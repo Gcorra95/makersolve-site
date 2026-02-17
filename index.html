@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MakerSolve — Filament Recycling Control Systems</title>
+  <meta name="description" content="MakerSolve: riciclo scarti di stampa 3D con controllo diametro reale. Progetto documentato in pubblico." />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --panel2:#0c131c;
+      --text:#e9eef5;
+      --muted:#a7b2c3;
+      --line:rgba(255,255,255,.10);
+      --accent:#33d6ff;
+      --good:#35f07a;
+      --warn:#ffcf33;
+      --bad:#ff4d4d;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --radius:18px;
+      --maxw:1080px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(1000px 600px at 20% 0%, rgba(51,214,255,.10), transparent 60%),
+        radial-gradient(1000px 700px at 80% 30%, rgba(53,240,122,.08), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.45;
+    }
+
+    a{color:var(--text); text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px 80px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .nav .wrap{padding:14px 20px}
+    .navrow{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background:
+        linear-gradient(135deg, rgba(51,214,255,.95), rgba(53,240,122,.85));
+      box-shadow: 0 0 0 1px rgba(255,255,255,.18), var(--shadow);
+    }
+    .brand b{letter-spacing:.4px}
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:flex-end}
+    .pill{
+      padding:9px 12px; border-radius:999px; border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      font-size:14px;
+    }
+    .pill.primary{
+      border-color: rgba(51,214,255,.45);
+      background: rgba(51,214,255,.10);
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero{padding:36px 0 18px}
+    .gridHero{display:grid; gap:18px; grid-template-columns: 1.15fr .85fr}
+    @media (max-width: 900px){ .gridHero{grid-template-columns:1fr} }
+    .hTitle{
+      font-size:48px; line-height:1.05; margin:0 0 10px;
+      letter-spacing:-.8px;
+    }
+    .hSub{
+      margin:0 0 16px; color:var(--muted); font-size:18px; max-width:60ch;
+    }
+    .tagrow{display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 22px}
+    .tag{
+      font-family:var(--mono);
+      font-size:12px;
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:rgba(233,238,245,.92);
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      font-weight:600;
+    }
+    .btn.primary{
+      border-color: rgba(51,214,255,.50);
+      background: rgba(51,214,255,.14);
+    }
+    .btn .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(51,214,255,.15);
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{padding:18px}
+    .muted{color:var(--muted)}
+    .mono{font-family:var(--mono)}
+    .small{font-size:14px}
+    .tiny{font-size:12px}
+
+    /* Media */
+    .videoBox{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: var(--panel);
+      aspect-ratio: 16 / 9;
+      position:relative;
+    }
+    .videoBox iframe, .videoBox video{
+      width:100%; height:100%; border:0; display:block;
+      background:#000;
+    }
+    .placeholder{
+      display:flex; align-items:center; justify-content:center;
+      height:100%;
+      color:rgba(233,238,245,.70);
+      font-family:var(--mono);
+      padding:14px;
+      text-align:center;
+    }
+
+    /* Sections */
+    section{margin-top:22px}
+    .sectionTitle{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+      margin: 0 0 10px;
+    }
+    h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .divider{height:1px; background:var(--line); margin:16px 0}
+    .cols3{display:grid; gap:14px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){ .cols3{grid-template-columns:1fr} }
+
+    .kpi{
+      display:flex; gap:10px; align-items:flex-start;
+    }
+    .kpi .icon{
+      width:36px; height:36px; border-radius:12px;
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--mono);
+      font-weight:700;
+      color:rgba(233,238,245,.9);
+    }
+    .kpi h3{margin:0 0 6px; font-size:16px}
+    .kpi p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Status */
+    .statusRow{display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px}
+    @media (max-width: 900px){ .statusRow{grid-template-columns:1fr} }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,238,245,.92);
+    }
+    .led{width:10px;height:10px;border-radius:999px;background:var(--good); box-shadow:0 0 0 4px rgba(53,240,122,.15)}
+    .led.warn{background:var(--warn); box-shadow:0 0 0 4px rgba(255,207,51,.14)}
+    .led.bad{background:var(--bad); box-shadow:0 0 0 4px rgba(255,77,77,.14)}
+
+    /* Build log */
+    .log{display:grid; gap:10px}
+    .logItem{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .logTop{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .logDate{font-family:var(--mono); font-size:12px; color:rgba(233,238,245,.70)}
+    .logTitle{margin:6px 0 6px; font-weight:700}
+    .logText{margin:0; color:var(--muted); font-size:14px}
+    .logMedia{margin-top:10px; display:flex; gap:10px; flex-wrap:wrap}
+    .thumb{
+      width:160px; aspect-ratio: 4/3;
+      border-radius:14px; overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: var(--panel2);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(233,238,245,.55);
+      font-family:var(--mono);
+      font-size:12px;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+
+    /* Form */
+    form{display:grid; gap:10px}
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    @media (max-width: 700px){ .row2{grid-template-columns:1fr} }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    input:focus, textarea:focus{border-color: rgba(51,214,255,.55); box-shadow:0 0 0 4px rgba(51,214,255,.10)}
+    .help{color:rgba(233,238,245,.65); font-size:12px}
+    .footer{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:rgba(233,238,245,.65);
+      font-size:12px;
+    }
+    .social{display:flex; gap:10px; flex-wrap:wrap}
+    .social a{padding:8px 10px; border-radius:999px; border:1px solid var(--line); background:rgba(255,255,255,.02)}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap">
+      <div class="navrow">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <b>MakerSolve</b><div class="tiny muted mono">build in public</div>
+          </div>
+        </div>
+        <div class="navlinks">
+          <a class="pill" href="#system">Sistema</a>
+          <a class="pill" href="#log">Build log</a>
+          <a class="pill primary" href="#follow">Segui</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="gridHero">
+        <div>
+          <h1 class="hTitle">Riciclo scarti 3D<br/>con controllo diametro reale.</h1>
+          <p class="hSub">
+            MakerSolve è un progetto DIY documentato in pubblico: trasformo scarti di stampa in filamento utilizzabile,
+            con sensore Hall differenziale e puller in closed-loop.
+          </p>
+
+          <div class="tagrow">
+            <span class="tag">230V extruder · manual</span>
+            <span class="tag">PID + SSR · 600W</span>
+            <span class="tag">Hall sensor · calibration</span>
+            <span class="tag">Closed-loop puller</span>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="#follow"><span class="dot"></span>Segui gli aggiornamenti</a>
+            <a class="btn" href="#log">Vedi gli ultimi test →</a>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="statusRow">
+            <div class="badge"><span class="led"></span>Status: prima estrusione riuscita</div>
+            <div class="badge"><span class="led warn"></span>Next: RPM puller + stabilità</div>
+            <div class="badge"><span class="led warn"></span>Target: ±0.05mm (work in progress)</div>
+          </div>
+        </div>
+
+        <div class="card pad">
+          <div class="sectionTitle">
+            <h2>Demo (video breve)</h2>
+            <span class="tiny muted mono">sostituisci con il tuo</span>
+          </div>
+
+          <!-- OPZIONE A: YouTube embed (consigliato)
+               Sostituisci VIDEO_ID con il tuo id -->
+          <div class="videoBox">
+            <div class="placeholder">
+              Inserisci qui il tuo video (YouTube / MP4).<br>
+              Cerca "VIDEO_ID" nel codice e sostituiscilo.
+            </div>
+
+            <!--
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="MakerSolve demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            -->
+            <!-- OPZIONE B: video locale
+            <video controls playsinline>
+              <source src="demo.mp4" type="video/mp4">
+            </video>
+            -->
+          </div>
+
+          <p class="small muted" style="margin:12px 2px 0">
+            Mostra 3 cose: uscita filamento, lettura diametro live, puller che corregge.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SYSTEM -->
+    <section id="system">
+      <div class="sectionTitle">
+        <h2>Com’è fatto (high-level)</h2>
+        <span class="tiny muted mono">senza “spoiler” copiabili</span>
+      </div>
+
+      <div class="cols3">
+        <div class="card pad kpi">
+          <div class="icon">01</div>
+          <div>
+            <h3>Estrusione (manuale)</h3>
+            <p>Motoriduttore 230V a coppia alta. Vite a giri fissi. Settaggio semplice e replicabile.</p>
+          </div>
+        </div>
+
+        <div class="card pad kpi">
+          <div class="icon">02</div>
+          <div>
+            <h3>Riscaldo controllato</h3>
+            <p>PID industriale + SSR. Fasce 200W × 3 (600W totali). Temperatura stabile senza micro-controllori.</p>
+          </div>
+        </div>
+
+        <div class="card pad kpi">
+          <div class="icon">03</div>
+          <div>
+            <h3>Diametro + Puller</h3>
+            <p>Sensore Hall differenziale con calibrazione multipunto. Puller closed-loop per tenere il diametro in tolleranza.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILD LOG -->
+    <section id="log">
+      <div class="sectionTitle">
+        <h2>Build log</h2>
+        <span class="tiny muted mono">brevissimo · tecnico · vero</span>
+      </div>
+
+      <div class="log">
+        <div class="logItem">
+          <div class="logTop">
+            <div class="logDate">2026-02-17</div>
+            <div class="badge"><span class="led"></span>milestone</div>
+          </div>
+          <div class="logTitle">Prima estrusione da scarti: riuscita ✅</div>
+          <p class="logText">
+            Avviato estrusore a giri fissi, riscaldo PID+SSR. Primo output continuo: ora si passa a stabilità e raffreddamento.
+          </p>
+          <div class="logMedia">
+            <div class="thumb">foto 1</div>
+            <div class="thumb">foto 2</div>
+            <div class="thumb">video</div>
+          </div>
+        </div>
+
+        <div class="logItem">
+          <div class="logTop">
+            <div class="logDate">2026-02-XX</div>
+            <div class="badge"><span class="led warn"></span>in progress</div>
+          </div>
+          <div class="logTitle">Calibrazione sensore Hall (multi-punto)</div>
+          <p class="logText">
+            Obiettivo: curva stabile e ripetibile. Prossimo step: ridurre gioco meccanico e migliorare smorzamento.
+          </p>
+          <div class="logMedia">
+            <div class="thumb">sensore</div>
+            <div class="thumb">grafico</div>
+          </div>
+        </div>
+
+        <div class="logItem">
+          <div class="logTop">
+            <div class="logDate">2026-02-XX</div>
+            <div class="badge"><span class="led warn"></span>next</div>
+          </div>
+          <div class="logTitle">RPM feedback sul puller</div>
+          <p class="logText">
+            Integro un tacho ottico per leggere i giri reali del puller. Serve per controllo robusto (niente “PWM a occhio”).
+          </p>
+          <div class="logMedia">
+            <div class="thumb">tacho</div>
+            <div class="thumb">puller</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOLLOW -->
+    <section id="follow">
+      <div class="sectionTitle">
+        <h2>Segui il progetto</h2>
+        <span class="tiny muted mono">no spam · solo progressi</span>
+      </div>
+
+      <div class="cols3">
+        <div class="card pad" style="grid-column: span 2;">
+          <!-- SENZA BACKEND: mailto. Sostituisci la tua email qui sotto. -->
+          <form action="mailto:TUAMAIL@EMAIL.COM" method="post" enctype="text/plain">
+            <div class="row2">
+              <input name="Nome" placeholder="Nome (opzionale)" />
+              <input name="Email" type="email" placeholder="Email" required />
+            </div>
+            <textarea name="Note" rows="4" placeholder="Cosa ti interessa? (riciclo, sensore diametro, puller, ecc.)"></textarea>
+            <button class="btn primary" type="submit"><span class="dot"></span>Iscrivimi</button>
+            <div class="help">
+              Suggerimento: quando vuoi fare le cose “serie”, sostituiamo questo con Formspree/MailerLite (2 minuti).
+            </div>
+          </form>
+        </div>
+
+        <div class="card pad">
+          <div class="mono tiny muted">LINK</div>
+          <div style="height:10px"></div>
+          <div class="small">
+            <div class="badge"><span class="led"></span>Reddit: <a href="#" class="mono">coming soon</a></div>
+            <div style="height:10px"></div>
+            <div class="badge"><span class="led warn"></span>YouTube: <a href="#" class="mono">coming soon</a></div>
+            <div style="height:10px"></div>
+            <div class="badge"><span class="led warn"></span>GitHub: <a href="#" class="mono">coming soon</a></div>
+          </div>
+          <div class="divider"></div>
+          <div class="tiny muted">
+            Vuoi solo documentare? Perfetto.  
+            Quando decidi di rilasciare file/guide, aggiungiamo una pagina “Release”.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div>© <span id="y"></span> MakerSolve — built in public.</div>
+      <div class="social">
+        <a href="#system">Sistema</a>
+        <a href="#log">Build log</a>
+        <a href="#follow">Segui</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
