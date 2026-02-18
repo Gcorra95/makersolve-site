@@ -206,7 +206,13 @@ footer{
 
 <header>
   <div class="container nav">
-    <div class="logo">Maker<span>Solve</span></div>
+   <a class="brand" href="#top" aria-label="MakerSolve Home">
+  <img src="assets/logo.png" alt="MakerSolve" class="brand-logo"
+       onerror="this.style.display='none'; document.getElementById('brandText').style.display='inline-flex';">
+  <span id="brandText" class="brand-text" style="display:none;">
+    Maker<span>Solve</span>
+  </span>
+</a>
 
     <div class="nav-links" id="menu">
       <a href="#system">System</a>
@@ -222,6 +228,29 @@ footer{
     </div>
   </div>
 </header>
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.brand-logo{
+  height:34px;        /* regola qui se lo vuoi più grande */
+  width:auto;
+  display:block;
+}
+
+.brand-text{
+  font-family:"Sora";
+  font-weight:600;
+  font-size:20px;
+  letter-spacing:-.5px;
+}
+
+.brand-text span{color:var(--brand)}
 
 <section class="hero">
   <div class="container">
