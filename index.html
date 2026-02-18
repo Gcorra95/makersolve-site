@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>MakerSolve — DIY Filament Recycling with Real Diameter Control</title>
-  <meta name="description" content="MakerSolve: a modular DIY system to recycle 3D print waste into usable filament with real diameter control. Built in public. Digital release coming soon." />
+  <title>MakerSolve present: ReFuser 3DX - DIY Filament Recycling with Real Diameter Control</title>
+  <meta name="description" content="ReFuser 3DX: a modular DIY system to recycle 3D print waste into usable filament with real diameter control. Built in public. Digital release coming soon." />
   <meta name="theme-color" content="#0ea5e9" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="MakerSolve — Real Diameter Control for DIY Filament Recycling" />
+  <meta property="og:title" content="ReFuser 3DX - Real Diameter Control for DIY Filament Recycling" />
   <meta property="og:description" content="Recycle 3D print waste into usable filament with Hall differential sensing + closed-loop puller. Built in public. Digital release coming soon." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://makersolve.com/" />
@@ -448,8 +448,8 @@
           <div class="brandText">
             <b>MakerSolve</b>
             <span class="tiny muted2">
-              <span data-lang="en">from scrap to filament · built in public</span>
-              <span data-lang="it">dagli scarti al filamento · build in public</span>
+              <span data-lang="en">from scrap to filament | built in public</span>
+              <span data-lang="it">dagli scarti al filamento | costruito in pubblico</span>
             </span>
           </div>
         </div>
@@ -485,11 +485,11 @@
             <div style="font-family:var(--display); font-weight:700;">MakerSolve</div>
             <div class="tiny muted2">
               <span data-lang="en">built in public</span>
-              <span data-lang="it">build in public</span>
+              <span data-lang="it">costruito in pubblico</span>
             </div>
           </div>
         </div>
-        <button class="closeBtn" id="closeMenu" type="button" aria-label="Close">✕</button>
+        <button class="closeBtn" id="closeMenu" type="button" aria-label="Close">&times;</button>
       </div>
 
       <div class="drawerLinks">
@@ -530,16 +530,14 @@
           <div data-lang="en" class="block">
             <h1>Recycle 3D print waste.<br/>Hold the diameter.</h1>
             <p class="lead">
-              MakerSolve is a modular DIY system: stable manual extrusion + Hall differential diameter sensing + closed-loop puller control.
-              Documentation is public. The digital release is coming.
+              MakerSolve is a modular DIY system: Stable manual extrusion, Hall differential sensor for diameter, and feedback-controlled puller, all with public documentation and digital release coming soon.
             </p>
           </div>
 
           <div data-lang="it" class="block">
             <h1>Ricicla gli scarti 3D.<br/>Mantieni il diametro.</h1>
             <p class="lead">
-              MakerSolve è un sistema DIY modulare: estrusione manuale stabile + sensore Hall differenziale + controllo del puller in closed-loop.
-              Documentazione pubblica. Pacchetto digitale in arrivo.
+              MakerSolve è un sistema DIY modulare: Estrusione con controllo manuale stabile, sensore differenziale Hall per il diametro e controllo del puller con feedback, il tutto con documentazione pubblica e release digitale in arrivo.
             </p>
           </div>
 
@@ -547,19 +545,19 @@
             <a class="btn primary" href="#follow">
               <span class="dot"></span>
               <span data-lang="en">Notify me on release</span>
-              <span data-lang="it">Avvisami all’uscita</span>
+              <span data-lang="it">Avvisami all'uscita</span>
             </a>
             <a class="btn" href="#modules">
-              <span data-lang="en">See modules →</span>
-              <span data-lang="it">Vedi i moduli →</span>
+              <span data-lang="en">See modules -></span>
+              <span data-lang="it">Vedi i moduli -></span>
             </a>
           </div>
 
           <div class="tags">
-            <span class="tag">230V geared motor · ~13 rpm</span>
-            <span class="tag">PID + SSR · 600W</span>
+            <span class="tag">230V geared motor | ~13 rpm</span>
+            <span class="tag">PID + SSR | 600W</span>
             <span class="tag">Hall differential sensor</span>
-            <span class="tag">Closed-loop puller</span>
+            <span class="tag">Closed-loop puller with feedback</span>
           </div>
         </div>
 
@@ -575,7 +573,7 @@
               <b><span data-lang="en">First public clip is in progress</span><span data-lang="it">Il primo video pubblico è in preparazione</span></b>
               <p class="small muted" style="margin:10px 0 0">
                 <span data-lang="en">Wiring cleanup + safe enclosure pass, then a short run showing output + diameter readout + puller correction.</span>
-                <span data-lang="it">Pulizia cablaggi + box sicurezza, poi una prova breve con uscita + lettura diametro + correzione puller.</span>
+                <span data-lang="it">Assemblaggio e pulizia cablaggi + box sicurezza, poi una prova breve con uscita + lettura diametro + correzione puller.</span>
               </p>
             </div>
           </div>
@@ -600,7 +598,7 @@
             <div class="badge">
               <div class="badgeLeft">
                 <span class="led warn"></span>
-                <span class="badgeText"><span data-lang="en">Target tolerance: ±0.05mm</span><span data-lang="it">Tolleranza target: ±0.05mm</span></span>
+                <span class="badgeText"><span data-lang="en">Target tolerance: +/-0.05mm</span><span data-lang="it">Tolleranza target: +/-0.05mm</span></span>
               </div>
               <span class="badgeRight">WIP</span>
             </div>
@@ -608,6 +606,90 @@
         </div>
       </div>
     </section>
+
+    <!-- PROOF OF LOOP -->
+<section id="proof">
+  <div class="sectionTop">
+    <h3>
+      <span data-lang="en">Proof of loop</span>
+      <span data-lang="it">Ciclo completo dimostrato</span>
+    </h3>
+    <span class="tiny muted2">
+      <span data-lang="en">extrusion → measurement → printed part</span>
+      <span data-lang="it">estrusione → misura → pezzo stampato</span>
+    </span>
+  </div>
+
+  <div class="grid3">
+
+    <!-- 1. Extrusion -->
+    <div class="card pad">
+      <h4 style="font-family:var(--display);margin-top:0;">
+        <span data-lang="en">1. Extrusion</span>
+        <span data-lang="it">1. Estrusione</span>
+      </h4>
+
+      <div class="videoBox">
+        <!-- Replace with real YouTube iframe -->
+        <div class="videoPlaceholder">
+          <b>
+            <span data-lang="en">Raw scrap extruded</span>
+            <span data-lang="it">Scarti estrusi</span>
+          </b>
+          <p class="small muted">
+            <span data-lang="en">Manual low-RPM extrusion with PID heating.</span>
+            <span data-lang="it">Estrusione a bassi RPM con riscaldo PID.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Measurement -->
+    <div class="card pad">
+      <h4 style="font-family:var(--display);margin-top:0;">
+        <span data-lang="en">2. Diameter Control</span>
+        <span data-lang="it">2. Controllo Diametro</span>
+      </h4>
+
+      <div class="videoBox">
+        <div class="videoPlaceholder">
+          <b>
+            <span data-lang="en">Live diameter reading</span>
+            <span data-lang="it">Lettura diametro in tempo reale</span>
+          </b>
+          <p class="small muted">
+            <span data-lang="en">Hall differential sensor + puller feedback.</span>
+            <span data-lang="it">Sensore Hall differenziale + feedback puller.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Printed Result -->
+    <div class="card pad">
+      <h4 style="font-family:var(--display);margin-top:0;">
+        <span data-lang="en">3. Printed Result</span>
+        <span data-lang="it">3. Pezzo Stampato</span>
+      </h4>
+
+      <div class="videoBox">
+        <!-- Replace with image when ready -->
+        <div class="videoPlaceholder">
+          <b>
+            <span data-lang="en">Bench printed with recycled filament</span>
+            <span data-lang="it">Barchetta stampata con filamento riciclato</span>
+          </b>
+          <p class="small muted">
+            <span data-lang="en">Closed-loop control applied to real output.</span>
+            <span data-lang="it">Controllo in closed-loop applicato all’output reale.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- SYSTEM -->
     <section id="system">
@@ -621,7 +703,7 @@
           <div class="icon">01</div>
           <div>
             <h4><span data-lang="en">Stable manual extrusion</span><span data-lang="it">Estrusione manuale stabile</span></h4>
-            <p><span data-lang="en">Fixed RPM on a geared 230V motor. You tune temperature—everything else becomes predictable.</span><span data-lang="it">Giri fissi con motoriduttore 230V. Regoli la temperatura—il resto diventa prevedibile.</span></p>
+            <p><span data-lang="en">Fixed RPM on a geared 230V motor. You tune temperature: everything else becomes predictable.</span><span data-lang="it">Giri fissi con motoriduttore 230V. Regoli la temperatura: il resto diventa prevedibile.</span></p>
           </div>
         </div>
 
@@ -629,7 +711,7 @@
           <div class="icon">02</div>
           <div>
             <h4><span data-lang="en">Industrial heating control</span><span data-lang="it">Controllo riscaldo industriale</span></h4>
-            <p><span data-lang="en">PID controller + SSR driving 200W bands (×3). No firmware required for the hot zone.</span><span data-lang="it">PID + SSR per fasce da 200W (×3). Nessun firmware per la parte calda.</span></p>
+            <p><span data-lang="en">PID controller + SSR driving 200W bands (x3). No firmware required for the hot zone.</span><span data-lang="it">PID + SSR per fasce da 200W (x3). Nessun firmware per la parte calda.</span></p>
           </div>
         </div>
 
@@ -653,7 +735,7 @@
       <div class="modules">
         <div class="card pad">
           <div class="moduleTitle">
-            <b><span data-lang="en">Module 1 — Diameter Sensor</span><span data-lang="it">Modulo 1 — Sensore Diametro</span></b>
+            <b><span data-lang="en">Module 1 - Diameter Sensor</span><span data-lang="it">Modulo 1 - Sensore Diametro</span></b>
             <span class="chip">STL + BOM + firmware</span>
           </div>
           <ul>
@@ -665,7 +747,7 @@
 
         <div class="card pad">
           <div class="moduleTitle">
-            <b><span data-lang="en">Module 2 — Closed-loop Puller</span><span data-lang="it">Modulo 2 — Puller Closed-loop</span></b>
+            <b><span data-lang="en">Module 2 - Closed-loop Puller</span><span data-lang="it">Modulo 2 - Puller Closed-loop</span></b>
             <span class="chip">STL + BOM + control</span>
           </div>
           <ul>
@@ -677,7 +759,7 @@
 
         <div class="card pad">
           <div class="moduleTitle">
-            <b><span data-lang="en">Module 3 — Full System Guide</span><span data-lang="it">Modulo 3 — Guida Sistema Completo</span></b>
+            <b><span data-lang="en">Module 3 - Full System Guide</span><span data-lang="it">Modulo 3 - Guida Sistema Completo</span></b>
             <span class="chip">Docs + tuning</span>
           </div>
           <ul>
@@ -693,7 +775,7 @@
     <section id="log">
       <div class="sectionTop">
         <h3>Build log</h3>
-        <span class="tiny muted2"><span data-lang="en">short · technical · real</span><span data-lang="it">breve · tecnico · vero</span></span>
+        <span class="tiny muted2"><span data-lang="en">short | technical | real</span><span data-lang="it">breve | tecnico | vero</span></span>
       </div>
 
       <div class="log">
@@ -702,7 +784,7 @@
             <span>2026-02-17</span>
             <span><span data-lang="en">Milestone</span><span data-lang="it">Milestone</span></span>
           </div>
-          <b><span data-lang="en">First extrusion from scraps: success ✅</span><span data-lang="it">Prima estrusione da scarti: riuscita ✅</span></b>
+          <b><span data-lang="en">First extrusion from scraps: success (done)</span><span data-lang="it">Prima estrusione da scarti: riuscita (ok)</span></b>
           <p><span data-lang="en">Manual extrusion + PID/SSR heating operational. Next: stable cooling and diameter consistency tests.</span><span data-lang="it">Estrusione manuale + riscaldo PID/SSR operativi. Prossimo step: raffreddamento stabile e test consistenza diametro.</span></p>
         </article>
       </div>
@@ -712,7 +794,7 @@
     <section id="follow">
       <div class="sectionTop">
         <h3><span data-lang="en">Get notified</span><span data-lang="it">Avvisami</span></h3>
-        <span class="tiny muted2"><span data-lang="en">no spam · only real progress</span><span data-lang="it">no spam · solo progressi reali</span></span>
+        <span class="tiny muted2"><span data-lang="en">no spam | only real progress</span><span data-lang="it">no spam | solo progressi reali</span></span>
       </div>
 
       <div class="card pad">
