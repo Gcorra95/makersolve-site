@@ -3,145 +3,341 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MakerSolve — DIY Filament Recycling, Real Diameter Control</title>
-  <meta name="description" content="MakerSolve: turn 3D printing waste into usable filament with real diameter control. Built in public. Digital release coming soon." />
-  <meta name="theme-color" content="#0b0f14" />
+
+  <title>MakerSolve — DIY Filament Recycling with Real Diameter Control</title>
+  <meta name="description" content="MakerSolve: a modular DIY system to recycle 3D print waste into usable filament with real diameter control. Built in public. Digital release coming soon." />
+  <meta name="theme-color" content="#0ea5e9" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="MakerSolve — Real Diameter Control for DIY Filament Recycling" />
-  <meta property="og:description" content="From scrap to filament: DIY system with Hall differential sensing + closed-loop puller. Built in public. Digital release coming soon." />
+  <meta property="og:description" content="Recycle 3D print waste into usable filament with Hall differential sensing + closed-loop puller. Built in public. Digital release coming soon." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://makersolve.com/" />
   <meta property="og:image" content="https://makersolve.com/assets/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Fonts (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b0f14; --bg2:#0a121b;
-      --panel: rgba(255,255,255,.04);
-      --line: rgba(255,255,255,.10);
-      --text:#e9eef5; --muted:#a7b2c3;
-      --accent:#33d6ff; --accent2:#35f07a;
-      --warn:#ffcf33;
-      --radius:18px; --shadow: 0 14px 40px rgba(0,0,0,.45);
-      --maxw:1120px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --bg: #ffffff;
+      --bg2:#f7fbff;
+      --panel:#ffffff;
+      --line: rgba(15, 23, 42, .12);
+      --text:#0b1220;
+      --muted: rgba(15, 23, 42, .68);
+      --muted2: rgba(15, 23, 42, .52);
+      --brand:#0ea5e9;      /* cyan-blue */
+      --brand2:#2563eb;     /* deep blue */
+      --good:#16a34a;
+      --warn:#f59e0b;
+      --radius:18px;
+      --shadow: 0 18px 50px rgba(2, 6, 23, .10);
+      --maxw: 1120px;
+      --sans: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --display: "Space Grotesk", "Inter", ui-sans-serif, system-ui;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0; color:var(--text); font-family:var(--sans); line-height:1.5;
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
       background:
-        radial-gradient(1100px 650px at 18% 0%, rgba(51,214,255,.12), transparent 60%),
-        radial-gradient(1100px 700px at 85% 20%, rgba(53,240,122,.10), transparent 60%),
+        radial-gradient(1100px 650px at 12% 0%, rgba(14,165,233,.16), transparent 55%),
+        radial-gradient(900px 600px at 82% 12%, rgba(37,99,235,.10), transparent 55%),
         linear-gradient(180deg, var(--bg), var(--bg2));
     }
-    a{color:var(--text); text-decoration:none}
-    a:hover{color:var(--accent)}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px 88px}
-    .mono{font-family:var(--mono)} .muted{color:var(--muted)}
-    .tiny{font-size:12px} .small{font-size:14px}
+    a{color:inherit; text-decoration:none}
+    a:hover{color:var(--brand2)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    .muted{color:var(--muted)}
+    .muted2{color:var(--muted2)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .tiny{font-size:12px}
+    .small{font-size:14px}
 
     /* NAV */
     .nav{
       position:sticky; top:0; z-index:50;
-      background: rgba(11,15,20,.68);
+      background: rgba(255,255,255,.78);
       backdrop-filter: blur(12px);
       border-bottom:1px solid var(--line);
     }
-    .nav .wrap{padding:14px 20px}
-    .navrow{display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(51,214,255,.95), rgba(53,240,122,.85));
-      box-shadow:0 0 0 1px rgba(255,255,255,.18), var(--shadow);
+    .navInner{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0;
     }
-    .brandTitle{display:flex; flex-direction:column; line-height:1.1}
-    .navlinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+    .brandRow{display:flex; align-items:center; gap:12px; min-width: 220px;}
+    .mark{
+      width:36px; height:36px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(14,165,233,1), rgba(37,99,235,.9));
+      box-shadow: 0 0 0 1px rgba(2,6,23,.08), var(--shadow);
+      flex:0 0 auto;
+    }
+    .brandText{display:flex; flex-direction:column; line-height:1.1}
+    .brandText b{font-family:var(--display); letter-spacing:-.2px}
+    .navLinks{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
     .pill{
       font-size:14px;
       padding:9px 12px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background: rgba(255,255,255,.72);
     }
-    .pill.primary{border-color: rgba(51,214,255,.55); background: rgba(51,214,255,.12);}
+    .pill.primary{
+      border-color: rgba(14,165,233,.35);
+      background: rgba(14,165,233,.12);
+      font-weight:700;
+    }
 
-    /* language toggle */
+    /* Language toggle */
     .langToggle{
-      display:inline-flex;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.02);
-      border-radius:999px;
-      overflow:hidden;
+      display:inline-flex; border-radius:999px; overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.75);
     }
     .langBtn{
       cursor:pointer;
-      font-family:var(--mono);
-      font-size:13px;
-      padding:9px 12px;
       border:0;
-      color: rgba(233,238,245,.88);
-      background: transparent;
+      background:transparent;
+      padding:9px 12px;
+      font-family: var(--display);
+      letter-spacing:.2px;
+      font-size:13px;
+      color: rgba(15,23,42,.70);
     }
     .langBtn.active{
-      background: rgba(51,214,255,.14);
-      color: var(--text);
+      background: rgba(14,165,233,.14);
+      color: rgba(15,23,42,.95);
     }
 
     /* HERO */
-    .hero{padding:40px 0 14px}
-    .gridHero{display:grid; gap:18px; grid-template-columns: 1.18fr .82fr}
-    @media (max-width: 940px){ .gridHero{grid-template-columns:1fr} }
-    h1{margin:0 0 12px; font-size:52px; letter-spacing:-1px; line-height:1.02;}
-    @media (max-width: 560px){ h1{font-size:40px} }
-    .lead{margin:0 0 18px; font-size:18px; color:var(--muted); max-width:62ch;}
-    .tagrow{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 22px}
-    .tag{font-family:var(--mono); font-size:12px; padding:7px 10px; border-radius:999px; border:1px solid var(--line); background: rgba(255,255,255,.03);}
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 14px; border-radius:14px; border:1px solid var(--line); background: rgba(255,255,255,.03); box-shadow: 0 12px 28px rgba(0,0,0,.25); font-weight:800;}
-    .btn.primary{border-color: rgba(51,214,255,.55); background: rgba(51,214,255,.14);}
-    .btn .dot{width:10px; height:10px; border-radius:999px; background: var(--accent); box-shadow: 0 0 0 4px rgba(51,214,255,.16);}
+    .hero{padding:38px 0 18px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){ .heroGrid{grid-template-columns:1fr} }
 
-    .card{border:1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)); border-radius: var(--radius); box-shadow: var(--shadow);}
+    .card{
+      background: rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
     .pad{padding:18px}
-    .divider{height:1px; background:var(--line); margin:16px 0}
-    .videoBox{border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.12); background:#000; aspect-ratio:16/9;}
-    .videoBox iframe{width:100%; height:100%; border:0; display:block;}
 
-    section{margin-top:22px}
-    .sectionTop{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin: 0 0 10px;}
-    h2{margin:0; font-size:18px; letter-spacing:.2px}
-    .cols3{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr)}
-    @media (max-width: 940px){ .cols3{grid-template-columns:1fr} }
-    .kpi{display:flex; gap:12px; align-items:flex-start}
-    .kpi .icon{width:40px; height:40px; border-radius:14px; background: rgba(255,255,255,.05); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-weight:800;}
-    .kpi h3{margin:0 0 6px; font-size:16px}
-    .kpi p{margin:0; color:var(--muted); font-size:14px}
+    .logoCard{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:flex-start;
+      gap:14px;
+      padding:22px;
+      overflow:hidden;
+      position:relative;
+      min-height: 320px;
+    }
+    .logoBg{
+      position:absolute; inset:-40px -80px auto auto;
+      width:260px; height:260px;
+      background: radial-gradient(circle at 30% 30%, rgba(14,165,233,.22), transparent 62%),
+                  radial-gradient(circle at 70% 60%, rgba(37,99,235,.12), transparent 62%);
+      border-radius:999px;
+      filter: blur(2px);
+      pointer-events:none;
+    }
+    .logoImg{
+      width: 100%;
+      max-width: 520px;
+      height:auto;
+      display:block;
+    }
+    h1{
+      margin:0;
+      font-family: var(--display);
+      font-size: 44px;
+      letter-spacing: -1px;
+      line-height: 1.05;
+    }
+    @media (max-width: 560px){ h1{font-size:36px} }
+    .lead{
+      margin:10px 0 0;
+      font-size:16px;
+      color: var(--muted);
+      max-width: 65ch;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:16px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      box-shadow: 0 10px 26px rgba(2,6,23,.08);
+      font-weight:800;
+    }
+    .btn.primary{
+      border-color: rgba(14,165,233,.35);
+      background: linear-gradient(180deg, rgba(14,165,233,.18), rgba(14,165,233,.10));
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 5px rgba(14,165,233,.14);
+    }
+    .tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    .tag{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      color: rgba(15,23,42,.78);
+    }
 
-    .statusRow{display:grid; gap:12px; grid-template-columns: repeat(3, 1fr)}
-    @media (max-width: 940px){ .statusRow{grid-template-columns:1fr} }
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:10px 10px; border-radius:14px; border:1px solid var(--line); background: rgba(255,255,255,.03); font-family:var(--mono); font-size:12px;}
-    .led{width:10px;height:10px;border-radius:999px;background:var(--accent2); box-shadow:0 0 0 4px rgba(53,240,122,.16)}
-    .led.warn{background:var(--warn); box-shadow:0 0 0 4px rgba(255,207,51,.14)}
+    /* Right column: demo / status */
+    .demoCard .top{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .demoCard h2{margin:0; font-family:var(--display); letter-spacing:-.2px; font-size:16px}
+    .note{
+      font-size:12px; color: rgba(15,23,42,.55);
+      background: rgba(14,165,233,.10);
+      border:1px solid rgba(14,165,233,.18);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .videoBox{
+      border-radius:16px;
+      border:1px solid rgba(2,6,23,.10);
+      overflow:hidden;
+      background: linear-gradient(180deg, rgba(2,6,23,.04), rgba(2,6,23,.02));
+      aspect-ratio: 16/9;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .videoPlaceholder{
+      text-align:center;
+      padding:18px;
+      max-width: 44ch;
+    }
+    .videoPlaceholder b{font-family:var(--display)}
+    .badges{display:grid; grid-template-columns:1fr; gap:10px; margin-top:12px}
+    .badge{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.75);
+    }
+    .badgeLeft{display:flex; align-items:center; gap:10px}
+    .led{width:10px;height:10px;border-radius:999px;background:var(--good); box-shadow:0 0 0 5px rgba(22,163,74,.14)}
+    .led.warn{background:var(--warn); box-shadow:0 0 0 5px rgba(245,158,11,.14)}
+    .badgeText{font-size:13px; color: rgba(15,23,42,.78)}
+    .badgeRight{font-family:var(--display); font-size:12px; color: rgba(15,23,42,.55)}
 
+    /* SECTIONS */
+    section{padding:18px 0}
+    .sectionTop{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin: 4px 0 10px;
+    }
+    .sectionTop h3{
+      margin:0;
+      font-family: var(--display);
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+
+    .grid3{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);}
+    @media (max-width: 980px){ .grid3{grid-template-columns:1fr} }
+    .feature{
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .icon{
+      width:40px; height:40px; border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(14,165,233,.08);
+      display:flex; align-items:center; justify-content:center;
+      font-family: var(--display);
+      color: rgba(15,23,42,.78);
+      flex:0 0 auto;
+    }
+    .feature h4{margin:0 0 6px; font-family:var(--display); font-size:15px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Modules */
+    .modules{display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);}
+    @media (max-width: 980px){ .modules{grid-template-columns:1fr} }
+    .moduleTitle{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
+    .moduleTitle b{font-family:var(--display)}
+    .chip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.75);
+      color: rgba(15,23,42,.70);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    ul{margin:10px 0 0; padding-left:18px; color: var(--muted)}
+    li{margin:6px 0; font-size:14px}
+
+    /* Build log */
     .log{display:grid; gap:10px}
-    .logItem{padding:14px; border-radius:16px; border:1px solid var(--line); background: rgba(255,255,255,.02);}
-    .logTop{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .logDate{font-family:var(--mono); font-size:12px; color: rgba(233,238,245,.70)}
-    .logTitle{margin:8px 0 6px; font-weight:900}
-    .logText{margin:0; color:var(--muted); font-size:14px}
+    .logItem{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.78);
+    }
+    .logTop{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color: rgba(15,23,42,.62);
+      font-size:12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .logItem b{font-family:var(--display); display:block; margin:8px 0 6px}
+    .logItem p{margin:0; color:var(--muted); font-size:14px}
 
+    /* Follow */
     form{display:grid; gap:10px}
     .row2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
     @media (max-width: 700px){ .row2{grid-template-columns:1fr} }
-    input, textarea{width:100%; padding:12px 12px; border-radius:14px; border:1px solid var(--line); background: rgba(255,255,255,.03); color:var(--text); outline:none; font-size:14px;}
-    input:focus, textarea:focus{border-color: rgba(51,214,255,.55); box-shadow:0 0 0 4px rgba(51,214,255,.12);}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.85);
+      color: var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(14,165,233,.45);
+      box-shadow:0 0 0 4px rgba(14,165,233,.14);
+    }
 
-    .footer{margin-top:22px; padding-top:18px; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; color: rgba(233,238,245,.65); font-size:12px;}
+    .footer{
+      padding:22px 0 34px;
+      border-top:1px solid var(--line);
+      color: rgba(15,23,42,.60);
+      font-size:12px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
 
-    /* language blocks */
+    /* Language blocks */
     [data-lang]{display:none}
     [data-lang].show{display:block}
   </style>
@@ -150,19 +346,29 @@
 <body>
   <header class="nav">
     <div class="wrap">
-      <div class="navrow">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div class="brandTitle">
+      <div class="navInner">
+        <div class="brandRow">
+          <div class="mark" aria-hidden="true"></div>
+          <div class="brandText">
             <b>MakerSolve</b>
-            <span class="tiny muted mono" data-i18n="tagline">from scrap to filament · built in public</span>
+            <span class="tiny muted mono">
+              <span data-lang="en">from scrap to filament · built in public</span>
+              <span data-lang="it">dagli scarti al filamento · build in public</span>
+            </span>
           </div>
         </div>
 
-        <nav class="navlinks">
-          <a class="pill" href="#system" data-i18n="nav_system">System</a>
-          <a class="pill" href="#log" data-i18n="nav_log">Build log</a>
-          <a class="pill primary" href="#follow" data-i18n="nav_follow">Get notified</a>
+        <nav class="navLinks">
+          <a class="pill" href="#system">
+            <span data-lang="en">System</span><span data-lang="it">Sistema</span>
+          </a>
+          <a class="pill" href="#modules">
+            <span data-lang="en">Modules</span><span data-lang="it">Moduli</span>
+          </a>
+          <a class="pill" href="#log">Build log</a>
+          <a class="pill primary" href="#follow">
+            <span data-lang="en">Get notified</span><span data-lang="it">Avvisami</span>
+          </a>
 
           <div class="langToggle" role="tablist" aria-label="Language">
             <button class="langBtn active" id="btnEN" type="button" aria-selected="true">EN</button>
@@ -176,85 +382,115 @@
   <main class="wrap">
     <!-- HERO -->
     <section class="hero">
-      <div class="gridHero">
-        <div>
-          <!-- EN -->
+      <div class="heroGrid">
+        <!-- Left: brand + message -->
+        <div class="card logoCard">
+          <div class="logoBg" aria-hidden="true"></div>
+
+          <!-- Put your logo here -->
+          <img class="logoImg" src="assets/logo.png" alt="MakerSolve logo" />
+
           <div data-lang="en">
-            <h1>DIY filament recycling<br/>with real diameter control.</h1>
+            <h1>Recycle 3D print waste.<br/>Hold the diameter.</h1>
             <p class="lead">
-              I’m building a garage-friendly system: stable manual extrusion + Hall differential sensing + a closed-loop puller.
-              Public documentation now, digital release coming soon.
+              MakerSolve is a modular DIY system: stable manual extrusion + Hall differential diameter sensing + closed-loop puller control.
+              Documentation is public. The digital release is coming.
             </p>
           </div>
 
-          <!-- IT -->
           <div data-lang="it">
-            <h1>Riciclo filamento DIY<br/>con controllo diametro reale.</h1>
+            <h1>Ricicla gli scarti 3D.<br/>Mantieni il diametro.</h1>
             <p class="lead">
-              Sto costruendo un sistema replicabile in garage: estrusione manuale stabile + sensore Hall differenziale + puller in closed-loop.
-              Documentazione pubblica ora, pacchetto digitale in arrivo.
+              MakerSolve è un sistema DIY modulare: estrusione manuale stabile + sensore Hall differenziale + controllo del puller in closed-loop.
+              Documentazione pubblica. Pacchetto digitale in arrivo.
             </p>
-          </div>
-
-          <div class="tagrow">
-            <span class="tag">230V extruder · 13 rpm</span>
-            <span class="tag">PID + SSR · 600W</span>
-            <span class="tag">Hall sensor · calibration</span>
-            <span class="tag">Closed-loop puller</span>
           </div>
 
           <div class="ctaRow">
             <a class="btn primary" href="#follow">
               <span class="dot"></span>
               <span data-lang="en">Notify me on release</span>
-              <span data-lang="it">Avvisami quando esce</span>
+              <span data-lang="it">Avvisami all’uscita</span>
             </a>
-            <a class="btn" href="#log">
-              <span data-lang="en">Latest tests →</span>
-              <span data-lang="it">Ultimi test →</span>
+            <a class="btn" href="#modules">
+              <span data-lang="en">See modules →</span>
+              <span data-lang="it">Vedi i moduli →</span>
             </a>
           </div>
 
-          <div class="divider"></div>
-
-          <div class="statusRow">
-            <div class="badge"><span class="led"></span>
-              <span data-lang="en">Status: first successful extrusion</span>
-              <span data-lang="it">Status: prima estrusione riuscita</span>
-            </div>
-            <div class="badge"><span class="led warn"></span>
-              <span data-lang="en">Next: puller RPM feedback</span>
-              <span data-lang="it">Next: RPM feedback puller</span>
-            </div>
-            <div class="badge"><span class="led warn"></span>
-              <span data-lang="en">Target: ±0.05mm (WIP)</span>
-              <span data-lang="it">Target: ±0.05mm (WIP)</span>
-            </div>
+          <div class="tags">
+            <span class="tag">230V geared motor · ~13 rpm</span>
+            <span class="tag">PID + SSR · 600W</span>
+            <span class="tag">Hall differential sensor</span>
+            <span class="tag">Closed-loop puller</span>
           </div>
         </div>
 
-        <div class="card pad">
-          <div class="sectionTop">
+        <!-- Right: demo + status -->
+        <div class="card pad demoCard">
+          <div class="top">
             <h2>
-              <span data-lang="en">Demo video</span>
-              <span data-lang="it">Video demo</span>
+              <span data-lang="en">Demo</span>
+              <span data-lang="it">Demo</span>
             </h2>
-            <span class="tiny muted mono">replace VIDEO_ID</span>
+            <span class="note">
+              <span data-lang="en">video coming soon</span>
+              <span data-lang="it">video in arrivo</span>
+            </span>
           </div>
 
+          <!-- Replace this box with YouTube later -->
           <div class="videoBox">
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="MakerSolve demo"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+            <div class="videoPlaceholder">
+              <b>
+                <span data-lang="en">First public clip is in progress</span>
+                <span data-lang="it">Il primo video pubblico è in preparazione</span>
+              </b>
+              <p class="small muted" style="margin:10px 0 0">
+                <span data-lang="en">Wiring cleanup + safe enclosure pass, then a short run showing output + diameter readout + puller correction.</span>
+                <span data-lang="it">Pulizia cablaggi + box sicurezza, poi una prova breve con uscita + lettura diametro + correzione puller.</span>
+              </p>
+              <p class="tiny muted2 mono" style="margin:10px 0 0">
+                <span data-lang="en">Tip: share links as makersolve.com?lang=en</span>
+                <span data-lang="it">Tip: condividi link come makersolve.com?lang=it</span>
+              </p>
+            </div>
           </div>
 
-          <p class="small muted" style="margin:10px 0 0">
-            <span data-lang="en">Keep it short (10–30s): output + diameter readout + puller correction.</span>
-            <span data-lang="it">Tienilo breve (10–30s): uscita + lettura diametro + correzione puller.</span>
-          </p>
+          <div class="badges">
+            <div class="badge">
+              <div class="badgeLeft">
+                <span class="led"></span>
+                <span class="badgeText">
+                  <span data-lang="en">Milestone: first successful extrusion</span>
+                  <span data-lang="it">Milestone: prima estrusione riuscita</span>
+                </span>
+              </div>
+              <span class="badgeRight">DONE</span>
+            </div>
+
+            <div class="badge">
+              <div class="badgeLeft">
+                <span class="led warn"></span>
+                <span class="badgeText">
+                  <span data-lang="en">Next: puller RPM feedback</span>
+                  <span data-lang="it">Next: feedback RPM puller</span>
+                </span>
+              </div>
+              <span class="badgeRight">WIP</span>
+            </div>
+
+            <div class="badge">
+              <div class="badgeLeft">
+                <span class="led warn"></span>
+                <span class="badgeText">
+                  <span data-lang="en">Target tolerance: ±0.05mm</span>
+                  <span data-lang="it">Tolleranza target: ±0.05mm</span>
+                </span>
+              </div>
+              <span class="badgeRight">WIP</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -262,57 +498,145 @@
     <!-- SYSTEM -->
     <section id="system">
       <div class="sectionTop">
-        <h2>
+        <h3>
           <span data-lang="en">How it works (high-level)</span>
           <span data-lang="it">Come funziona (high-level)</span>
-        </h2>
+        </h3>
         <span class="tiny muted mono">
           <span data-lang="en">architecture, not spoilers</span>
           <span data-lang="it">architettura, non spoiler</span>
         </span>
       </div>
 
-      <div class="cols3">
-        <div class="card pad kpi">
+      <div class="grid3">
+        <div class="card pad feature">
           <div class="icon">01</div>
           <div>
-            <h3>
+            <h4>
               <span data-lang="en">Stable manual extrusion</span>
               <span data-lang="it">Estrusione manuale stabile</span>
-            </h3>
+            </h4>
             <p>
-              <span data-lang="en">High-torque 230V geared motor, fixed RPM. Simple knobs, predictable behavior.</span>
-              <span data-lang="it">Motoriduttore 230V a coppia alta, giri fissi. Poche regolazioni, comportamento prevedibile.</span>
+              <span data-lang="en">Fixed RPM on a geared 230V motor. You tune temperature—everything else becomes predictable.</span>
+              <span data-lang="it">Giri fissi con motoriduttore 230V. Regoli la temperatura—il resto diventa prevedibile.</span>
             </p>
           </div>
         </div>
 
-        <div class="card pad kpi">
+        <div class="card pad feature">
           <div class="icon">02</div>
           <div>
-            <h3>
-              <span data-lang="en">Industrial PID heating</span>
-              <span data-lang="it">Riscaldo con PID industriale</span>
-            </h3>
+            <h4>
+              <span data-lang="en">Industrial heating control</span>
+              <span data-lang="it">Controllo riscaldo industriale</span>
+            </h4>
             <p>
-              <span data-lang="en">REX-C100 + SSR, 200W × 3 (600W). Thermocouple K. No microcontroller needed for heat.</span>
-              <span data-lang="it">REX-C100 + SSR, fasce 200W × 3 (600W). Termocoppia K. Niente microcontroller per la parte calda.</span>
+              <span data-lang="en">PID controller + SSR driving 200W bands (×3). No firmware required for the hot zone.</span>
+              <span data-lang="it">PID + SSR per fasce da 200W (×3). Nessun firmware per la parte calda.</span>
             </p>
           </div>
         </div>
 
-        <div class="card pad kpi">
+        <div class="card pad feature">
           <div class="icon">03</div>
           <div>
-            <h3>
-              <span data-lang="en">Diameter + closed-loop puller</span>
-              <span data-lang="it">Diametro + puller closed-loop</span>
-            </h3>
+            <h4>
+              <span data-lang="en">Real diameter measurement</span>
+              <span data-lang="it">Misura diametro reale</span>
+            </h4>
             <p>
-              <span data-lang="en">Hall differential sensor with multi-point calibration. Puller adapts speed to hold tolerance.</span>
-              <span data-lang="it">Sensore Hall differenziale con calibrazione multipunto. Il puller adatta la velocità per stare in tolleranza.</span>
+              <span data-lang="en">Hall differential sensor + multi-point calibration. The puller adapts speed to hold tolerance.</span>
+              <span data-lang="it">Sensore Hall differenziale + calibrazione multipunto. Il puller adatta la velocità per stare in tolleranza.</span>
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="modules">
+      <div class="sectionTop">
+        <h3>
+          <span data-lang="en">Modular digital release</span>
+          <span data-lang="it">Release digitale modulare</span>
+        </h3>
+        <span class="tiny muted mono">
+          <span data-lang="en">buy only what you need</span>
+          <span data-lang="it">comprI solo ciò che ti serve</span>
+        </span>
+      </div>
+
+      <div class="modules">
+        <div class="card pad">
+          <div class="moduleTitle">
+            <b>
+              <span data-lang="en">Module 1 — Diameter Sensor</span>
+              <span data-lang="it">Modulo 1 — Sensore Diametro</span>
+            </b>
+            <span class="chip">STL + BOM + firmware</span>
+          </div>
+          <ul>
+            <li>
+              <span data-lang="en">Printable mechanics + bearings + magnets</span>
+              <span data-lang="it">Meccanica stampabile + cuscinetti + magneti</span>
+            </li>
+            <li>
+              <span data-lang="en">Calibration workflow (multi-point)</span>
+              <span data-lang="it">Workflow di calibrazione (multipunto)</span>
+            </li>
+            <li>
+              <span data-lang="en">Stable UI (ESP32 + display) to read real-time diameter</span>
+              <span data-lang="it">UI stabile (ESP32 + display) per leggere diametro in tempo reale</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pad">
+          <div class="moduleTitle">
+            <b>
+              <span data-lang="en">Module 2 — Closed-loop Puller</span>
+              <span data-lang="it">Modulo 2 — Puller Closed-loop</span>
+            </b>
+            <span class="chip">STL + BOM + control</span>
+          </div>
+          <ul>
+            <li>
+              <span data-lang="en">Puller mechanics + motor driver + RPM feedback</span>
+              <span data-lang="it">Meccanica puller + driver motore + feedback RPM</span>
+            </li>
+            <li>
+              <span data-lang="en">Control logic to stabilize diameter</span>
+              <span data-lang="it">Logica di controllo per stabilizzare il diametro</span>
+            </li>
+            <li>
+              <span data-lang="en">Designed to be built with common hobby parts</span>
+              <span data-lang="it">Pensato per componenti reperibili da hobbisti</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pad">
+          <div class="moduleTitle">
+            <b>
+              <span data-lang="en">Module 3 — Full System Guide</span>
+              <span data-lang="it">Modulo 3 — Guida Sistema Completo</span>
+            </b>
+            <span class="chip">Docs + tuning</span>
+          </div>
+          <ul>
+            <li>
+              <span data-lang="en">Cooling, routing, and practical tuning</span>
+              <span data-lang="it">Raffreddamento, percorso filo e tuning pratico</span>
+            </li>
+            <li>
+              <span data-lang="en">Safety notes (230V / heaters) and enclosure guidance</span>
+              <span data-lang="it">Note sicurezza (230V / riscaldo) e indicazioni per box</span>
+            </li>
+            <li>
+              <span data-lang="en">Recommended build variants (low-cost / robust)</span>
+              <span data-lang="it">Varianti consigliate (economica / robusta)</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -320,7 +644,7 @@
     <!-- BUILD LOG -->
     <section id="log">
       <div class="sectionTop">
-        <h2>Build log</h2>
+        <h3>Build log</h3>
         <span class="tiny muted mono">
           <span data-lang="en">short · technical · real</span>
           <span data-lang="it">breve · tecnico · vero</span>
@@ -330,16 +654,19 @@
       <div class="log">
         <article class="logItem">
           <div class="logTop">
-            <div class="logDate">2026-02-17</div>
-            <div class="badge"><span class="led"></span>milestone</div>
+            <span>2026-02-17</span>
+            <span>
+              <span data-lang="en">Milestone</span>
+              <span data-lang="it">Milestone</span>
+            </span>
           </div>
-          <div class="logTitle">
-            <span data-lang="en">First extrusion from scrap: success ✅</span>
+          <b>
+            <span data-lang="en">First extrusion from scraps: success ✅</span>
             <span data-lang="it">Prima estrusione da scarti: riuscita ✅</span>
-          </div>
-          <p class="logText">
-            <span data-lang="en">Manual extrusion + PID/SSR heating operational. Next: cooling stability and diameter consistency tests.</span>
-            <span data-lang="it">Estrusione manuale + riscaldo PID/SSR operativi. Prossimo step: raffreddamento e stabilità del diametro.</span>
+          </b>
+          <p>
+            <span data-lang="en">Manual extrusion + PID/SSR heating operational. Next: stable cooling and diameter consistency tests.</span>
+            <span data-lang="it">Estrusione manuale + riscaldo PID/SSR operativi. Prossimo step: raffreddamento stabile e test consistenza diametro.</span>
           </p>
         </article>
       </div>
@@ -348,10 +675,10 @@
     <!-- FOLLOW -->
     <section id="follow">
       <div class="sectionTop">
-        <h2>
-          <span data-lang="en">Get notified on release</span>
-          <span data-lang="it">Avvisami quando esce</span>
-        </h2>
+        <h3>
+          <span data-lang="en">Get notified</span>
+          <span data-lang="it">Avvisami</span>
+        </h3>
         <span class="tiny muted mono">
           <span data-lang="en">no spam · only real progress</span>
           <span data-lang="it">no spam · solo progressi reali</span>
@@ -359,20 +686,24 @@
       </div>
 
       <div class="card pad">
+        <!-- TEMP mailto (replace later with Formspree/MailerLite) -->
         <form action="mailto:TUAMAIL@EMAIL.COM" method="post" enctype="text/plain">
           <div class="row2">
             <input name="Name" placeholder="Name / Nome (optional)" />
             <input name="Email" type="email" placeholder="Email" required />
           </div>
+
           <textarea name="Interest" rows="4" placeholder="Which module interests you? / Che modulo ti interessa?"></textarea>
+
           <button class="btn primary" type="submit">
             <span class="dot"></span>
             <span data-lang="en">Notify me</span>
             <span data-lang="it">Avvisami</span>
           </button>
-          <div class="tiny muted">
-            <span data-lang="en">Tip: later we’ll switch this to Formspree/MailerLite (no server) so people don’t drop off.</span>
-            <span data-lang="it">Consiglio: poi passiamo a Formspree/MailerLite (senza server) così non perdi iscrizioni.</span>
+
+          <div class="tiny muted2">
+            <span data-lang="en">This is temporary. We will switch to a no-server form (Formspree/MailerLite) so users don’t drop off.</span>
+            <span data-lang="it">Questo è temporaneo. Passeremo a un form senza server (Formspree/MailerLite) per non perdere iscrizioni.</span>
           </div>
         </form>
       </div>
@@ -381,8 +712,8 @@
     <footer class="footer">
       <div>© <span id="y"></span> MakerSolve</div>
       <div class="tiny muted mono">
-        <span data-lang="en">Language: EN / IT</span>
-        <span data-lang="it">Lingua: IT / EN</span>
+        <span data-lang="en">Share: makersolve.com?lang=en</span>
+        <span data-lang="it">Condividi: makersolve.com?lang=it</span>
       </div>
     </footer>
   </main>
@@ -396,13 +727,11 @@
     const nodes = document.querySelectorAll("[data-lang]");
 
     function setLang(lang, persist=true) {
-      // show/hide blocks
       nodes.forEach(n => {
         n.classList.remove("show");
         if (n.getAttribute("data-lang") === lang) n.classList.add("show");
       });
 
-      // buttons
       if (lang === "en") {
         btnEN.classList.add("active"); btnEN.setAttribute("aria-selected","true");
         btnIT.classList.remove("active"); btnIT.setAttribute("aria-selected","false");
@@ -416,13 +745,12 @@
       if (persist) localStorage.setItem("makersolve_lang", lang);
     }
 
-    // initial language: ?lang=it | ?lang=en, else saved, else browser
+    // initial language priority: ?lang=it|en > saved > browser
     const params = new URLSearchParams(location.search);
     const qLang = params.get("lang");
     const saved = localStorage.getItem("makersolve_lang");
     const browser = (navigator.language || "en").toLowerCase().startsWith("it") ? "it" : "en";
     const initial = (qLang === "it" || qLang === "en") ? qLang : (saved || browser);
-
     setLang(initial, false);
 
     btnEN.addEventListener("click", () => setLang("en"));
