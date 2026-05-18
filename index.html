@@ -1,265 +1,829 @@
-import { Wrench, Cuboid, Layers3, Cpu, Boxes, Sparkles } from "lucide-react"
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MakerSolve | Prototipazione rapida e stampa 3D</title>
+  <meta name="description" content="MakerSolve realizza prototipi, componenti custom, piccole serie e pezzi tecnici tramite progettazione CAD, stampa 3D FDM e resin." />
 
-export default function MakerSolveLanding() {
-  const services = [
-    {
-      icon: <Cuboid className="w-7 h-7" />,
-      title: "Prototipazione rapida",
-      text: "Prototipi funzionali e verifiche dimensionali sviluppati rapidamente tramite stampa 3D."
-    },
-    {
-      icon: <Cpu className="w-7 h-7" />,
-      title: "Modellazione CAD",
-      text: "Ricostruzione e adattamento di componenti custom partendo da pezzi esistenti o idee progettuali."
-    },
-    {
-      icon: <Layers3 className="w-7 h-7" />,
-      title: "Stampa 3D FDM",
-      text: "Produzione di supporti, attrezzature, componenti tecnici e piccole serie."
-    },
-    {
-      icon: <Sparkles className="w-7 h-7" />,
-      title: "Stampa Resin",
-      text: "Miniature, componenti ad alto dettaglio e pezzi estetici con finitura premium."
-    },
-    {
-      icon: <Boxes className="w-7 h-7" />,
-      title: "Piccole serie",
-      text: "Produzione flessibile senza necessità di stampi industriali o grandi quantitativi."
-    },
-    {
-      icon: <Wrench className="w-7 h-7" />,
-      title: "Componenti custom",
-      text: "Staffe, adattatori, supporti e componenti personalizzati per esigenze specifiche."
+  <style>
+    :root {
+      --bg: #07090d;
+      --bg-soft: #0d1118;
+      --card: #121824;
+      --card-2: #161f2d;
+      --text: #f4f7fb;
+      --muted: #a7b0c0;
+      --muted-2: #778195;
+      --accent: #36d6ff;
+      --accent-2: #6ee7b7;
+      --line: rgba(255,255,255,0.10);
+      --shadow: 0 24px 80px rgba(0,0,0,0.45);
+      --radius: 28px;
     }
-  ]
 
-  return (
-    <div className="min-h-screen bg-[#09090b] text-white overflow-hidden font-sans">
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute bottom-[-200px] left-[-100px] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-3xl" />
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(54,214,255,0.16), transparent 34rem),
+        radial-gradient(circle at bottom left, rgba(110,231,183,0.10), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .nav-cta:hover {
+      background: rgba(54,214,255,0.12);
+      border-color: rgba(54,214,255,0.35);
+    }
+
+    .hero {
+      padding: 96px 0 92px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.05);
+      font-size: 0.92rem;
+      margin-bottom: 26px;
+    }
+
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 24px var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 7vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      max-width: 680px;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #061018;
+      box-shadow: 0 18px 50px rgba(54,214,255,0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 70px rgba(54,214,255,0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.10);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 620px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted-2);
+      font-size: 0.92rem;
+    }
+
+    .photo-wall {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .photo-card {
+      min-height: 250px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(54,214,255,0.12), transparent),
+        var(--card);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-card.tall {
+      min-height: 340px;
+    }
+
+    .photo-card.offset {
+      transform: translateY(44px);
+    }
+
+    .photo-placeholder {
+      height: 100%;
+      min-height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-2);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+    }
+
+    section {
+      padding: 92px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 42px;
+      margin-bottom: 44px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      max-width: 780px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 420px;
+      font-size: 1.05rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      min-height: 230px;
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(54,214,255,0.12);
+      border: 1px solid rgba(54,214,255,0.24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.35rem;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card p {
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .process-box {
+      padding: 36px;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .process-box p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+    }
+
+    .step-number {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #061018;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin-bottom: 4px;
+      font-size: 1.15rem;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 260px;
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      position: relative;
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      right: 18px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(7,9,13,0.72);
+      backdrop-filter: blur(12px);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 700;
+    }
+
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .target {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--line);
+      min-height: 160px;
+    }
+
+    .target strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .target span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .contact-card {
+      border-radius: 36px;
+      padding: 54px;
+      background:
+        radial-gradient(circle at top right, rgba(54,214,255,0.18), transparent 20rem),
+        linear-gradient(135deg, var(--card), var(--card-2));
+      border: 1px solid var(--line);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 24px auto 34px;
+      font-size: 1.1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .contact-link {
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted-2);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card.offset {
+        transform: none;
+      }
+
+      .services-grid,
+      .target-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      .stats,
+      .services-grid,
+      .target-grid,
+      .photo-wall,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.large,
+      .gallery-item.wide {
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+
+      .contact-card {
+        padding: 34px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">Maker<span>Solve</span></a>
+
+      <nav class="nav-links">
+        <a href="#servizi">Servizi</a>
+        <a href="#processo">Processo</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+
+      <a href="#contatti" class="nav-cta">Richiedi info</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Prototipazione rapida • CAD • Stampa 3D
+          </div>
+
+          <h1>Soluzioni <span>custom</span> per pezzi reali.</h1>
+
+          <p>
+            MakerSolve realizza prototipi, componenti tecnici, piccole serie e pezzi personalizzati tramite progettazione CAD, stampa 3D FDM e resin.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contatti" class="btn btn-primary">Parliamo del progetto</a>
+            <a href="#progetti" class="btn btn-secondary">Vedi esempi</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>FDM</strong>
+              <span>Componenti funzionali, supporti, piccole serie.</span>
+            </div>
+            <div class="stat">
+              <strong>Resin</strong>
+              <span>Dettaglio elevato, miniature, prototipi estetici.</span>
+            </div>
+            <div class="stat">
+              <strong>CAD</strong>
+              <span>Ricostruzione e adattamento pezzi custom.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-wall">
+          <div class="photo-card tall">
+            <div class="photo-placeholder">FOTO<br>PEZZO TECNICO</div>
+          </div>
+          <div class="photo-card offset">
+            <div class="photo-placeholder">FOTO<br>CAD / MODELLAZIONE</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-placeholder">FOTO<br>MINIATURA RESIN</div>
+          </div>
+          <div class="photo-card tall offset">
+            <div class="photo-placeholder">FOTO<br>LAB / STAMPANTE</div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      {/* HERO */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="servizi">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-zinc-300 mb-8">
-              <span className="w-2 h-2 rounded-full bg-cyan-400" />
-              Prototipazione • CAD • Produzione custom
-            </div>
-
-            <h1 className="text-6xl md:text-7xl font-black tracking-tight leading-none">
-              Maker<span className="text-cyan-400">Solve</span>
-            </h1>
-
-            <p className="mt-8 text-zinc-300 text-xl leading-relaxed max-w-2xl">
-              Progettazione CAD, prototipazione rapida e stampa 3D per componenti custom,
-              supporti tecnici, miniature e piccole serie.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="px-7 py-4 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition-all duration-300 shadow-2xl shadow-cyan-500/20"
-              >
-                Contattami
-              </a>
-
-              <a
-                href="#gallery"
-                className="px-7 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
-              >
-                Guarda i progetti
-              </a>
-            </div>
-
-            <div className="mt-14 grid grid-cols-3 gap-6 max-w-xl">
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">FDM</div>
-                <div className="text-zinc-400 mt-1 text-sm">Produzione tecnica</div>
-              </div>
-
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">Resin</div>
-                <div className="text-zinc-400 mt-1 text-sm">Dettaglio premium</div>
-              </div>
-
-              <div>
-                <div className="text-3xl font-bold text-cyan-400">CAD</div>
-                <div className="text-zinc-400 mt-1 text-sm">Custom design</div>
-              </div>
-            </div>
+            <div class="eyebrow">Servizi</div>
+            <h2>Dal problema al pezzo finito.</h2>
           </div>
-
-          {/* HERO GRID */}
-          <div className="grid grid-cols-2 gap-5">
-            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-[0.9] group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
-              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
-                FOTO PROTOTIPO TECNICO
-              </div>
-            </div>
-
-            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-square mt-12 group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
-              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
-                FOTO CAD / WORKFLOW
-              </div>
-            </div>
-
-            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-square group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
-              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
-                FOTO MINIATURA RESIN
-              </div>
-            </div>
-
-            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-[0.9] -mt-12 group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
-              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
-                FOTO STAMPANTE / LAB
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="relative border-t border-white/5 bg-white/[0.02] backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="max-w-3xl mb-16">
-            <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
-              Servizi
-            </div>
-
-            <h2 className="text-5xl font-bold tracking-tight leading-tight">
-              Soluzioni rapide e custom per prototipi e produzione.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="rounded-[28px] border border-white/10 bg-zinc-900/60 p-8 hover:border-cyan-400/30 hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 mb-6">
-                  {service.icon}
-                </div>
-
-                <h3 className="text-2xl font-semibold mb-4">
-                  {service.title}
-                </h3>
-
-                <p className="text-zinc-400 leading-relaxed text-base">
-                  {service.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section id="gallery" className="relative border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16">
-            <div>
-              <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
-                Progetti
-              </div>
-
-              <h2 className="text-5xl font-bold tracking-tight leading-tight max-w-3xl">
-                Spazio dedicato a prototipi, miniature, componenti tecnici e custom.
-              </h2>
-            </div>
-
-            <p className="text-zinc-400 max-w-xl text-lg leading-relaxed">
-              Inserisci qui foto reali dei lavori. Le immagini saranno la parte più importante della pagina.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-[260px]">
-            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm xl:row-span-2">
-              FOTO COMPONENTE TECNICO
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm">
-              FOTO MINIATURA
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm">
-              FOTO LAMPADA CUSTOM
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm xl:col-span-2">
-              FOTO WORKFLOW / CAD / STAMPANTE
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section className="relative border-t border-white/5 bg-gradient-to-b from-transparent to-white/[0.02]">
-        <div className="max-w-5xl mx-auto px-6 py-24 text-center">
-          <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
-            Approccio
-          </div>
-
-          <h2 className="text-5xl font-bold tracking-tight leading-tight">
-            Un approccio pratico orientato alla soluzione.
-          </h2>
-
-          <p className="mt-10 text-zinc-300 text-xl leading-relaxed max-w-4xl mx-auto">
-            MakerSolve nasce dall’unione tra esperienza tecnica, progettazione CAD e stampa 3D.
-            
-            L’obiettivo è realizzare componenti e prototipi in modo rapido, flessibile e funzionale,
-            adattandosi a esigenze custom, modifiche specifiche e piccole produzioni.
+          <p>
+            Soluzioni pensate per aziende, officine, attività locali e progetti custom che richiedono flessibilità e tempi rapidi.
           </p>
         </div>
-      </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="relative border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-6 py-24 text-center">
-          <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-950 p-14 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full" />
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">01</div>
+            <h3>Prototipazione rapida</h3>
+            <p>Prototipi funzionali per verifiche dimensionali, prove di montaggio e validazione veloce delle idee.</p>
+          </div>
 
-            <div className="relative z-10">
-              <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
-                Contatti
-              </div>
+          <div class="service-card">
+            <div class="service-icon">02</div>
+            <h3>Componenti custom</h3>
+            <p>Supporti, staffe, adattatori, dime e componenti sviluppati su esigenza specifica.</p>
+          </div>
 
-              <h2 className="text-5xl font-bold tracking-tight">
-                Hai un progetto o un’idea?
-              </h2>
+          <div class="service-card">
+            <div class="service-icon">03</div>
+            <h3>Ricostruzione pezzi</h3>
+            <p>Rilievo manuale, modellazione CAD e modifica di componenti esistenti non facilmente reperibili.</p>
+          </div>
 
-              <p className="mt-6 text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                Per richieste, collaborazioni o informazioni puoi contattarmi direttamente.
-              </p>
+          <div class="service-card">
+            <div class="service-icon">04</div>
+            <h3>Piccole serie</h3>
+            <p>Produzione flessibile di piccoli lotti senza stampi industriali o grandi quantitativi minimi.</p>
+          </div>
 
-              <div className="mt-12 flex flex-col gap-5 items-center text-lg">
-                <a
-                  href="mailto:info@makersolve.com"
-                  className="hover:text-cyan-400 transition"
-                >
-                  info@makersolve.com
-                </a>
+          <div class="service-card">
+            <div class="service-icon">05</div>
+            <h3>Stampa FDM</h3>
+            <p>Ideale per pezzi funzionali, prototipi tecnici, supporti e componenti di dimensioni medio-grandi.</p>
+          </div>
 
-                <a
-                  href="https://instagram.com"
-                  className="hover:text-cyan-400 transition"
-                >
-                  Instagram
-                </a>
-              </div>
+          <div class="service-card">
+            <div class="service-icon">06</div>
+            <h3>Stampa resin</h3>
+            <p>Alta definizione per miniature, dettagli fini, prototipi estetici e componenti piccoli ad alto dettaglio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container split">
+        <div class="process-box">
+          <div class="eyebrow">Metodo</div>
+          <h2>Approccio pratico, non fuffa da brochure.</h2>
+          <p>
+            L’obiettivo non è stampare qualsiasi cosa: è capire il problema, scegliere il processo giusto e arrivare a un pezzo utile, producibile e sensato.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Analisi esigenza</h3>
+              <p>Capire funzione, vincoli, dimensioni, materiale e contesto d’uso.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>CAD e prototipo</h3>
+              <p>Modellazione o adattamento del pezzo e prima verifica tramite stampa.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Test e correzioni</h3>
+              <p>Eventuali modifiche su tolleranze, geometria, incastri o resistenza.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Produzione finale</h3>
+              <p>Realizzazione del pezzo definitivo o della piccola serie.</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <section id="progetti">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Portfolio</div>
+            <h2>Qui vanno i lavori veri.</h2>
+          </div>
+          <p>
+            Inserisci foto reali: pezzi tecnici, CAD, miniature, lampade custom, prove di montaggio e dettagli di stampa.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item large">
+            <div class="photo-placeholder">FOTO PEZZO TECNICO</div>
+            <div class="gallery-label">Componenti custom</div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="photo-placeholder">FOTO CAD</div>
+            <div class="gallery-label">Modellazione CAD</div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="photo-placeholder">FOTO MINIATURA</div>
+            <div class="gallery-label">Resin detail</div>
+          </div>
+
+          <div class="gallery-item wide">
+            <div class="photo-placeholder">FOTO WORKFLOW / STAMPANTI / LAB</div>
+            <div class="gallery-label">Workflow e produzione</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Per chi</div>
+            <h2>Utile quando serve qualcosa che non trovi già pronto.</h2>
+          </div>
+        </div>
+
+        <div class="target-grid">
+          <div class="target">
+            <strong>Aziende</strong>
+            <span>Prototipi, supporti, dime, piccole serie e componenti custom.</span>
+          </div>
+          <div class="target">
+            <strong>Officine</strong>
+            <span>Adattatori, staffe, attrezzature leggere e pezzi di supporto.</span>
+          </div>
+          <div class="target">
+            <strong>Attività locali</strong>
+            <span>Oggetti personalizzati, espositori, insegne, gadget e soluzioni su misura.</span>
+          </div>
+          <div class="target">
+            <strong>Maker e hobbisti</strong>
+            <span>Miniature, terreni, componenti speciali e progetti custom.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <div class="container">
+        <div class="contact-card">
+          <div class="eyebrow">Contatti</div>
+          <h2>Hai un pezzo da realizzare o un problema da risolvere?</h2>
+          <p>
+            Mandami una descrizione, qualche foto o una misura indicativa. Valutiamo insieme se ha senso realizzarlo tramite CAD e stampa 3D.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:info@makersolve.com" class="contact-link">info@makersolve.com</a>
+            <a href="https://instagram.com" class="contact-link">Instagram</a>
+            <a href="#" class="contact-link">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 MakerSolve</span>
+      <span>Prototipazione rapida • CAD • Stampa 3D</span>
     </div>
-  )
-}
+  </footer>
+</body>
+</html>
