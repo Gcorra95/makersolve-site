@@ -1,141 +1,265 @@
+import { Wrench, Cuboid, Layers3, Cpu, Boxes, Sparkles } from "lucide-react"
+
 export default function MakerSolveLanding() {
+  const services = [
+    {
+      icon: <Cuboid className="w-7 h-7" />,
+      title: "Prototipazione rapida",
+      text: "Prototipi funzionali e verifiche dimensionali sviluppati rapidamente tramite stampa 3D."
+    },
+    {
+      icon: <Cpu className="w-7 h-7" />,
+      title: "Modellazione CAD",
+      text: "Ricostruzione e adattamento di componenti custom partendo da pezzi esistenti o idee progettuali."
+    },
+    {
+      icon: <Layers3 className="w-7 h-7" />,
+      title: "Stampa 3D FDM",
+      text: "Produzione di supporti, attrezzature, componenti tecnici e piccole serie."
+    },
+    {
+      icon: <Sparkles className="w-7 h-7" />,
+      title: "Stampa Resin",
+      text: "Miniature, componenti ad alto dettaglio e pezzi estetici con finitura premium."
+    },
+    {
+      icon: <Boxes className="w-7 h-7" />,
+      title: "Piccole serie",
+      text: "Produzione flessibile senza necessità di stampi industriali o grandi quantitativi."
+    },
+    {
+      icon: <Wrench className="w-7 h-7" />,
+      title: "Componenti custom",
+      text: "Staffe, adattatori, supporti e componenti personalizzati per esigenze specifiche."
+    }
+  ]
+
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+    <div className="min-h-screen bg-[#09090b] text-white overflow-hidden font-sans">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute bottom-[-200px] left-[-100px] w-[500px] h-[500px] rounded-full bg-blue-500/10 blur-3xl" />
+      </div>
+
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative max-w-7xl mx-auto px-6 pt-24 pb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-block px-3 py-1 rounded-full border border-zinc-700 text-sm text-zinc-400 mb-6">
-              Prototipazione rapida • Stampa 3D • Componenti custom
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-zinc-300 mb-8">
+              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              Prototipazione • CAD • Produzione custom
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
-              MakerSolve
+            <h1 className="text-6xl md:text-7xl font-black tracking-tight leading-none">
+              Maker<span className="text-cyan-400">Solve</span>
             </h1>
 
-            <p className="mt-6 text-zinc-300 text-lg leading-relaxed max-w-xl">
-              Progettazione CAD, prototipazione rapida e produzione di componenti custom tramite stampa 3D FDM e resin.
+            <p className="mt-8 text-zinc-300 text-xl leading-relaxed max-w-2xl">
+              Progettazione CAD, prototipazione rapida e stampa 3D per componenti custom,
+              supporti tecnici, miniature e piccole serie.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="px-6 py-3 rounded-2xl bg-white text-black font-medium hover:opacity-90 transition"
+                className="px-7 py-4 rounded-2xl bg-cyan-400 text-black font-semibold hover:scale-105 transition-all duration-300 shadow-2xl shadow-cyan-500/20"
               >
                 Contattami
               </a>
 
               <a
-                href="#services"
-                className="px-6 py-3 rounded-2xl border border-zinc-700 hover:bg-zinc-900 transition"
+                href="#gallery"
+                className="px-7 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
               >
-                Servizi
+                Guarda i progetti
               </a>
+            </div>
+
+            <div className="mt-14 grid grid-cols-3 gap-6 max-w-xl">
+              <div>
+                <div className="text-3xl font-bold text-cyan-400">FDM</div>
+                <div className="text-zinc-400 mt-1 text-sm">Produzione tecnica</div>
+              </div>
+
+              <div>
+                <div className="text-3xl font-bold text-cyan-400">Resin</div>
+                <div className="text-zinc-400 mt-1 text-sm">Dettaglio premium</div>
+              </div>
+
+              <div>
+                <div className="text-3xl font-bold text-cyan-400">CAD</div>
+                <div className="text-zinc-400 mt-1 text-sm">Custom design</div>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-3xl bg-zinc-900 border border-zinc-800 aspect-square flex items-center justify-center text-zinc-500 text-sm">
-              Foto prototipo
+          {/* HERO GRID */}
+          <div className="grid grid-cols-2 gap-5">
+            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-[0.9] group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
+                FOTO PROTOTIPO TECNICO
+              </div>
             </div>
-            <div className="rounded-3xl bg-zinc-900 border border-zinc-800 aspect-square flex items-center justify-center text-zinc-500 text-sm">
-              Foto CAD
+
+            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-square mt-12 group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
+                FOTO CAD / WORKFLOW
+              </div>
             </div>
-            <div className="rounded-3xl bg-zinc-900 border border-zinc-800 aspect-square flex items-center justify-center text-zinc-500 text-sm">
-              Foto miniatura resin
+
+            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-square group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
+                FOTO MINIATURA RESIN
+              </div>
             </div>
-            <div className="rounded-3xl bg-zinc-900 border border-zinc-800 aspect-square flex items-center justify-center text-zinc-500 text-sm">
-              Foto pezzo tecnico
+
+            <div className="rounded-[32px] overflow-hidden border border-white/10 bg-zinc-900 aspect-[0.9] -mt-12 group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="w-full h-full flex items-center justify-center text-zinc-500 text-sm">
+                FOTO STAMPANTE / LAB
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="border-t border-zinc-800">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold mb-12">Servizi</h2>
+      <section id="services" className="relative border-t border-white/5 bg-white/[0.02] backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 py-24">
+          <div className="max-w-3xl mb-16">
+            <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
+              Servizi
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Prototipazione rapida",
-                text: "Realizzazione veloce di prototipi funzionali e componenti custom."
-              },
-              {
-                title: "Modellazione CAD",
-                text: "Ricostruzione, adattamento e progettazione di componenti tecnici."
-              },
-              {
-                title: "Stampa 3D FDM",
-                text: "Produzione di componenti tecnici, supporti, attrezzature e piccole serie."
-              },
-              {
-                title: "Stampa resin",
-                text: "Miniature, componenti ad alto dettaglio e pezzi estetici."
-              },
-              {
-                title: "Componenti custom",
-                text: "Supporti, staffe, dime e adattamenti specifici su richiesta."
-              },
-              {
-                title: "Piccole serie",
-                text: "Produzione flessibile senza necessità di stampi industriali."
-              }
-            ].map((item, index) => (
+            <h2 className="text-5xl font-bold tracking-tight leading-tight">
+              Soluzioni rapide e custom per prototipi e produzione.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {services.map((service, index) => (
               <div
                 key={index}
-                className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-6"
+                className="rounded-[28px] border border-white/10 bg-zinc-900/60 p-8 hover:border-cyan-400/30 hover:-translate-y-1 transition-all duration-300"
               >
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-zinc-400 leading-relaxed">{item.text}</p>
+                <div className="w-14 h-14 rounded-2xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 mb-6">
+                  {service.icon}
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  {service.title}
+                </h3>
+
+                <p className="text-zinc-400 leading-relaxed text-base">
+                  {service.text}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="border-t border-zinc-800">
-        <div className="max-w-4xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold mb-8">Approccio</h2>
+      {/* GALLERY */}
+      <section id="gallery" className="relative border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-24">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16">
+            <div>
+              <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
+                Progetti
+              </div>
 
-          <p className="text-zinc-300 text-lg leading-relaxed">
+              <h2 className="text-5xl font-bold tracking-tight leading-tight max-w-3xl">
+                Spazio dedicato a prototipi, miniature, componenti tecnici e custom.
+              </h2>
+            </div>
+
+            <p className="text-zinc-400 max-w-xl text-lg leading-relaxed">
+              Inserisci qui foto reali dei lavori. Le immagini saranno la parte più importante della pagina.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-[260px]">
+            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm xl:row-span-2">
+              FOTO COMPONENTE TECNICO
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm">
+              FOTO MINIATURA
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm">
+              FOTO LAMPADA CUSTOM
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-zinc-900 flex items-center justify-center text-zinc-500 text-sm xl:col-span-2">
+              FOTO WORKFLOW / CAD / STAMPANTE
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section className="relative border-t border-white/5 bg-gradient-to-b from-transparent to-white/[0.02]">
+        <div className="max-w-5xl mx-auto px-6 py-24 text-center">
+          <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
+            Approccio
+          </div>
+
+          <h2 className="text-5xl font-bold tracking-tight leading-tight">
+            Un approccio pratico orientato alla soluzione.
+          </h2>
+
+          <p className="mt-10 text-zinc-300 text-xl leading-relaxed max-w-4xl mx-auto">
             MakerSolve nasce dall’unione tra esperienza tecnica, progettazione CAD e stampa 3D.
             
-            L’obiettivo è offrire soluzioni rapide e flessibili per prototipi, componenti custom e piccole produzioni,
-            con un approccio pratico orientato alla funzionalità e alla risoluzione dei problemi.
+            L’obiettivo è realizzare componenti e prototipi in modo rapido, flessibile e funzionale,
+            adattandosi a esigenze custom, modifiche specifiche e piccole produzioni.
           </p>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="border-t border-zinc-800">
-        <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-          <h2 className="text-4xl font-bold">Contatti</h2>
+      <section id="contact" className="relative border-t border-white/5">
+        <div className="max-w-5xl mx-auto px-6 py-24 text-center">
+          <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-zinc-900 to-zinc-950 p-14 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full" />
 
-          <p className="mt-6 text-zinc-400 text-lg">
-            Per richieste, collaborazioni o informazioni:
-          </p>
+            <div className="relative z-10">
+              <div className="text-cyan-400 font-medium mb-4 tracking-wide uppercase text-sm">
+                Contatti
+              </div>
 
-          <div className="mt-10 flex flex-col gap-4 items-center text-lg">
-            <a
-              href="mailto:info@makersolve.com"
-              className="hover:text-white transition"
-            >
-              info@makersolve.com
-            </a>
+              <h2 className="text-5xl font-bold tracking-tight">
+                Hai un progetto o un’idea?
+              </h2>
 
-            <a
-              href="https://instagram.com"
-              className="hover:text-white transition"
-            >
-              Instagram
-            </a>
+              <p className="mt-6 text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                Per richieste, collaborazioni o informazioni puoi contattarmi direttamente.
+              </p>
+
+              <div className="mt-12 flex flex-col gap-5 items-center text-lg">
+                <a
+                  href="mailto:info@makersolve.com"
+                  className="hover:text-cyan-400 transition"
+                >
+                  info@makersolve.com
+                </a>
+
+                <a
+                  href="https://instagram.com"
+                  className="hover:text-cyan-400 transition"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </div>
   )
 }
-
