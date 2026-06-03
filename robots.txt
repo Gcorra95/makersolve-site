@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Blocca cartelle non pubbliche
-Disallow: /assets/og-image.jpg
-
-# Sitemap
 Sitemap: https://makersolve.com/sitemap.xml
