@@ -22,7 +22,16 @@
     });
   }
 
-  setText("[data-site-email]", cfg.email);
+  function setEmailText(value) {
+    if (!value) return;
+    document.querySelectorAll("[data-site-email]").forEach((el) => {
+      const previous = el.previousSibling && el.previousSibling.textContent ? el.previousSibling.textContent : "";
+      const needsSpace = previous && !/\s$/.test(previous);
+      el.textContent = needsSpace ? ` ${value}` : value;
+    });
+  }
+
+  setEmailText(cfg.email);
   setHref("[data-site-email-link]", cfg.email ? `mailto:${cfg.email}` : "");
 
   setText("[data-site-phone]", cfg.phoneDisplay);
