@@ -1,6 +1,6 @@
 # MakerSolve — audit SEO e piano implementato
 
-Data: 2026-06-03
+Data: 2026-06-10
 Area target: Mirandola, Modena, Emilia-Romagna, Nord Italia
 Tipo sito: HTML statico su GitHub Pages
 Obiettivo: clienti B2B reali, non traffico generico
@@ -10,7 +10,7 @@ Obiettivo: clienti B2B reali, non traffico generico
 ### Problemi corretti
 
 - Placeholder eliminati: telefono finto, P.IVA finta, form finto.
-- Pagine mancanti create: servizi, materiali, portfolio, chi siamo, contatti, blog, privacy.
+- Pagine principali presenti: servizi, materiali, portfolio, chi siamo, contatti, blog, privacy.
 - Sitemap aggiornata e coerente con pagine esistenti.
 - Robots.txt pulito.
 - CSS centralizzato con cache-busting.
@@ -18,6 +18,8 @@ Obiettivo: clienti B2B reali, non traffico generico
 - Meta title e description riscritti pagina per pagina.
 - Canonical inserito in ogni pagina.
 - Open Graph base inserito in ogni pagina.
+- Homepage riposizionata su problem solving tecnico, prototipazione rapida, reverse engineering e componenti custom.
+- Le pagine CAD, reverse engineering, prototipazione rapida, componenti custom e contatti sono state rinforzate con keyword locali Modena/Mirandola.
 
 ### Problemi ancora aperti
 
@@ -27,6 +29,7 @@ Obiettivo: clienti B2B reali, non traffico generico
 - Local SEO completa richiede Google Business Profile e prime citazioni esterne.
 - Manca misurazione Search Console.
 - Manca una pagina verticale per ciascun caso studio.
+- Da reinserire una versione snella e controllata del JSON-LD LocalBusiness/ProfessionalService in homepage.
 
 ## 2. SEO e copy
 
@@ -34,13 +37,15 @@ Obiettivo: clienti B2B reali, non traffico generico
 
 Homepage:
 - Messaggio centrale: dal problema tecnico al componente in mano.
-- Target: aziende, officine, manutentori, realtà industriali.
-- Servizi principali: CAD, reverse engineering, prototipazione rapida, componenti custom.
+- Target: aziende, officine, manutentori, realtà industriali e attività locali.
+- Servizi principali: CAD, reverse engineering, prototipazione rapida, componenti custom, stampa 3D tecnica.
+- La stampa 3D personalizzata resta presente ma non guida più il posizionamento principale.
 
 Pagine servizio:
 - Ogni pagina ha H1 specifico.
 - H2 orientati a problemi reali, non a slogan.
 - CTA orientate a richiesta tecnica.
+- Keyword locali integrate nei title e nelle description senza keyword stuffing.
 
 ### Linea editoriale
 
@@ -54,11 +59,12 @@ Da evitare:
 
 Da usare:
 - componente rotto
-- pezzo fuori produzione
+- parte non standard
 - supporto custom
 - adattatore tecnico
 - prototipo funzionale
 - piccolo lotto senza stampi
+- CAD orientato al pezzo reale
 
 ## 3. Local SEO
 
@@ -66,6 +72,7 @@ Da usare:
 
 - Mirandola
 - Modena
+- Provincia di Modena
 - Emilia-Romagna
 - Nord Italia
 
@@ -85,6 +92,7 @@ Da usare:
 2. Usare sempre lo stesso NAP: nome, indirizzo/area, email, telefono se pubblicato.
 3. Inserire sito in profili coerenti: LinkedIn, eventuali directory industriali locali, portfolio tecnico.
 4. Ottenere primi link reali da partner, fornitori, progetti, profili social.
+5. Inviare sitemap aggiornata in Google Search Console.
 
 ## 4. Keyword strategy
 
@@ -98,8 +106,8 @@ Da usare:
 - stampa 3D tecnica Modena
 - componenti custom stampa 3D
 - piccoli lotti stampa 3D
-- componenti fuori produzione
 - supporti custom industriali
+- adattatori custom CAD
 
 ### Media priorità
 
@@ -109,7 +117,6 @@ Da usare:
 - stampa 3D PA-CF
 - stampa 3D ASA componenti tecnici
 - dime e attrezzature custom
-- adattatori custom CAD
 - progettazione componenti plastici
 
 ### Blog/content
@@ -120,6 +127,8 @@ Da usare:
 - PETG ASA PA-CF quale materiale scegliere
 - piccoli lotti senza stampi
 - prototipo funzionale vs prototipo estetico
+- come preparare una richiesta tecnica per un prototipo
+- come scegliere materiale per un supporto stampato in 3D
 
 ### Local SEO
 
@@ -143,8 +152,6 @@ Ogni pagina principale ora include:
 - favicon provvisoria
 - CSS condiviso
 - CTA verso contatti
-
-Homepage include anche JSON-LD LocalBusiness/ProfessionalService.
 
 ## 6. GitHub Pages SEO
 
@@ -178,129 +185,13 @@ Homepage include anche JSON-LD LocalBusiness/ProfessionalService.
   privacy-policy/index.html
   docs/
     seo-strategy.md
-    seo-audit-and-implementation.md
 ```
 
-### Best practice applicate
+## 7. Prossime mosse ad alto impatto
 
-- URL descrittivi.
-- Cartelle tematiche.
-- Sitemap coerente.
-- Robots.txt non blocca CSS/JS.
-- .nojekyll presente.
-- CSS con versione per evitare cache vecchia.
-
-## 7. Conversione clienti
-
-### Cosa funziona
-
-- Messaggio principale chiaro.
-- Target B2B tecnico.
-- Servizi separati.
-- CTA email diretta.
-- No form finto.
-- No claim eccessivi.
-
-### Cosa manca ancora per convertire meglio
-
-- Foto vere di pezzi.
-- Foto laboratorio/stampanti/strumenti.
-- 3 casi studio completi.
-- Esempi di output: STEP, STL, prototipo, piccolo lotto.
-- Prova sociale: prime recensioni, collaborazioni, progetti autorizzati.
-- Numero di telefono solo quando vuoi davvero gestirlo.
-
-## 8. Blog e contenuti
-
-Priorità contenuti:
-
-1. Reverse engineering di un pezzo rotto: cosa serve per un preventivo.
-2. Quando conviene progettare un componente custom invece di adattare un pezzo commerciale.
-3. PETG, ASA o PA-CF: scelta materiale per parti tecniche.
-4. Piccoli lotti senza stampi: quando la stampa 3D è conveniente.
-5. Prototipo funzionale: cosa validare prima della produzione.
-6. Come preparare foto e misure per una richiesta CAD.
-
-Contenuti LinkedIn/reel:
-
-- prima/dopo CAD
-- pezzo rotto → modello 3D → prototipo
-- confronto materiali
-- errori comuni nei pezzi stampati
-- mini case study di 30-60 secondi
-- “perché questo pezzo non va stampato in PLA”
-
-## 9. Output tecnico pronto
-
-### robots.txt
-
-```txt
-User-agent: *
-Allow: /
-
-Sitemap: https://makersolve.com/sitemap.xml
-```
-
-### Esempio meta pagina servizio
-
-```html
-<title>Reverse Engineering Componenti | MakerSolve Mirandola</title>
-<meta name="description" content="Reverse engineering a Mirandola per pezzi rotti, ricambi fuori produzione e componenti senza disegno: rilievo quote, CAD e prototipo funzionale.">
-<link rel="canonical" href="https://makersolve.com/servizi/reverse-engineering/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Reverse engineering componenti | MakerSolve">
-<meta property="og:description" content="Ricostruzione CAD e prototipo fisico da campione, foto o componente danneggiato.">
-<meta property="og:url" content="https://makersolve.com/servizi/reverse-engineering/">
-<meta property="og:image" content="https://makersolve.com/assets/logo.png">
-```
-
-### Config centrale
-
-Modificare:
-
-```txt
-data/site-config.js
-```
-
-Per email, telefono, P.IVA, città, regione, area servita.
-
-## 10. Strategia
-
-Il sito non deve posizionarsi come ecommerce, blog generico o portfolio artistico.
-
-Deve posizionarsi come:
-
-- laboratorio tecnico agile
-- partner per prototipazione e problem solving
-- supporto a officine, manutentori e aziende
-- servizio tecnico per pezzi custom, prototipi e reverse engineering
-
-La leva non è “stampa 3D economica”.
-
-La leva è:
-
-- ridurre fermo
-- ottenere un pezzo non disponibile
-- validare un prototipo
-- produrre un piccolo lotto senza stampi
-- avere un tecnico che capisce funzione, montaggio e materiale
-
-## Prossimo step prioritario
-
-Creare tre pagine caso studio:
-
-```txt
-/portfolio/refuser-3dx/
-/portfolio/supporto-custom/
-/portfolio/reverse-engineering-pezzo-rotto/
-```
-
-Ogni caso studio deve avere:
-
-- problema
-- vincoli
-- processo
-- materiale
-- risultato
-- foto
-- CTA finale
+1. Aprire Google Search Console e inviare `https://makersolve.com/sitemap.xml`.
+2. Creare 3 casi studio tecnici veri o dimostrativi: problema, soluzione, materiale, tempo, risultato.
+3. Pubblicare almeno 3 articoli tecnici lunghi e locali.
+4. Preparare immagine Open Graph 1200x630 professionale.
+5. Inserire telefono o modulo quando l'attività sarà pronta a gestire richieste rapide.
+6. Creare Google Business Profile appena i dati aziendali sono presentabili.
