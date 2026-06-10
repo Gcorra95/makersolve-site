@@ -22,5 +22,8 @@ window.MAKERSOLVE_CONFIG = {
   // Compila solo quando avrai una P.IVA definitiva.
   vatNumber: "",
 
-  serviceArea: "Mirandola, Modena, Emilia-Romagna, Nord Italia"
+  serviceArea: "Mirandola, Modena, Emilia-Romagna, Nord Italia",
+
+  // Campo tecnico usato solo per forzare un nuovo deploy dopo aggiornamenti SEO.
+  deployVersion: "2026-06-10-seo-redeploy-1"
 };
