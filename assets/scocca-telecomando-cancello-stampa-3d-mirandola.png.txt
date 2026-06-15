@@ -1,0 +1,1 @@
+PNG asset will be managed separately; portfolio uses /assets/scocca-telecomando-cancello-stampa-3d-mirandola.png
