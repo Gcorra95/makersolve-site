@@ -7,9 +7,9 @@ window.MAKERSOLVE_CONFIG = {
   domain: "https://makersolve.com",
   email: "info@makersolve.com",
 
-  // Lascia vuoto se non vuoi mostrare un numero di telefono sul sito.
-  phoneDisplay: "",
-  phoneHref: "",
+  // Numero principale per contatti rapidi e WhatsApp.
+  phoneDisplay: "346 608 8830",
+  phoneHref: "+393466088830",
 
   city: "Mirandola",
   province: "MO",
@@ -25,5 +25,5 @@ window.MAKERSOLVE_CONFIG = {
   serviceArea: "Mirandola, Modena, Emilia-Romagna, Nord Italia",
 
   // Campo tecnico usato solo per forzare un nuovo deploy dopo aggiornamenti SEO.
-  deployVersion: "2026-06-10-seo-redeploy-1"
+  deployVersion: "2026-06-17-phone-1"
 };
