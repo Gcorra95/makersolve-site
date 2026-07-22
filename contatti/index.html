@@ -15,7 +15,9 @@
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="/assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=3">
 </head>
 <body>
 
@@ -36,15 +38,15 @@
 
 <!-- ===================== HERO ===================== -->
 <header class="hero compact">
-  <div class="hero-media"><img src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-media"><img class="tint-copper parallax" src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
+  <div id="halo" class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
       <div class="crumb rv"><a href="/">Home</a><span>/</span>Contatti</div>
       <span class="eyebrow rv">Contatti</span>
-      <h1 class="rv" data-d="1">Parliamo del tuo<br><span class="grad">componente.</span></h1>
+      <h1 class="rv" data-d="1">Hai un pezzo da rifare<br><span class="grad">o un'idea da provare?</span></h1>
       <p class="lead rv" data-d="2">
         Non servono un disegno tecnico né un file 3D. Bastano una fotografia, le misure di massima
         e la destinazione d'uso del componente per ricevere una valutazione tecnica.
@@ -72,13 +74,13 @@
 
 <!-- ===================== FORM ===================== -->
 <section id="richiesta" class="contact has-bg">
-  <div class="sec-bg"><img src="/assets/gen-layers.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-layers.webp" alt="" loading="lazy"></div>
   <div class="wrap contact-wrap">
 
     <div class="rv">
       <span class="eyebrow">Richiesta di fattibilità</span>
       <h2 style="margin:16px 0 20px">Cosa inviarci<br>per una valutazione completa.</h2>
-      <p class="lead">Più la richiesta è dettagliata, più la risposta è precisa. Non servono tutti gli elementi: parti da quello che hai già.</p>
+      <p class="lead">Non serve avere tutto pronto. Parti da foto, misure, pezzo fisico, schizzo o file 3D disponibili.</p>
 
       <ul class="ticks" style="margin-top:26px">
         <li><span class="mark n">01</span><span><b>Fotografia o schizzo.</b> Se hai il componente rotto, fotografalo con un calibro o un metro accanto: ci dà subito il riferimento di scala.</span></li>
@@ -181,8 +183,8 @@
       </div>
 
       <label class="consent">
-        <input type="checkbox" required>
-        <span>Ho preso visione della <a href="/privacy-policy/">privacy policy</a> e acconsento al trattamento dei dati per essere ricontattato in merito alla presente richiesta.</span>
+        <input type="checkbox" name="privacy_ack" value="presa_visione" required>
+        <span>Dichiaro di aver preso visione della <a href="/privacy-policy/">privacy policy</a>. I dati saranno utilizzati per valutare la richiesta e ricontattarmi.</span>
       </label>
 
       <button type="submit" class="btn btn-primary btn-lg">Invia la richiesta di fattibilità</button>
@@ -198,8 +200,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Ambito</span>
-      <h2>Cosa possiamo valutare.</h2>
-      <p class="lead">Se la tua richiesta rientra in una di queste categorie, siamo nell'ambito corretto. Altrimenti inviala lo stesso: ti diamo una risposta, anche negativa, entro 24 ore.</p>
+      <h2>Cosa posso valutare.</h2>
+      <p class="lead">Valuto ricambi non critici, dime, supporti, scocche, prototipi e piccoli lotti. Per applicazioni critiche o certificate serve un percorso diverso.</p>
     </div>
 
     <div class="grid-3">
@@ -343,11 +345,11 @@
 
 <!-- ===================== CTA FINALE ===================== -->
 <section class="tight has-bg">
-  <div class="sec-bg"><img src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
-    <h2 class="rv" style="max-width:22ch;margin:0 auto 20px">Il telefono resta la via più rapida.</h2>
+    <h2 class="rv" style="max-width:22ch;margin:0 auto 20px">Preferisci spiegare il problema a voce?</h2>
     <p class="lead rv" data-d="1" style="max-width:56ch;margin:0 auto">
-      Se preferisci spiegarci la richiesta a voce, chiamaci: bastano pochi minuti per capire se siamo nell'ambito corretto.
+      Puoi chiamarmi per descrivere il componente e capire quali informazioni servono per una prima valutazione.
     </p>
     <div class="hero-cta rv" data-d="2" style="justify-content:center">
       <a href="tel:+393466088830" data-site-phone-link class="btn btn-primary btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -481,6 +483,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=3" defer></script>
 </body>
 </html>

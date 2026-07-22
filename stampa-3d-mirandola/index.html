@@ -15,7 +15,9 @@
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="/assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=3">
 </head>
 <body>
 
@@ -34,10 +36,10 @@
 </nav>
 
 <header class="hero compact">
-  <div class="hero-media"><img src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-media"><img class="tint-copper parallax" src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
+  <div id="halo" class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
       <div class="crumb rv"><a href="/">Home</a><span>/</span>Stampa 3D a Mirandola</div>
@@ -57,8 +59,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Servizio locale</span>
-      <h2>Un fornitore raggiungibile.</h2>
-      <p class="lead">Sulle lavorazioni che richiedono verifiche dimensionali, avere l'officina a pochi chilometri accorcia sensibilmente i tempi.</p>
+      <h2>Stampa 3D e progettazione a Mirandola.</h2>
+      <p class="lead">Per chi è in zona è possibile consegnare il campione, confrontarsi sul pezzo e ritirare direttamente il lavoro.</p>
     </div>
     <div class="grid-3">
       <div class="card rv"><div class="ico">01</div>
@@ -89,7 +91,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Cosa realizziamo</span>
-      <h2>Componenti su misura, in zona.</h2>
+      <h2>Lavori disponibili in zona Mirandola.</h2>
     </div>
     <div class="grid-3">
       <div class="card rv"><div class="ico">01</div>
@@ -124,8 +126,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Come partire</span>
-      <h2>Cosa ci serve per la valutazione.</h2>
-      <p class="lead">Non serve un file 3D: la modellazione CAD la facciamo noi.</p>
+      <h2>Cosa serve per una valutazione.</h2>
+      <p class="lead">Non serve avere già un file 3D: posso partire da foto, misure, schizzo o pezzo fisico.</p>
     </div>
     <div class="pain">
       <div class="rv">
@@ -156,7 +158,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Zona servita</span>
-      <h2>Mirandola e provincia di Modena.</h2>
+      <h2>Ritiro a Mirandola e spedizione in tutta Italia.</h2>
     </div>
     <dl class="specs rv">
       <div class="spec-row">
@@ -180,9 +182,9 @@
 </section>
 
 <section class="tight has-bg">
-  <div class="sec-bg"><img src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
-    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Sei in zona Mirandola?</h2>
+    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Hai un pezzo da valutare a Mirandola?</h2>
     <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Inviaci una fotografia e le misure di massima, oppure chiamaci: rispondiamo entro 24/48 ore, senza costi n&eacute; vincoli.</p>
     <div class="hero-cta rv" data-d="2" style="justify-content:center">
       <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
@@ -256,6 +258,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=3" defer></script>
 </body>
 </html>

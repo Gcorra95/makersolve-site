@@ -15,7 +15,9 @@
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="/assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=3">
 </head>
 <body>
 
@@ -34,16 +36,16 @@
 </nav>
 
 <header class="hero compact">
-  <div class="hero-media"><img src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-media"><img class="tint-copper parallax" src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
+  <div id="halo" class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
       <div class="crumb rv"><a href="/">Home</a><span>/</span>Reverse engineering</div>
       <span class="eyebrow rv">Reverse engineering</span>
-      <h1 class="rv" data-d="1">Dal componente reale<br><span class="grad">al modello digitale.</span></h1>
-      <p class="lead rv" data-d="2">Ricostruiamo componenti dal campione fisico, da una fotografia o da quanto resta di un originale danneggiato. Quando il ricambio &egrave; fuori produzione e il fornitore non risponde, spesso &egrave; l'unica via per rimettere in servizio una macchina.</p>
+      <h1 class="rv" data-d="1">Ricostruzione CAD<br><span class="grad">da un pezzo esistente.</span></h1>
+      <p class="lead rv" data-d="2">Ricostruisco componenti partendo dal campione fisico, da una fotografia con misure o dalle parti rimaste di un originale danneggiato. Il lavoro &egrave; adatto a ricambi non critici, scocche, supporti e componenti fuori produzione.</p>
       <div class="hero-cta rv" data-d="3">
         <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
         <a href="tel:+393466088830" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -57,7 +59,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Applicabilit&agrave;</span>
-      <h2>Quattro casi ricorrenti.</h2>
+      <h2>Casi in cui può essere utile.</h2>
     </div>
     <div class="pain">
       <div class="rv">
@@ -88,12 +90,12 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Processo</span>
-      <h2>Come ricostruiamo un componente.</h2>
+      <h2>Come viene ricostruito il componente.</h2>
     </div>
     <div class="grid-4">
       <div class="card dark rv"><div class="ico">01</div>
         <h3>Analisi</h3>
-        <p>Determiniamo come lavorava, dove si accoppiava e perch&eacute; ha ceduto. Senza questa fase si replica anche il difetto originale.</p>
+        <p>Valuto funzione, accoppiamenti e punto di rottura prima di ricostruire il modello.</p>
       </div>
       <div class="card dark rv" data-d="1"><div class="ico">02</div>
         <h3>Rilievo</h3>
@@ -121,7 +123,7 @@
       </div>
       <div class="rv" data-d="1">
         <span class="q">VALUTAZIONE</span>
-        <h3>La copia non &egrave; sempre la risposta</h3>
+        <h3>Non sempre conviene copiare l'originale</h3>
         <p>Se l'originale era in metallo e lavorava sotto carico, riprodurlo in materiale polimerico non risolve: sposta il problema pi&ugrave; avanti. In quel caso te lo diciamo e valutiamo alternative.</p>
       </div>
     </div>
@@ -129,10 +131,10 @@
 </section>
 
 <section class="tight has-bg">
-  <div class="sec-bg"><img src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
-    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Hai un componente da ricostruire?</h2>
-    <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Inviaci una fotografia del pezzo, anche rotto, con un riferimento dimensionale in campo. Ricevi l'esito entro 24/48 ore.</p>
+    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Hai un ricambio da ricostruire?</h2>
+    <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Mandami una fotografia del pezzo, anche rotto, con un metro o un calibro visibile nell'immagine.</p>
     <div class="hero-cta rv" data-d="2" style="justify-content:center">
       <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
       <a href="tel:+393466088830" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -205,6 +207,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=3" defer></script>
 </body>
 </html>

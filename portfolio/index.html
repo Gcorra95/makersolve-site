@@ -15,7 +15,9 @@
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="/assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=3">
 </head>
 <body>
 
@@ -34,16 +36,16 @@
 </nav>
 
 <header class="hero compact">
-  <div class="hero-media"><img src="/assets/gen-exploded.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-media"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
+  <div id="halo" class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
       <div class="crumb rv"><a href="/">Home</a><span>/</span>Lavori</div>
       <span class="eyebrow rv">Lavori</span>
-      <h1 class="rv" data-d="1">Dal problema tecnico<br><span class="grad">al componente finito.</span></h1>
-      <p class="lead rv" data-d="2">MakerSolve &egrave; una realt&agrave; recente e non presentiamo un portfolio di commesse che non abbiamo ancora. Questi sono lavori usciti dalla nostra officina, descritti per come sono andati.</p>
+      <h1 class="rv" data-d="1">Esempi, prove<br><span class="grad">e lavori reali.</span></h1>
+      <p class="lead rv" data-d="2">Il portfolio mostra come nasce un pezzo: problema iniziale, misure, scelta del materiale, prototipo e risultato finale.</p>
       <div class="hero-cta rv" data-d="3">
         <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
         <a href="tel:+393466088830" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -88,7 +90,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Il percorso</span>
-      <h2>Lo stesso su ogni intervento.</h2>
+      <h2>Il metodo usato nei lavori.</h2>
     </div>
     <div class="pain">
       <div class="rv">
@@ -103,13 +105,13 @@
       </div>
       <div class="rv" data-d="2">
         <span class="q">03 &middot; CAD</span>
-        <h3>La geometria segue i vincoli</h3>
-        <p>Il modello discende dai requisiti rilevati. Ogni raccordo e ogni spessore rispondono a una ragione tecnica.</p>
+        <h3>Il modello nasce dai vincoli reali</h3>
+        <p>Il modello discende dai requisiti rilevati. Il modello viene costruito sulle misure, sugli accoppiamenti e sulle condizioni d'uso disponibili.</p>
       </div>
       <div class="rv" data-d="3">
         <span class="q">04 &middot; VALIDAZIONE</span>
-        <h3>Verifica in esercizio</h3>
-        <p>Il componente si monta e si prova. Scostamenti significano correzione del modello e nuova realizzazione: senza stampi, iterare costa poco.</p>
+        <h3>Prova e correzione</h3>
+        <p>Il componente viene montato e provato. Se qualcosa non torna, il modello viene corretto prima della versione successiva.</p>
       </div>
     </div>
   </div>
@@ -119,8 +121,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Ambito</span>
-      <h2>Tipologie che seguiamo.</h2>
-      <p class="lead">Se la tua esigenza rientra qui, l'ambito &egrave; quello corretto.</p>
+      <h2>Tipologie di lavoro.</h2>
+      <p class="lead">Scocche, supporti, adattatori, reverse engineering, dime e prototipi sono tra i lavori pi&ugrave; comuni.</p>
     </div>
     <div class="grid-3">
       <div class="card rv"><div class="ico">01</div>
@@ -140,7 +142,7 @@
 </section>
 
 <section class="tight has-bg">
-  <div class="sec-bg"><img src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
     <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">La tua esigenza rientra in questi casi?</h2>
     <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Inviaci una fotografia e le misure di massima: ricevi l'esito di fattibilit&agrave; e l'indicazione del materiale entro 24/48 ore.</p>
@@ -206,6 +208,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=3" defer></script>
 </body>
 </html>

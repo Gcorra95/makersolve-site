@@ -15,7 +15,9 @@
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="/assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=3">
 </head>
 <body>
 
@@ -34,16 +36,16 @@
 </nav>
 
 <header class="hero compact">
-  <div class="hero-media"><img src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-media"><img class="tint-copper parallax" src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
+  <div id="halo" class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
       <div class="crumb rv"><a href="/">Home</a><span>/</span>Prototipazione rapida</div>
       <span class="eyebrow rv">Prototipazione rapida</span>
-      <h1 class="rv" data-d="1">Prototipi funzionali,<br><span class="grad">prima di investire.</span></h1>
-      <p class="lead rv" data-d="2">Un prototipo non deve essere bello: deve dare una risposta verificabile. Entra? Si monta? Tiene? Realizziamo prototipi funzionali per verificare forma, ingombri, fori, fissaggi e montaggio prima che le decisioni diventino costose.</p>
+      <h1 class="rv" data-d="1">Prototipi per verificare<br><span class="grad">forma, ingombri e montaggio.</span></h1>
+      <p class="lead rv" data-d="2">Realizzo prototipi per controllare forma, ingombri, fori, fissaggi e montaggio prima della versione definitiva o di lavorazioni più costose.</p>
       <div class="hero-cta rv" data-d="3">
         <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
         <a href="tel:+393466088830" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -57,7 +59,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Finalit&agrave;</span>
-      <h2>Quattro verifiche in un solo pezzo.</h2>
+      <h2>Cosa si può verificare.</h2>
     </div>
     <div class="grid-4">
       <div class="card rv"><div class="ico">01</div>
@@ -66,15 +68,15 @@
       </div>
       <div class="card rv" data-d="1"><div class="ico">02</div>
         <h3>Prova funzionale</h3>
-        <p>Il comportamento si verifica montato e sollecitato, non a pezzo fermo su un tavolo.</p>
+        <p>Il componente viene montato e provato nelle condizioni disponibili, nei limiti concordati per il progetto.</p>
       </div>
       <div class="card rv" data-d="2"><div class="ico">03</div>
         <h3>Iterazione rapida</h3>
-        <p>Correzione del modello e nuova stampa. Senza stampi, cambiare idea alla terza revisione costa poco.</p>
+        <p>Dopo la prova il modello può essere corretto e ristampato prima di consolidare la geometria.</p>
       </div>
       <div class="card rv" data-d="3"><div class="ico">04</div>
         <h3>Ponte verso la produzione</h3>
-        <p>Una geometria validata sul campo &egrave; la base per decidere con cognizione se e come industrializzare.</p>
+        <p>Le verifiche sul prototipo aiutano a decidere quali modifiche fare prima della produzione successiva.</p>
       </div>
     </div>
   </div>
@@ -84,7 +86,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Destinatari</span>
-      <h2>Chi ne trae maggiore vantaggio.</h2>
+      <h2>Quando può essere utile.</h2>
     </div>
     <div class="pain">
       <div class="rv">
@@ -115,7 +117,7 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Livelli di servizio</span>
-      <h2>Fin dove vuoi arrivare.</h2>
+      <h2>Livello di sviluppo del prototipo.</h2>
     </div>
     <dl class="specs rv">
       <div class="spec-row">
@@ -139,9 +141,9 @@
 </section>
 
 <section class="tight has-bg">
-  <div class="sec-bg"><img src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
-    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Hai una soluzione da validare?</h2>
+    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Hai un'idea o un componente da provare?</h2>
     <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Con o senza file 3D. Descrivici la funzione richiesta al componente e ricevi una risposta entro 24/48 ore.</p>
     <div class="hero-cta rv" data-d="2" style="justify-content:center">
       <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
@@ -215,6 +217,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=3" defer></script>
 </body>
 </html>

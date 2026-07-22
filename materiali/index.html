@@ -15,7 +15,9 @@
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="/assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=3">
 </head>
 <body>
 
@@ -34,16 +36,16 @@
 </nav>
 
 <header class="hero compact">
-  <div class="hero-media"><img src="/assets/gen-materials.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
+  <div class="hero-media"><img class="tint-copper parallax" src="/assets/gen-materials.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
   <div class="hero-scrim"></div>
   <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
+  <div id="halo" class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
       <div class="crumb rv"><a href="/">Home</a><span>/</span>Materiali</div>
       <span class="eyebrow rv">Materiali</span>
-      <h1 class="rv" data-d="1">Il materiale giusto<br><span class="grad">per l'impiego previsto.</span></h1>
-      <p class="lead rv" data-d="2">Non il pi&ugrave; costoso: quello adeguato al carico, alla temperatura di esercizio e all'ambiente di lavoro. Un nylon caricato fibra su un componente scarico &egrave; solo un costo in pi&ugrave;.</p>
+      <h1 class="rv" data-d="1">Il materiale si sceglie<br><span class="grad">in base all'uso.</span></h1>
+      <p class="lead rv" data-d="2">La scelta dipende da carico, temperatura, ambiente, elasticit&agrave;, finitura e durata richiesta. Un materiale pi&ugrave; costoso non &egrave; automaticamente pi&ugrave; adatto.</p>
       <div class="hero-cta rv" data-d="3">
         <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
         <a href="tel:+393466088830" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -57,8 +59,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Criteri</span>
-      <h2>Quattro parametri, una scelta.</h2>
-      <p class="lead">Indicarli nella richiesta accorcia sensibilmente i tempi di valutazione.</p>
+      <h2>Cosa considero nella scelta.</h2>
+      <p class="lead">Queste informazioni aiutano a restringere subito la scelta del materiale.</p>
     </div>
     <div class="grid-4">
       <div class="card rv"><div class="ico">01</div>
@@ -85,8 +87,8 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Disponibilit&agrave;</span>
-      <h2>Materiali trattati e impiego.</h2>
-      <p class="lead">Nessuno &egrave; superiore in assoluto: ciascuno risponde a un requisito preciso.</p>
+      <h2>Materiali disponibili e impieghi tipici.</h2>
+      <p class="lead">PLA, PETG, ASA, ABS, TPU, nylon caricati e resina vengono valutati in base al componente.</p>
     </div>
     <dl class="specs rv">
       <div class="spec-row">
@@ -130,12 +132,12 @@
     <div class="pain">
       <div class="rv">
         <span class="q">CRITERIO</span>
-        <h3>Non esiste un materiale universale</h3>
+        <h3>Non esiste un materiale adatto a tutto</h3>
         <p>Un materiale pi&ugrave; costoso non &egrave; automaticamente pi&ugrave; adatto: deve essere coerente con geometria e impiego. Se il PETG soddisfa il requisito, proponiamo il PETG.</p>
       </div>
       <div class="rv" data-d="1">
         <span class="q">LIMITE</span>
-        <h3>Il materiale non salva una geometria sbagliata</h3>
+        <h3>Materiale e geometria vanno valutati insieme</h3>
         <p>Un componente progettato male cede anche in nylon caricato. Prima il disegno &mdash; orientamento, raccordi, spessori, distribuzione degli sforzi &mdash; poi il materiale.</p>
       </div>
     </div>
@@ -143,10 +145,10 @@
 </section>
 
 <section class="tight has-bg">
-  <div class="sec-bg"><img src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
+  <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
-    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Non hai definito il materiale?</h2>
-    <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Rientra nel nostro lavoro. Descrivici le condizioni di esercizio del componente e ti forniamo l'indicazione tecnica.</p>
+    <h2 class="rv" style="max-width:20ch;margin:0 auto 20px">Non sai quale materiale usare?</h2>
+    <p class="lead rv" data-d="1" style="max-width:58ch;margin:0 auto">Descrivi dove lavora il componente, a quali temperature e con quali sollecitazioni. La scelta del materiale fa parte della valutazione.</p>
     <div class="hero-cta rv" data-d="2" style="justify-content:center">
       <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
       <a href="tel:+393466088830" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>346 608 8830</span></a>
@@ -219,6 +221,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=3" defer></script>
 </body>
 </html>
