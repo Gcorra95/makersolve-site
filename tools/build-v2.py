@@ -262,53 +262,53 @@ PAGES.append(dict(
     nav_active="chi-siamo",
     title="Chi sono &mdash; Giulio Corazzari | MakerSolve Mirandola (MO)",
     ogtitle="Chi sono &mdash; MakerSolve",
-    desc="Sono Giulio: progetto e produco componenti su misura, attrezzature e prototipi funzionali. Officina a Mirandola (MO), interlocutore tecnico diretto senza passaggi commerciali.",
+    desc="Progettista meccanico con officina propria a Mirandola (MO): progettazione CAD, reverse engineering e stampa 3D di componenti su misura per aziende. Interlocutore tecnico diretto.",
     hero=hero(
         "Chi sono",
-        "Parli con chi<br><span class=\"grad\">progetta e produce.</span>",
-        "Sono Giulio. MakerSolve &egrave; la mia officina: progettazione meccanica, reverse engineering e stampa 3D. "
-        "Chi risponde al telefono &egrave; la stessa persona che disegna il pezzo e lo tira fuori dalla macchina.",
+        "Progettazione e produzione<br><span class=\"grad\">seguite dalla stessa persona.</span>",
+        "Sono Giulio Corazzari e MakerSolve &egrave; la mia officina di progettazione meccanica e stampa 3D. "
+        "Chi risponde al telefono &egrave; la stessa persona che redige il modello CAD e segue la produzione del componente.",
         "Chi sono",
-        note="Nessun intermediario commerciale &middot; Risposta in 24/48h",
+        note="Interlocutore tecnico unico &middot; Risposta in 24/48 ore",
     ),
     body="\n\n".join([
         section(
-            sec_head("Approccio", "Meccanica pratica, non teoria.",
-                     "Il mio metro di giudizio non &egrave; se il modello 3D &egrave; elegante. &Egrave; se il pezzo, montato, fa quello che deve fare.")
+            sec_head("Approccio", "Meccanica applicata, non esercizio di stile.",
+                     "Il criterio di valutazione non &egrave; l'eleganza del modello 3D, ma il comportamento del componente una volta montato e messo in funzione.")
             + cards([
-                ("Parto dal problema, non dal file",
-                 "La prima domanda non &egrave; &laquo;che forma ha&raquo; ma &laquo;cosa deve fare, dove lavora e cosa succede se cede&raquo;. Da l&igrave; discendono materiale, spessori e processo."),
-                ("Interlocutore unico",
-                 "Non c'&egrave; un commerciale che raccoglie la richiesta e un tecnico che la interpreta. Parli direttamente con chi esegue: le informazioni non si perdono per strada."),
-                ("Ti dico di no quando serve",
-                 "Se la stampa 3D non &egrave; la tecnologia giusta, o se il pezzo &egrave; fuori dal mio ambito, te lo dico subito. Un no in 24 ore vale pi&ugrave; di un preventivo che ti fa perdere due settimane."),
+                ("Il requisito precede la geometria",
+                 "La prima analisi non riguarda la forma del pezzo, ma la sua funzione: quale carico sostiene, in quale ambiente opera e quali sono le conseguenze di un cedimento. Materiale, spessori e processo discendono da queste risposte."),
+                ("Un solo interlocutore tecnico",
+                 "Non esiste un passaggio commerciale che raccoglie la richiesta e un tecnico che la interpreta. Il confronto avviene direttamente con chi esegue il lavoro, senza dispersione di informazioni."),
+                ("Valutazione preventiva dei limiti",
+                 "Quando la stampa 3D non &egrave; la tecnologia appropriata, o la richiesta esula dall'ambito di competenza, la valutazione lo segnala in fase preliminare anzich&eacute; a lavorazione avviata."),
             ], cols=3, dark=True),
             cls="",
         ),
         section(
-            sec_head("Contesto", "Un'officina a Mirandola.",
-                     "Lavoro in provincia di Modena, dentro un territorio dove la meccanica di precisione &egrave; la norma e non l'eccezione. &Egrave; il contesto in cui mi confronto ogni giorno.")
+            sec_head("Contesto operativo", "Un'officina a Mirandola, in provincia di Modena.",
+                     "L'attivit&agrave; si svolge in un territorio in cui la meccanica di precisione rappresenta lo standard di riferimento quotidiano.")
             + specs([
-                ("Cosa faccio", "Progettazione CAD di componenti su misura, reverse engineering da pezzo fisico, attrezzature di reparto, prototipi funzionali e piccola elettronica integrata."),
-                ("Per chi lavoro", "Aziende, officine, manutenzione e reparti tecnici. Anche privati, quando la richiesta ha senso tecnico."),
-                ("Come mi trovi", "Telefono, email o form. Se sei in zona Mirandola puoi passare in officina; per il resto d'Italia si lavora su file e foto e si spedisce."),
-                ("Cosa non faccio", "Parti di sicurezza, componenti strutturali critici e dispositivi certificati. Su quelli posso supportare la fase di studio, non la produzione."),
+                ("Ambito di attivit&agrave;", "Progettazione CAD di componenti su misura, reverse engineering da campione fisico, attrezzature di reparto, prototipi funzionali e integrazione di piccola elettronica."),
+                ("Destinatari", "Aziende, officine, reparti di manutenzione e uffici tecnici. Le richieste di privati vengono valutate quando presentano un contenuto tecnico definito."),
+                ("Modalit&agrave; di contatto", "Telefono, posta elettronica o modulo di richiesta. Per la zona di Mirandola &egrave; possibile il ritiro diretto; per il resto d'Italia la lavorazione procede su file e fotografie, con spedizione del componente finito."),
+                ("Ambiti esclusi", "Parti di sicurezza, componenti strutturali critici e dispositivi soggetti a certificazione. Su questi ambiti &egrave; possibile un supporto in fase di studio, non la produzione."),
             ]),
             cls="paper-2",
         ),
         MARQUEE,
         section(
-            sec_head("Come lavoro", "Quattro passaggi, sempre gli stessi.")
+            sec_head("Metodo di lavoro", "Quattro fasi, applicate a ogni commessa.")
             + pain([
-                ("PASSO 01", "Mi mandi il materiale", "Foto, misure, un campione fisico o un file. Anche parziale: il resto lo ricostruisco io."),
-                ("PASSO 02", "Valuto la fattibilit&agrave;", "Entro 24/48h ti dico se si fa, con quale materiale e a quali condizioni. Se non si fa, ti spiego perch&eacute;."),
-                ("PASSO 03", "Progetto e produco", "Modellazione CAD e stampa. Sui pezzi complessi ti mostro il modello prima, cos&igrave; correggiamo su schermo e non su un pezzo gi&agrave; fatto."),
-                ("PASSO 04", "Provi e correggo", "Il pezzo si valida in funzione. Se qualcosa non torna si interviene sul modello e si ristampa: &egrave; il vantaggio di lavorare senza stampi."),
+                ("FASE 01", "Acquisizione dei dati", "Fotografie, misure, campione fisico o file esistente. Anche una documentazione parziale &egrave; sufficiente ad avviare la valutazione: le informazioni mancanti vengono ricostruite in fase di rilievo."),
+                ("FASE 02", "Valutazione di fattibilit&agrave;", "Entro 24/48 ore ricevi l'esito tecnico: fattibilit&agrave;, materiale indicato e condizioni di realizzazione. In caso di esito negativo, la motivazione tecnica viene esplicitata."),
+                ("FASE 03", "Progettazione e produzione", "Modellazione CAD e realizzazione del componente. Sui pezzi di maggiore complessit&agrave; il modello viene condiviso prima della produzione, per consentire correzioni a monte anzich&eacute; su un pezzo gi&agrave; realizzato."),
+                ("FASE 04", "Validazione e consegna", "Il componente viene verificato in funzione. Eventuali scostamenti comportano una correzione del modello e una nuova realizzazione: &egrave; il vantaggio di una produzione che non richiede stampi."),
             ]),
         ),
     ]),
-    cta=cta_band("Hai un pezzo da valutare?",
-                 "Mandami una foto e due misure. Ti dico in 24/48h se si pu&ograve; fare, senza costi e senza impegno."),
+    cta=cta_band("Hai un componente da valutare?",
+                 "Invia una fotografia e le misure di massima: ricevi entro 24/48 ore una valutazione di fattibilit&agrave;, senza costi n&eacute; impegno."),
     jsonld="""{
   "@context":"https://schema.org",
   "@type":"AboutPage",
@@ -327,58 +327,58 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="materiali/",
     nav_active="materiali",
-    title="Materiali stampa 3D: PLA, PETG, ASA, ABS, TPU, Nylon | Mirandola e Modena",
+    title="Materiali stampa 3D: PLA, PETG, ASA, ABS, TPU | Mirandola e Modena",
     ogtitle="Materiali &mdash; MakerSolve",
-    desc="Come scelgo il materiale in base a carico, temperatura e ambiente d'esercizio. PLA, PETG, ASA, ABS, TPU, nylon caricato fibra e resina. Mirandola (MO).",
+    desc="Selezione del materiale di stampa 3D in base a carico, temperatura di esercizio ed esposizione ambientale: PLA, PETG, ASA, ABS, TPU, nylon caricato e resina. Mirandola (MO).",
     hero=hero(
         "Materiali",
-        "Il materiale giusto<br><span class=\"grad\">non &egrave; il pi&ugrave; costoso.</span>",
-        "&Egrave; quello adatto al carico che il pezzo deve reggere, alla temperatura a cui lavora e all'ambiente in cui sta. "
-        "Un nylon caricato fibra su un pezzo che non porta nulla &egrave; solo spesa in pi&ugrave;.",
+        "Selezione del materiale<br><span class=\"grad\">in base all'impiego.</span>",
+        "Il materiale appropriato non &egrave; quello di costo superiore, ma quello adeguato al carico previsto, "
+        "alla temperatura di esercizio e all'ambiente in cui il componente opera. Un nylon caricato fibra su un pezzo scarico &egrave; solo un costo aggiuntivo.",
         "Materiali",
         img="gen-materials",
         note="Materiali speciali reperibili su richiesta",
     ),
     body="\n\n".join([
         section(
-            sec_head("Criterio", "Quattro domande prima di scegliere.",
-                     "Rispondere a queste, nella richiesta, accorcia di parecchio la conversazione.")
+            sec_head("Criteri di selezione", "Quattro parametri determinanti.",
+                     "Indicare questi elementi nella richiesta riduce sensibilmente i tempi di valutazione.")
             + cards([
-                ("Che carico regge?", "Un pezzo estetico e uno che lavora sotto sforzo non hanno nulla in comune: cambiano materiale, spessori, orientamento di stampa e riempimento."),
-                ("A che temperatura lavora?", "Vicino a un motore, a una fonte di calore o dentro un'auto d'estate: il PLA &egrave; fuori discussione, e met&agrave; delle altre opzioni pure."),
-                ("Sta al sole o all'aperto?", "L'esposizione a UV e intemperie esclude diversi materiali e porta dritti verso l'ASA."),
-                ("Deve flettere o restare rigido?", "Se il pezzo deve deformarsi e tornare in posizione si va sul TPU. Se deve restare fermo, serve l'opposto."),
+                ("Entit&agrave; del carico", "Un componente estetico e uno sottoposto a sollecitazione non condividono alcun parametro: variano materiale, spessori, orientamento di stampa e percentuale di riempimento."),
+                ("Temperatura di esercizio", "In prossimit&agrave; di un motore, di una fonte di calore o all'interno di un veicolo esposto al sole, il PLA &egrave; escluso e con esso buona parte delle alternative."),
+                ("Esposizione ambientale", "L'esposizione a raggi UV e agenti atmosferici restringe la scelta e orienta verso l'ASA."),
+                ("Comportamento elastico", "Se il componente deve deformarsi e recuperare la posizione originale si adotta il TPU; se deve mantenere la geometria, il requisito &egrave; opposto."),
             ], cols=4),
             cls="paper",
         ),
         section(
-            sec_head("Disponibili", "Cosa tengo e quando lo uso.",
-                     "Nessuno di questi &egrave; &laquo;il migliore&raquo;. Ognuno risolve un problema diverso.")
+            sec_head("Disponibilit&agrave;", "Materiali trattati e relativo impiego.",
+                     "Nessuno di questi materiali &egrave; superiore in assoluto: ciascuno risponde a un requisito specifico.")
             + specs([
-                ("PLA", "Il pi&ugrave; semplice da stampare, buona definizione. Va bene per prove dimensionali, mock-up, modelli e pezzi estetici. <b>Non regge il calore</b>: perde forma gi&agrave; a temperature che si raggiungono in un'auto al sole."),
-                ("PETG", "Pi&ugrave; tenace del PLA e meno fragile. &Egrave; la scelta di default per supporti, contenitori e parti funzionali che non vedono temperature alte."),
-                ("ASA", "Resistente a UV e intemperie. &Egrave; il materiale giusto per qualsiasi cosa stia stabilmente all'aperto."),
-                ("ABS", "Buona resistenza termica e meccanica per componenti tecnici, carter e scocche che lavorano in ambienti caldi."),
-                ("TPU", "Flessibile ed elastico. Protezioni, piedini antivibranti, paracolpi, inserti morbidi e guarnizioni non critiche."),
-                ("Nylon caricato fibra di carbonio (CF)", "Rigidit&agrave; elevata e buona stabilit&agrave; dimensionale. Per staffe e attrezzature che devono restare in quota sotto carico."),
-                ("Nylon caricato fibra di vetro (GF)", "Simile al CF come impiego, con un compromesso diverso tra rigidit&agrave;, tenacit&agrave; e costo."),
-                ("Resina", "Stampa a resina per dettagli fini e geometrie piccole, dove l'FDM non arriva. Attenzione: in genere pi&ugrave; fragile, non &egrave; un materiale da carico."),
+                ("PLA", "Processo di stampa semplice e buona definizione superficiale. Indicato per verifiche dimensionali, modelli e componenti estetici. <b>Non presenta resistenza termica</b>: la deformazione avviene gi&agrave; alle temperature raggiunte in un abitacolo esposto al sole."),
+                ("PETG", "Superiore al PLA per tenacit&agrave; e minore fragilit&agrave;. Rappresenta la scelta di riferimento per supporti, contenitori e componenti funzionali non esposti a temperature elevate."),
+                ("ASA", "Resistente a raggi UV e agenti atmosferici. Materiale indicato per qualunque componente destinato a permanenza stabile in esterno."),
+                ("ABS", "Buona resistenza termica e meccanica, adatto a componenti tecnici, carter e scocche operanti in ambienti caldi."),
+                ("TPU", "Materiale flessibile ed elastico, impiegato per protezioni, piedini antivibranti, paracolpi, inserti morbidi e guarnizioni non critiche."),
+                ("Nylon caricato fibra di carbonio (CF)", "Rigidit&agrave; elevata e buona stabilit&agrave; dimensionale. Indicato per staffe e attrezzature che devono mantenere la quota sotto carico."),
+                ("Nylon caricato fibra di vetro (GF)", "Impiego analogo al CF, con un diverso rapporto tra rigidit&agrave;, tenacit&agrave; e costo."),
+                ("Resina", "Stampa a resina per dettagli fini e geometrie di piccole dimensioni, oltre i limiti del processo FDM. Da considerare la maggiore fragilit&agrave;: non &egrave; un materiale destinato al carico."),
             ]),
             cls="paper-2",
         ),
         section(
             pain([
-                ("ONEST&Agrave;", "Non esiste il materiale perfetto per tutto",
-                 "Un materiale pi&ugrave; costoso non &egrave; automaticamente migliore: deve essere adatto al pezzo, alla geometria e all'uso reale. Se il PETG basta, ti propongo il PETG."),
-                ("LIMITE", "Il materiale non salva una geometria sbagliata",
-                 "Un pezzo progettato male si rompe anche in nylon caricato. Prima viene il disegno &mdash; orientamento, raccordi, spessori, dove passano gli sforzi &mdash; poi la scelta del materiale."),
+                ("CRITERIO", "Non esiste un materiale universale",
+                 "Un materiale di costo superiore non &egrave; automaticamente pi&ugrave; adatto: deve risultare coerente con il componente, la geometria e l'impiego effettivo. Quando il PETG soddisfa il requisito, la proposta &egrave; il PETG."),
+                ("LIMITE", "Il materiale non compensa una geometria inadeguata",
+                 "Un componente progettato in modo non corretto cede anche in nylon caricato. La priorit&agrave; &egrave; il disegno &mdash; orientamento, raccordi, spessori, distribuzione degli sforzi &mdash; e solo successivamente la scelta del materiale."),
             ]),
         ),
     ]),
-    cta=cta_band("Non sai quale materiale ti serve?",
-                 "&Egrave; normale, ed &egrave; parte del lavoro. Descrivimi dove lavora il pezzo e te lo dico io."),
+    cta=cta_band("Non hai definito il materiale?",
+                 "&Egrave; una condizione ordinaria e rientra nell'attivit&agrave; di valutazione. Descrivi le condizioni di esercizio del componente e ricevi l'indicazione tecnica."),
     jsonld=service_ld("Stampa 3D con materiali tecnici",
-                      "Selezione del materiale di stampa 3D in base a carico, temperatura d'esercizio e ambiente: PLA, PETG, ASA, ABS, TPU, nylon caricato fibra e resina.",
+                      "Selezione del materiale di stampa 3D in base a carico, temperatura di esercizio e ambiente: PLA, PETG, ASA, ABS, TPU, nylon caricato fibra e resina.",
                       "materiali/"),
 ))
 
@@ -388,15 +388,15 @@ PAGES.append(dict(
     nav_active="portfolio",
     title="Lavori: casi reali di CAD e stampa 3D | Mirandola e Modena",
     ogtitle="Lavori &mdash; MakerSolve",
-    desc="Casi reali usciti dall'officina: scocca ricostruita attorno a una PCB, posaggio da banco per tubicini, dima universale per semimanubri da competizione.",
+    desc="Casi reali di progettazione e stampa 3D: scocca ricostruita attorno a una PCB esistente, posaggio da banco per tubicini flessibili, dima universale per semimanubri da competizione.",
     hero=hero(
         "Lavori",
-        "Tre pezzi,<br><span class=\"grad\">tre problemi diversi.</span>",
-        "MakerSolve &egrave; una realt&agrave; giovane e non ho ancora un portfolio aziendale da esibire. "
-        "Questi sono lavori reali, raccontati per come sono andati: da dove nasceva il problema e come &egrave; stato risolto.",
+        "Casi reali di progettazione<br><span class=\"grad\">e produzione.</span>",
+        "MakerSolve &egrave; una realt&agrave; recente e non dispone ancora di un portfolio di commesse aziendali. "
+        "I lavori riportati di seguito sono interventi effettivamente realizzati in officina, descritti nel loro svolgimento reale.",
         "Lavori",
         img="gen-exploded",
-        note="Casi reali &middot; Nessun render di repertorio",
+        note="Casi reali &middot; Nessuna immagine di repertorio",
     ),
     body="\n\n".join([
         section(
@@ -406,7 +406,7 @@ PAGES.append(dict(
         <div class="work-body">
           <span class="tag">Reverse engineering</span>
           <h3>Scocca ricostruita attorno a una PCB esistente</h3>
-          <p>Il guscio originale era rotto ma l'elettronica funzionava ancora. Ho rilevato la scheda originale e progettato una nuova scocca su misura, con pulsanti, foro portachiavi e nervature interne studiate per tenere ferma la PCB.</p>
+          <p>Involucro originale danneggiato, elettronica ancora funzionante. La scheda &egrave; stata rilevata dimensionalmente e attorno a essa &egrave; stata progettata una nuova scocca, comprensiva di pulsanti, foro portachiavi e nervature interne per il bloccaggio della PCB.</p>
         </div>
       </article>
       <article class="work-item rv" data-d="1">
@@ -414,7 +414,7 @@ PAGES.append(dict(
         <div class="work-body">
           <span class="tag">Attrezzatura di reparto</span>
           <h3>Posaggio da banco per tubicini flessibili</h3>
-          <p>Dima per tenere in posizione piccoli tubi flessibili durante assemblaggio o test. Nasce da un'esigenza semplice: rendere ripetibile un posizionamento senza commissionare un'attrezzatura costosa.</p>
+          <p>Attrezzatura per il mantenimento in posizione di tubi di piccolo diametro durante assemblaggio e collaudo. L'obiettivo era rendere ripetibile un posizionamento senza ricorrere alla commissione di un'attrezzatura dedicata.</p>
         </div>
       </article>
       <article class="work-item rv" data-d="2">
@@ -422,38 +422,38 @@ PAGES.append(dict(
         <div class="work-body">
           <span class="tag">Prodotto MakerSolve</span>
           <h3>Dima universale per semimanubri</h3>
-          <p>Attrezzatura per controllare l'apertura dei semimanubri sulle moto da competizione. La geometria &egrave; studiata per adattarsi a moto diverse e rendere il controllo pi&ugrave; rapido e ripetibile della misurazione manuale.</p>
+          <p>Attrezzatura per il controllo dell'apertura dei semimanubri su motociclette da competizione. La geometria &egrave; stata studiata per l'adattamento a modelli differenti, in sostituzione della misurazione manuale.</p>
         </div>
       </article>
     </div>
 """),
         section(
-            sec_head("Il filo comune", "Come nasce un pezzo, ogni volta.")
+            sec_head("Elemento comune", "Il percorso seguito in ogni intervento.")
             + pain([
-                ("01 &middot; PROBLEMA", "Qualcosa non c'&egrave; o non funziona",
-                 "Un componente rotto, un'attrezzatura che non esiste a catalogo, un'operazione che dipende troppo dalla manualit&agrave; dell'operatore."),
-                ("02 &middot; VINCOLI", "Misure, ingombri, condizioni d'uso",
-                 "Rilievo di quote e vincoli: cosa deve accoppiarsi con cosa, quanto spazio c'&egrave;, che sforzi vede il pezzo, in che ambiente sta."),
-                ("03 &middot; CAD", "Il modello nasce dai vincoli",
-                 "La geometria discende dai requisiti, non da un'idea estetica. Ogni raccordo e ogni spessore rispondono a una ragione precisa."),
-                ("04 &middot; PROVA", "Si valida in funzione",
-                 "Il pezzo si monta e si prova. Se qualcosa non torna si corregge il modello e si ristampa: senza stampi, un'iterazione costa poco."),
+                ("01 &middot; PROBLEMA", "Un componente assente o non funzionante",
+                 "Un pezzo danneggiato, un'attrezzatura non disponibile a catalogo, oppure un'operazione la cui riuscita dipende eccessivamente dalla manualit&agrave; dell'operatore."),
+                ("02 &middot; VINCOLI", "Rilievo di misure, ingombri e condizioni",
+                 "Acquisizione di quote e vincoli: accoppiamenti richiesti, spazio disponibile, sollecitazioni previste e ambiente di esercizio."),
+                ("03 &middot; CAD", "Il modello discende dai requisiti",
+                 "La geometria deriva dai vincoli rilevati e non da un'impostazione estetica. Ogni raccordo e ogni spessore rispondono a una motivazione tecnica definita."),
+                ("04 &middot; VALIDAZIONE", "Verifica in condizioni di esercizio",
+                 "Il componente viene montato e provato. Eventuali scostamenti comportano una correzione del modello e una nuova realizzazione: senza stampi, l'iterazione ha un costo contenuto."),
             ]),
             cls="",
         ),
         section(
-            sec_head("Ambito", "Che tipo di lavori seguo.",
-                     "Se il tuo caso somiglia a uno di questi siamo nel campo giusto.")
+            sec_head("Ambito", "Tipologie di intervento seguite.",
+                     "Se la tua esigenza rientra in una di queste categorie, l'ambito &egrave; quello corretto.")
             + cards([
-                ("Scocche e contenitori", "Involucri su misura attorno a elettronica esistente: alloggiamenti PCB, passaggi cavo, accessi per connettori e pulsanti."),
-                ("Supporti e adattatori", "Staffe, raccordi e adattatori che collegano due cose nate per non stare insieme."),
-                ("Reverse engineering funzionale", "Ricostruzione di componenti a partire dal pezzo fisico, anche quando &egrave; rotto: si rileva dalle zone sane."),
+                ("Scocche e contenitori", "Involucri su misura per elettronica esistente: alloggiamenti per PCB, passaggi cavo, accessi per connettori e organi di comando."),
+                ("Supporti e adattatori", "Staffe, raccordi e interfacce tra componenti non progettati per essere accoppiati tra loro."),
+                ("Reverse engineering funzionale", "Ricostruzione di componenti a partire dal campione fisico, anche danneggiato: il rilievo viene effettuato sulle porzioni integre."),
             ], cols=3),
             cls="paper",
         ),
     ]),
-    cta=cta_band("Il tuo caso somiglia a uno di questi?",
-                 "Mandami una foto e due misure: ti dico in 24/48h se si pu&ograve; fare e con quale materiale."),
+    cta=cta_band("La tua esigenza rientra in questi casi?",
+                 "Invia una fotografia e le misure di massima: ricevi entro 24/48 ore l'esito di fattibilit&agrave; e l'indicazione del materiale."),
     jsonld="""{
   "@context":"https://schema.org",
   "@type":"CollectionPage",
@@ -469,51 +469,51 @@ PAGES.append(dict(
     nav_active="",
     title="Stampa 3D personalizzata su misura a Mirandola e Modena | MakerSolve",
     ogtitle="Stampa 3D personalizzata &mdash; MakerSolve",
-    desc="Stampa 3D di oggetti e pezzi su misura, con o senza file 3D. Controllo del file prima di stampare, consulenza su materiale e orientamento. Mirandola (MO).",
+    desc="Stampa 3D di componenti e oggetti su misura, con o senza file 3D. Verifica preventiva del file, consulenza su materiale e orientamento di stampa. Mirandola (MO).",
     hero=hero(
         "Stampa 3D personalizzata",
-        "Prima si controlla<br><span class=\"grad\">il pezzo, poi si stampa.</span>",
-        "Mandare un file a una macchina lo sanno fare tutti. La differenza la fa il controllo prima: spessori, orientamento, "
-        "punti deboli e materiale adatto all'uso reale. &Egrave; il passaggio che evita di pagare due volte lo stesso pezzo.",
+        "Stampa 3D su misura,<br><span class=\"grad\">con verifica preventiva del file.</span>",
+        "L'invio di un file a una macchina &egrave; un'operazione elementare. La differenza risiede nella verifica che la precede: "
+        "spessori, orientamento di stampa, punti critici e idoneit&agrave; del materiale all'impiego previsto. &Egrave; il passaggio che evita di realizzare due volte lo stesso componente.",
         "Stampa 3D personalizzata",
     ),
     body="\n\n".join([
         section(
-            sec_head("Due punti di partenza", "Con il file, o senza.")
+            sec_head("Punto di partenza", "Con file 3D o senza.")
             + cards([
-                ("Hai gi&agrave; il file 3D",
-                 "Accetto STL, STEP, 3MF e OBJ. Prima di stampare controllo scala, spessori minimi, orientamento e punti critici, e ti dico se conviene modificare qualcosa. Se il file ha problemi lo scopri prima, non a pezzo consegnato."),
-                ("Non hai il file",
-                 "Il CAD lo faccio io, partendo da uno schizzo, una foto con una misura di riferimento o il pezzo fisico. Non serve saper modellare per ottenere un pezzo su misura."),
+                ("Disponi gi&agrave; del file 3D",
+                 "Sono accettati i formati STL, STEP, 3MF e OBJ. Prima della produzione vengono verificati scala, spessori minimi, orientamento e criticit&agrave; geometriche, con indicazione delle eventuali modifiche opportune. Gli errori del file emergono in fase preliminare e non a componente consegnato."),
+                ("Non disponi del file",
+                 "La modellazione CAD rientra nel servizio e pu&ograve; partire da uno schizzo, da una fotografia con riferimento dimensionale o dal componente fisico. Non &egrave; necessaria alcuna competenza di modellazione per ottenere un pezzo su misura."),
             ], cols=2),
             cls="paper",
         ),
         MARQUEE,
         section(
-            sec_head("Cosa realizzo", "Dal ricambio all'attrezzatura.")
+            sec_head("Realizzazioni", "Dal ricambio all'attrezzatura di reparto.")
             + cards([
-                ("Ricambi e pezzi introvabili", "Componenti fuori produzione o senza fornitore, ricostruiti dal pezzo originale o da quello che ne resta."),
-                ("Supporti ed espositori", "Basi, sostegni, staffe ed espositori disegnati su un oggetto specifico invece che adattati da un prodotto generico."),
-                ("Oggetti personalizzati", "Targhette, loghi tridimensionali, gadget e piccoli oggetti su misura."),
-                ("Adattatori", "Raccordi e interfacce tra componenti che non sono nati per accoppiarsi."),
-                ("Prototipi", "Pezzi da provare sul campo per verificare ingombri, accoppiamenti ed ergonomia prima di decidere."),
-                ("Piccoli lotti", "Serie ridotte, dove attrezzare uno stampo non ha alcun senso economico."),
+                ("Ricambi e componenti non reperibili", "Pezzi fuori produzione o privi di fornitore, ricostruiti a partire dall'originale o dalle porzioni residue."),
+                ("Supporti ed espositori", "Basi, sostegni, staffe ed espositori progettati su un oggetto specifico anzich&eacute; adattati da un prodotto generico."),
+                ("Oggetti personalizzati", "Targhette, loghi tridimensionali e componenti di piccole dimensioni realizzati su misura."),
+                ("Adattatori", "Raccordi e interfacce tra componenti non predisposti all'accoppiamento."),
+                ("Prototipi", "Componenti destinati alla prova sul campo per la verifica di ingombri, accoppiamenti ed ergonomia."),
+                ("Piccoli lotti", "Serie ridotte, per le quali l'attrezzaggio di uno stampo non presenta convenienza economica."),
             ], cols=3),
             cls="paper-2",
         ),
         section(
             pain([
-                ("COSA SERVE SAPERE", "L'uso reale decide tutto",
-                 "Se il pezzo &egrave; estetico, funzionale o provvisorio cambia materiale, spessori e orientamento di stampa. Dimmelo nella richiesta: &egrave; l'informazione pi&ugrave; utile che puoi darmi."),
-                ("LIMITE", "Non tutto va stampato in 3D",
-                 "Se una lavorazione CNC, un taglio laser o un ricambio commerciale sono pi&ugrave; adatti al tuo caso, conviene saperlo prima di spendere. Te lo dico in fase di valutazione."),
+                ("INFORMAZIONE RICHIESTA", "L'impiego effettivo determina le scelte tecniche",
+                 "La destinazione del componente &mdash; estetica, funzionale o provvisoria &mdash; determina materiale, spessori e orientamento di stampa. Indicarla nella richiesta &egrave; l'informazione di maggiore utilit&agrave; ai fini della valutazione."),
+                ("LIMITE", "La stampa 3D non &egrave; sempre la tecnologia appropriata",
+                 "Quando una lavorazione CNC, un taglio laser o un ricambio commerciale risultano pi&ugrave; adeguati, l'indicazione viene fornita in fase di valutazione, prima di qualsiasi impegno di spesa."),
             ]),
         ),
     ]),
-    cta=cta_band("Hai un file o solo un'idea?",
-                 "In entrambi i casi si parte. Mandami quello che hai e ti rispondo entro 24/48h."),
+    cta=cta_band("Disponi di un file o di una sola idea?",
+                 "In entrambi i casi la valutazione pu&ograve; procedere. Invia il materiale disponibile e ricevi una risposta entro 24/48 ore."),
     jsonld=service_ld("Stampa 3D personalizzata",
-                      "Stampa 3D di oggetti e componenti su misura, con o senza file 3D, con controllo preventivo di file, materiale e orientamento.",
+                      "Stampa 3D di oggetti e componenti su misura, con o senza file 3D, con verifica preventiva di file, materiale e orientamento.",
                       "stampa-3d-personalizzata/"),
 ))
 
@@ -523,50 +523,50 @@ PAGES.append(dict(
     nav_active="servizi",
     title="Progettazione CAD di componenti su misura | Mirandola e Modena",
     ogtitle="Progettazione CAD &mdash; MakerSolve",
-    desc="Modellazione CAD di componenti custom a partire da idea, schizzo, foto o pezzo fisico. Consegna con file STEP. Mirandola (MO), lavorazioni in tutta Italia.",
+    desc="Modellazione CAD di componenti meccanici su misura a partire da idea, schizzo, fotografia o campione fisico. Consegna in formato STEP. Mirandola (MO), lavorazioni in tutta Italia.",
     hero=hero(
         "Progettazione CAD",
-        "Un problema diventa<br><span class=\"grad\">un pezzo reale.</span>",
-        "Disegno componenti su misura partendo da quello che hai: un'idea, uno schizzo, una foto con due quote o il pezzo fisico. "
-        "Il modello nasce per essere stampato, provato, corretto e usato &mdash; non per fare bella figura in un render.",
+        "Progettazione CAD<br><span class=\"grad\">di componenti su misura.</span>",
+        "Realizzo il disegno di componenti custom a partire dagli elementi disponibili: un'idea, uno schizzo, una fotografia quotata o il campione fisico. "
+        "Il modello viene impostato per essere prodotto, verificato, corretto e utilizzato.",
         "Progettazione CAD",
     ),
     body="\n\n".join([
         section(
-            sec_head("Punto di partenza", "Da cosa posso partire.",
-                     "Non serve materiale tecnico. Serve che sia chiaro cosa deve fare il pezzo.")
+            sec_head("Dati di partenza", "Elementi da cui &egrave; possibile procedere.",
+                     "Non &egrave; richiesta documentazione tecnica formale. &Egrave; necessario che risulti definita la funzione del componente.")
             + cards([
-                ("Un'idea o uno schizzo", "Anche disegnato a mano su un foglio. Da l&igrave; si definiscono insieme vincoli e ingombri."),
-                ("Foto e misure", "Una foto con un calibro o un metro accanto d&agrave; la scala. Le quote critiche le prendiamo insieme."),
-                ("Un campione fisico", "Il pezzo originale, anche rotto: si rileva dalle zone integre e si ricostruisce il resto."),
-                ("Un file esistente", "STEP, STL o 3MF da modificare, correggere o adattare a un nuovo impiego."),
+                ("Idea o schizzo", "Anche redatto a mano. Su questa base vengono definiti congiuntamente vincoli e ingombri."),
+                ("Fotografie e misure", "Una fotografia con calibro o metro in campo fornisce il riferimento di scala. Le quote critiche vengono definite in fase di analisi."),
+                ("Campione fisico", "Il componente originale, anche danneggiato: il rilievo avviene sulle porzioni integre e la parte mancante viene ricostruita."),
+                ("File esistente", "File STEP, STL o 3MF da modificare, correggere o adattare a un nuovo impiego."),
             ], cols=4),
             cls="paper",
         ),
         section(
-            sec_head("Quando serve", "I casi tipici.")
+            sec_head("Applicazioni", "Casi ricorrenti.")
             + pain([
-                ("CASO 01", "Scocche e contenitori", "Involucri disegnati attorno a un'elettronica esistente: alloggiamento della scheda, passaggi cavo, accessi per connettori e pulsanti, tenuta dei componenti."),
-                ("CASO 02", "Supporti e adattatori", "Interfacce tra componenti che non sono nati per stare insieme, con i fissaggi giusti e gli ingombri verificati."),
-                ("CASO 03", "Prototipi funzionali", "Modelli pensati per essere provati sul campo, iterati e corretti prima di congelare la geometria."),
-                ("CASO 04", "File tecnici da usare altrove", "Un modello 3D pulito e un STEP che puoi portare a un altro fornitore, anche se poi non produci qui."),
+                ("CASO 01", "Scocche e contenitori", "Involucri progettati attorno a un'elettronica esistente: alloggiamento della scheda, passaggi cavo, accessi per connettori e organi di comando, sistemi di ritegno dei componenti."),
+                ("CASO 02", "Supporti e adattatori", "Interfacce tra componenti non predisposti all'accoppiamento, con definizione dei fissaggi e verifica degli ingombri."),
+                ("CASO 03", "Prototipi funzionali", "Modelli destinati alla prova sul campo, all'iterazione e alla correzione prima del consolidamento della geometria."),
+                ("CASO 04", "Documentazione tecnica trasferibile", "Un modello 3D corretto e un file STEP utilizzabili presso altri fornitori, anche qualora la produzione non venga affidata a MakerSolve."),
             ]),
         ),
         section(
-            sec_head("Consegna", "Cosa ricevi.")
+            sec_head("Consegna", "Elementi forniti.")
             + specs([
-                ("Modello 3D", "Il componente modellato secondo i requisiti concordati, verificato per il processo con cui verr&agrave; prodotto."),
-                ("File STEP", "Formato neutro, apribile da qualsiasi CAD. &Egrave; tuo: puoi portarlo altrove senza dipendere da me."),
-                ("Revisioni", "Le correzioni che emergono dalla prova del prototipo rientrano nel percorso: il modello si aggiorna, non si ricomincia."),
-                ("Tolleranze", "<b>Si lavora nell'ordine del millimetro.</b> Il decimo, in FDM, non &egrave; garantito: se il pezzo lo richiede te lo dico prima di iniziare."),
+                ("Modello 3D", "Il componente modellato secondo i requisiti concordati e verificato per il processo produttivo previsto."),
+                ("File STEP", "Formato neutro, apribile da qualunque sistema CAD. Il file &egrave; di tua propriet&agrave; e pu&ograve; essere utilizzato presso terzi senza vincoli."),
+                ("Revisioni", "Le correzioni derivanti dalla prova del prototipo rientrano nel percorso: il modello viene aggiornato, non ricostruito da principio."),
+                ("Tolleranze", "<b>La lavorazione si colloca nell'ordine del millimetro.</b> Il decimo di millimetro, in processo FDM, non rientra tra i risultati garantiti: qualora il componente lo richieda, l'indicazione viene fornita prima dell'avvio."),
             ]),
             cls="paper-2",
         ),
     ]),
     cta=cta_band("Hai un componente da disegnare?",
-                 "Mandami quello che hai, anche solo uno schizzo. Ti rispondo entro 24/48h con una valutazione di fattibilit&agrave;."),
+                 "Invia il materiale disponibile, anche un solo schizzo. Ricevi entro 24/48 ore una valutazione di fattibilit&agrave;."),
     jsonld=service_ld("Progettazione CAD",
-                      "Modellazione CAD di componenti meccanici su misura a partire da idea, schizzo, foto, quote o pezzo fisico, con consegna in formato STEP.",
+                      "Modellazione CAD di componenti meccanici su misura a partire da idea, schizzo, fotografia, quote o campione fisico, con consegna in formato STEP.",
                       "servizi/progettazione-cad/"),
 ))
 
@@ -576,47 +576,47 @@ PAGES.append(dict(
     nav_active="servizi",
     title="Reverse engineering pezzi rotti e senza disegno | Mirandola e Modena",
     ogtitle="Reverse engineering &mdash; MakerSolve",
-    desc="Ricostruzione CAD di componenti a partire dal pezzo fisico, anche rotto o incompleto. Ricambi non pi&ugrave; reperibili, scocche, carter. Mirandola (MO).",
+    desc="Ricostruzione CAD di componenti a partire dal campione fisico, anche danneggiato o incompleto: ricambi non più reperibili, scocche, carter. Mirandola (MO).",
     hero=hero(
         "Reverse engineering",
-        "Il pezzo non esiste pi&ugrave;.<br><span class=\"grad\">Il problema s&igrave;.</span>",
-        "Ricostruisco componenti partendo dal pezzo fisico, da una foto o da quello che resta di un originale rotto. "
-        "Quando il ricambio &egrave; fuori produzione e il fornitore non risponde, questa &egrave; spesso l'unica strada che rimette in moto una macchina.",
+        "Ricostruzione di componenti<br><span class=\"grad\">non pi&ugrave; reperibili.</span>",
+        "Ricostruisco componenti a partire dal campione fisico, da una fotografia o dalle porzioni residue di un originale danneggiato. "
+        "Quando il ricambio &egrave; fuori produzione e il fornitore non &egrave; raggiungibile, questa &egrave; frequentemente l'unica via per rimettere in servizio una macchina.",
         "Reverse engineering",
     ),
     body="\n\n".join([
         section(
-            sec_head("Quando ha senso", "I quattro casi tipici.")
+            sec_head("Applicabilit&agrave;", "Quattro casi ricorrenti.")
             + pain([
-                ("CASO 01", "Il ricambio non si trova", "Componente fuori produzione, fornitore irreperibile, oppure venduto solo dentro un assieme che costa dieci volte il pezzo che ti serve."),
-                ("CASO 02", "Il pezzo &egrave; rotto", "Si rileva dalle zone integre e si ricostruisce il resto per continuit&agrave; geometrica. Un pezzo rotto conserva quasi sempre abbastanza informazione."),
-                ("CASO 03", "Scocche e carter", "Gusci e coperture da riprodurre o da adattare a componenti interni che nel frattempo sono cambiati."),
-                ("CASO 04", "Serve una modifica", "Non una copia identica ma una versione corretta: fissaggi diversi, un rinforzo dove cedeva, un ingombro ridotto."),
+                ("CASO 01", "Ricambio non reperibile", "Componente fuori produzione, fornitore non raggiungibile, oppure disponibile esclusivamente all'interno di un assieme di costo sproporzionato rispetto al pezzo necessario."),
+                ("CASO 02", "Componente danneggiato", "Il rilievo viene effettuato sulle porzioni integre e la parte mancante &egrave; ricostruita per continuit&agrave; geometrica. Un componente rotto conserva quasi sempre informazione sufficiente."),
+                ("CASO 03", "Scocche e carter", "Gusci e coperture da riprodurre o da adattare a componenti interni nel frattempo modificati."),
+                ("CASO 04", "Riproduzione con modifica", "Non una copia conforme ma una versione corretta: fissaggi differenti, rinforzo nella zona di cedimento, riduzione degli ingombri."),
             ]),
         ),
         section(
-            sec_head("Processo", "Come si ricostruisce un pezzo.")
+            sec_head("Processo", "Fasi della ricostruzione.")
             + cards([
-                ("Analisi del pezzo", "Si capisce come lavorava, dove si accoppiava e perch&eacute; ha ceduto. Senza questo passaggio si replica anche il difetto originale."),
-                ("Rilievo delle quote", "Misurazione diretta di ingombri, diametri, interassi e spessori, con attenzione alle quote che devono accoppiarsi."),
-                ("Ricostruzione CAD", "Il modello 3D nasce dalle quote rilevate, con le correzioni necessarie dove la geometria originale era il punto debole."),
-                ("Prototipo e correzione", "Si stampa, si prova sul posto e si corregge. La prima versione serve a validare gli accoppiamenti, non a essere definitiva."),
+                ("Analisi del componente", "Vengono determinati il funzionamento, i punti di accoppiamento e le cause del cedimento. In assenza di questa fase si replica anche il difetto originale."),
+                ("Rilievo dimensionale", "Misurazione diretta di ingombri, diametri, interassi e spessori, con attenzione specifica alle quote di accoppiamento."),
+                ("Ricostruzione CAD", "Il modello 3D viene generato dalle quote rilevate, con le correzioni necessarie nei punti in cui la geometria originale costituiva l'elemento debole."),
+                ("Prototipo e correzione", "Realizzazione, prova in sede e correzione. La prima versione ha funzione di validazione degli accoppiamenti e non carattere definitivo."),
             ], cols=4, dark=True),
         ),
         section(
             pain([
-                ("LIMITE", "Non su parti critiche",
-                 "Non propongo reverse engineering per componenti strutturali critici, parti di sicurezza o applicazioni che richiedono certificazioni specifiche. Un pezzo che, cedendo, mette a rischio persone o impianti richiede un percorso di qualifica che questa officina non copre."),
-                ("LIMITE", "La copia non &egrave; sempre la risposta",
-                 "Se l'originale era in metallo e lavorava sotto carico, riprodurlo in plastica non risolve: sposta il problema pi&ugrave; avanti. In quel caso te lo dico e valutiamo un'altra strada."),
+                ("ESCLUSIONE", "Non applicabile a parti critiche",
+                 "Il servizio non viene proposto per componenti strutturali critici, parti di sicurezza o applicazioni soggette a certificazione. Un componente il cui cedimento comporti rischio per persone o impianti richiede un percorso di qualifica non coperto da questa officina."),
+                ("VALUTAZIONE", "La riproduzione non &egrave; sempre la soluzione",
+                 "Se l'originale era realizzato in metallo e operava sotto carico, la riproduzione in materiale polimerico non risolve il problema ma ne posticipa la manifestazione. In tali casi l'indicazione viene esplicitata e si valutano soluzioni alternative."),
             ]),
             cls="",
         ),
     ]),
-    cta=cta_band("Hai un pezzo da ricreare?",
-                 "Mandami una foto del pezzo, anche rotto, con un metro accanto. Ti dico in 24/48h se &egrave; ricostruibile."),
+    cta=cta_band("Hai un componente da ricostruire?",
+                 "Invia una fotografia del pezzo, anche danneggiato, con un riferimento dimensionale in campo. Ricevi entro 24/48 ore l'esito sulla ricostruibilit&agrave;."),
     jsonld=service_ld("Reverse engineering",
-                      "Ricostruzione del modello CAD di un componente a partire dal pezzo fisico, anche rotto o incompleto, per ricambi non più reperibili.",
+                      "Ricostruzione del modello CAD di un componente a partire dal campione fisico, anche danneggiato o incompleto, per ricambi non più reperibili.",
                       "servizi/reverse-engineering/"),
 ))
 
@@ -626,47 +626,47 @@ PAGES.append(dict(
     nav_active="servizi",
     title="Prototipazione rapida con CAD e stampa 3D | Mirandola e Modena",
     ogtitle="Prototipazione rapida &mdash; MakerSolve",
-    desc="Prototipi funzionali per verificare ingombri, accoppiamenti e funzione prima di investire in attrezzature definitive. CAD e stampa 3D. Mirandola (MO).",
+    desc="Prototipi funzionali per la verifica di ingombri, accoppiamenti e funzione prima dell'investimento in attrezzature definitive. Progettazione CAD e stampa 3D. Mirandola (MO).",
     hero=hero(
         "Prototipazione rapida",
-        "Un prototipo non deve<br><span class=\"grad\">essere bello.</span>",
-        "Deve rispondere a una domanda: entra? si monta? tiene? si preme? si usa? "
-        "Realizzo prototipi funzionali per verificare forma, ingombri, fori, fissaggi e montaggio prima che le decisioni diventino costose.",
+        "Prototipi funzionali<br><span class=\"grad\">per la validazione tecnica.</span>",
+        "Un prototipo non ha finalit&agrave; estetiche: deve fornire una risposta verificabile. Il componente entra nello spazio disponibile, si accoppia, sostiene il carico, risulta utilizzabile. "
+        "Realizzo prototipi per la verifica di forma, ingombri, fori, fissaggi e montaggio prima che le decisioni comportino costi rilevanti.",
         "Prototipazione rapida",
     ),
     body="\n\n".join([
         section(
-            sec_head("A cosa serve", "Quattro domande a cui risponde un prototipo.")
+            sec_head("Finalit&agrave;", "Quattro verifiche rese possibili da un prototipo.")
             + cards([
-                ("Verifica di accoppiamento", "Il pezzo entra nello spazio disponibile? I fori sono in asse? Gli interassi tornano davvero o solo sul disegno?"),
-                ("Prova funzionale", "Il componente fa quello che deve fare quando &egrave; montato e sollecitato, non quando &egrave; fermo su un tavolo."),
-                ("Iterazione rapida", "Si corregge il modello e si ristampa. Senza stampi, cambiare idea alla terza versione costa poco."),
-                ("Ponte verso la produzione", "Una geometria validata sul campo &egrave; la base per decidere con cognizione se e come industrializzare."),
+                ("Verifica di accoppiamento", "Il componente rientra nello spazio disponibile, i fori risultano in asse e gli interassi trovano riscontro nella realt&agrave; e non solo sul disegno."),
+                ("Prova funzionale", "Il comportamento del componente viene verificato in condizioni di montaggio e sollecitazione, non a pezzo isolato."),
+                ("Iterazione rapida", "Correzione del modello e nuova realizzazione. In assenza di stampi, una modifica alla terza revisione comporta un costo contenuto."),
+                ("Preparazione all'industrializzazione", "Una geometria validata sul campo costituisce la base per valutare consapevolmente le modalit&agrave; di produzione di serie."),
             ], cols=4),
             cls="paper",
         ),
         section(
-            sec_head("Per chi", "Chi ci guadagna di pi&ugrave;.")
+            sec_head("Destinatari", "Contesti di maggiore utilit&agrave;.")
             + pain([
-                ("PROFILO 01", "Uffici tecnici e R&amp;D", "Chi deve validare un'idea prima di impegnare capitale in stampi o attrezzature definitive, e ha bisogno di iterare in giorni e non in settimane."),
-                ("PROFILO 02", "Manutenzione e officine", "Chi deve rimettere in funzione qualcosa e ha bisogno di provare una soluzione prima di adottarla stabilmente."),
-                ("PROFILO 03", "Chi sviluppa un prodotto", "Chi ha bisogno di toccare con mano ergonomia, ingombri e sensazione d'uso prima di congelare il progetto."),
-                ("PROFILO 04", "Chi deve convincere qualcuno", "Un pezzo che si passa di mano in riunione sposta pi&ugrave; di venti slide di render."),
+                ("PROFILO 01", "Uffici tecnici e R&amp;D", "Strutture che devono validare una soluzione prima di impegnare capitale in stampi o attrezzature definitive, con necessit&agrave; di iterare in giorni anzich&eacute; in settimane."),
+                ("PROFILO 02", "Manutenzione e officine", "Contesti in cui &egrave; necessario ripristinare una funzionalit&agrave; e verificare una soluzione prima di adottarla stabilmente."),
+                ("PROFILO 03", "Sviluppo prodotto", "Attivit&agrave; che richiedono la verifica diretta di ergonomia, ingombri e percezione d'uso prima del consolidamento del progetto."),
+                ("PROFILO 04", "Presentazione interna del progetto", "Un componente fisico disponibile in riunione fornisce elementi di valutazione superiori a qualsiasi rappresentazione grafica."),
             ]),
         ),
         section(
-            sec_head("Output", "Fin dove vuoi arrivare.")
+            sec_head("Livelli di servizio", "Estensione dell'intervento.")
             + specs([
-                ("Solo prototipo", "Il pezzo da provare, stampato nel materiale pi&ugrave; adatto alla verifica che devi fare."),
-                ("Prototipo + revisione CAD", "Il pezzo e il modello aggiornato con le correzioni emerse dalla prova: quello che porti avanti &egrave; una geometria gi&agrave; validata."),
-                ("Prototipo + pezzo finale", "Dopo la validazione si produce la versione definitiva, eventualmente in un materiale diverso da quello di prova."),
-                ("Materiali tipici", "PLA per le prove puramente dimensionali, PETG e ABS/ASA per le prove funzionali, nylon caricato fibra dove serve rigidit&agrave;, TPU per le parti che devono flettere."),
+                ("Solo prototipo", "Il componente destinato alla prova, realizzato nel materiale pi&ugrave; adatto alla verifica prevista."),
+                ("Prototipo e revisione CAD", "Il componente e il modello aggiornato con le correzioni emerse dalla prova: quanto viene consegnato &egrave; una geometria gi&agrave; validata."),
+                ("Prototipo e componente definitivo", "A validazione avvenuta si procede alla realizzazione della versione definitiva, eventualmente in materiale differente da quello impiegato per la prova."),
+                ("Materiali di riferimento", "PLA per le verifiche esclusivamente dimensionali, PETG e ABS/ASA per le prove funzionali, nylon caricato fibra dove &egrave; richiesta rigidit&agrave;, TPU per le parti soggette a flessione."),
             ]),
             cls="paper-2",
         ),
     ]),
-    cta=cta_band("Hai un'idea da provare?",
-                 "Con un file o senza. Mandami cosa deve fare il pezzo e ti rispondo entro 24/48h."),
+    cta=cta_band("Hai una soluzione da validare?",
+                 "Con o senza file 3D. Descrivi la funzione richiesta al componente e ricevi una risposta entro 24/48 ore."),
     jsonld=service_ld("Prototipazione rapida",
                       "Prototipi funzionali con CAD e stampa 3D per verificare forma, ingombri, accoppiamenti e funzione prima della produzione definitiva.",
                       "servizi/prototipazione-rapida/"),
@@ -678,46 +678,46 @@ PAGES.append(dict(
     nav_active="servizi",
     title="Componenti su misura: supporti, staffe, dime | Mirandola e Modena",
     ogtitle="Componenti custom &mdash; MakerSolve",
-    desc="Componenti su misura quando il pezzo commerciale non esiste, non combacia o costa troppo: supporti, staffe, adattatori, guide, carter, dime e piccoli lotti.",
+    desc="Componenti su misura quando il pezzo commerciale non esiste, non combacia o non presenta convenienza: supporti, staffe, adattatori, guide, carter, dime e piccoli lotti.",
     hero=hero(
         "Componenti custom",
-        "Progettati intorno<br><span class=\"grad\">al tuo problema.</span>",
-        "Realizzo componenti su misura quando il pezzo commerciale non esiste, non combacia, costa troppo o richiede una modifica specifica: "
+        "Supporti, staffe, adattatori<br><span class=\"grad\">e dime su misura.</span>",
+        "Realizzo componenti custom quando il pezzo commerciale non esiste, non combacia, presenta un costo sproporzionato o richiede una modifica specifica: "
         "supporti, staffe, adattatori, guide, carter, dime, scocche e piccoli lotti.",
         "Componenti custom",
     ),
     body="\n\n".join([
         section(
-            sec_head("Cosa realizzo", "Quattro famiglie ricorrenti.")
+            sec_head("Tipologie", "Quattro famiglie ricorrenti.")
             + cards([
-                ("Supporti e fissaggi", "Staffe e sostegni disegnati sull'oggetto reale e sul punto di ancoraggio disponibile, non adattati da un prodotto generico."),
-                ("Adattatori", "Interfacce che collegano due componenti nati per non stare insieme: cambio di attacco, di passo, di diametro o di orientamento."),
-                ("Scocche e coperture", "Involucri e carter attorno a componenti esistenti, con accessi, passaggi cavo e ritegni pensati sul contenuto reale."),
-                ("Dime e ausili di reparto", "Attrezzature che rendono ripetibile un'operazione oggi affidata alla manualit&agrave; e all'occhio dell'operatore."),
+                ("Supporti e fissaggi", "Staffe e sostegni progettati sull'oggetto reale e sul punto di ancoraggio effettivamente disponibile, non adattati da un prodotto generico."),
+                ("Adattatori", "Interfacce tra componenti non predisposti all'accoppiamento: variazione di attacco, di passo, di diametro o di orientamento."),
+                ("Scocche e coperture", "Involucri e carter attorno a componenti esistenti, con accessi, passaggi cavo e sistemi di ritegno definiti sul contenuto effettivo."),
+                ("Dime e ausili di reparto", "Attrezzature che rendono ripetibile un'operazione la cui riuscita dipende attualmente dalla manualit&agrave; dell'operatore."),
             ], cols=4),
             cls="paper",
         ),
         section(
-            sec_head("Quando conviene", "Le condizioni in cui ha senso economico.")
+            sec_head("Convenienza", "Condizioni di applicabilit&agrave; economica.")
             + pain([
-                ("CONDIZIONE 01", "Il ricambio non si trova", "Fuori produzione, oppure venduto solo dentro un assieme che costa molte volte il singolo pezzo che ti serve."),
-                ("CONDIZIONE 02", "Serve una geometria diversa", "Il commerciale esiste ma non combacia: attacchi sbagliati, ingombri fuori, interassi che non tornano."),
-                ("CONDIZIONE 03", "Serve provare prima", "Non sei ancora sicuro della soluzione e vuoi validarla su un pezzo reale prima di adottarla."),
-                ("CONDIZIONE 04", "La quantit&agrave; &egrave; bassa", "Da uno a poche decine di pezzi: numeri in cui attrezzare uno stampo &egrave; fuori discussione."),
+                ("CONDIZIONE 01", "Ricambio non reperibile", "Componente fuori produzione, oppure commercializzato esclusivamente all'interno di un assieme di costo largamente superiore al pezzo necessario."),
+                ("CONDIZIONE 02", "Geometria non corrispondente", "Il prodotto commerciale esiste ma non risulta compatibile: attacchi non conformi, ingombri eccedenti, interassi non corrispondenti."),
+                ("CONDIZIONE 03", "Necessit&agrave; di verifica preliminare", "La soluzione non &egrave; ancora consolidata e richiede validazione su un componente reale prima dell'adozione definitiva."),
+                ("CONDIZIONE 04", "Quantit&agrave; ridotte", "Da un pezzo a poche decine: volumi per i quali l'attrezzaggio di uno stampo &egrave; economicamente escluso."),
             ]),
         ),
         section(
             pain([
-                ("APPROCCIO REALISTICO", "Non tutto va stampato in 3D",
-                 "Se una lavorazione CNC, un taglio laser, un ricambio commerciale o una soluzione pi&ugrave; semplice sono pi&ugrave; adatti al tuo caso, conviene capirlo prima di spendere. Te lo dico in fase di valutazione, anche quando significa non fare il lavoro."),
+                ("CRITERIO", "La stampa 3D non &egrave; sempre la soluzione appropriata",
+                 "Quando una lavorazione CNC, un taglio laser, un ricambio commerciale o una soluzione costruttivamente pi&ugrave; semplice risultano pi&ugrave; adeguati, l'indicazione viene fornita in fase di valutazione, anche quando comporta la rinuncia alla commessa."),
                 ("QUANTIT&Agrave;", "Dal pezzo singolo alla piccola serie",
-                 "Il limite superiore dipende dalla geometria e dal tempo macchina e si valuta sul pezzo specifico. Se i numeri crescono al punto che lo stampaggio conviene, te lo segnalo invece di lasciarti pagare di pi&ugrave;."),
+                 "Il limite superiore dipende dalla geometria e dal tempo macchina e viene definito sul componente specifico. Qualora i volumi rendano conveniente lo stampaggio, l'indicazione viene fornita anzich&eacute; procedere con un costo superiore."),
             ]),
             cls="",
         ),
     ]),
-    cta=cta_band("Ti serve un pezzo che non esiste?",
-                 "Descrivimi il problema, non la soluzione. Al resto ci penso io, e ti rispondo entro 24/48h."),
+    cta=cta_band("Ti serve un componente che non esiste?",
+                 "Descrivi il problema tecnico, non la soluzione: l'impostazione progettuale rientra nel servizio. Risposta entro 24/48 ore."),
     jsonld=service_ld("Componenti su misura",
                       "Progettazione e produzione di componenti custom: supporti, staffe, adattatori, guide, carter, dime, scocche e piccoli lotti.",
                       "servizi/componenti-custom/"),
