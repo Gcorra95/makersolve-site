@@ -47,6 +47,46 @@
     addEventListener('resize', function () { if (innerWidth >= 1024 && open) setMenu(false); });
   }
 
+  /* ---------------- form Web3Forms senza redirect ---------------- */
+  document.querySelectorAll('form[action="https://api.web3forms.com/submit"]').forEach(function (form) {
+    var file = form.querySelector('input[type="file"]');
+    var status = form.querySelector('[data-form-status]');
+    var button = form.querySelector('button[type="submit"]');
+    var originalLabel = button ? button.textContent : '';
+
+    function showStatus(message, ok) {
+      if (!status) return;
+      status.textContent = message;
+      status.classList.remove('hidden', 'is-ok', 'is-error');
+      status.classList.add(ok ? 'is-ok' : 'is-error');
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (file && file.files[0] && file.files[0].size > 5 * 1024 * 1024) {
+        showStatus('L’allegato supera 5 MB. Invialo direttamente a giulio.corazzari@gmail.com.', false);
+        file.focus();
+        return;
+      }
+      if (button) { button.disabled = true; button.textContent = 'Invio in corso…'; }
+      if (status) status.classList.add('hidden');
+
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (response) { return response.json().then(function (data) { return { ok: response.ok, data: data }; }); })
+        .then(function (result) {
+          if (!result.ok || result.data.success === false) throw new Error(result.data.message || 'Invio non riuscito');
+          form.reset();
+          showStatus('Richiesta inviata correttamente. Riceverai una risposta entro 24/48 ore.', true);
+        })
+        .catch(function () {
+          showStatus('Invio non riuscito. Puoi scrivere direttamente a giulio.corazzari@gmail.com allegando i file alla mail.', false);
+        })
+        .finally(function () {
+          if (button) { button.disabled = false; button.textContent = originalLabel; }
+        });
+    });
+  });
+
   /* ---------------- fallback senza animazioni ---------------- */
   if (reduced || !('IntersectionObserver' in window)) {
     document.querySelectorAll('.rv').forEach(function (el) { el.classList.add('in'); });

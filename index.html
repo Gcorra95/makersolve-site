@@ -17,7 +17,7 @@
 <link rel="icon" type="image/png" href="/assets/logo.png">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/ms-tw.css?v=2">
+<link rel="stylesheet" href="/assets/ms-tw.css?v=4">
 </head>
 <body>
 
@@ -250,11 +250,11 @@
         <p class="text-[.95rem]">Gusci costruiti attorno a un'elettronica che hai già, con sedi per la scheda, fori per i cavi e aperture per i pulsanti.</p>
         <span class="mt-5 inline-flex items-center gap-2 text-[.84rem] font-medium text-copper transition-transform duration-300 group-hover:translate-x-1">Scopri il servizio →</span>
       </a>
-      <a href="/contatti/" class="card rv block group" data-d="5" aria-label="Contattami per elettronica e sensori">
+      <a href="/servizi/elettronica-sensori/" class="card rv block group" data-d="5" aria-label="Scopri il servizio di elettronica e sensori">
         <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">06</div>
         <h3 class="text-[1.2rem] mb-2.5">Elettronica e sensori</h3>
         <p class="text-[.95rem]">Piccoli sistemi con sensori, cablaggi o comandi quando il componente deve integrare anche una funzione elettronica.</p>
-        <span class="mt-5 inline-flex items-center gap-2 text-[.84rem] font-medium text-copper transition-transform duration-300 group-hover:translate-x-1">Parliamone →</span>
+        <span class="mt-5 inline-flex items-center gap-2 text-[.84rem] font-medium text-copper transition-transform duration-300 group-hover:translate-x-1">Scopri il servizio →</span>
       </a>
     </div>
 
@@ -534,6 +534,7 @@
             <option>Una scocca o un contenitore</option>
             <option>Un disegno 3D da zero</option>
             <option>La copia di un pezzo che ho</option>
+            <option>Elettronica, sensori o controllo</option>
             <option>Altro / da definire</option>
           </select>
         </div>
@@ -546,6 +547,7 @@
       <div class="field mb-4">
         <label for="file">Fotografie, schizzi o file 3D — massimo 5 MB</label>
         <input id="file" name="allegato" type="file" accept=".jpg,.jpeg,.png,.pdf,.step,.stp,.stl,.3mf,.zip" class="!py-2.5 text-[.86rem] text-bone-dim">
+        <p class="mt-2 text-[.78rem] text-bone-dimmer">Dimensione massima: 5 MB. Per allegati più grandi, invia il file direttamente a <a href="mailto:giulio.corazzari@gmail.com" class="text-copper-light underline underline-offset-2">giulio.corazzari@gmail.com</a>.</p>
       </div>
 
       <label class="flex gap-3 items-start text-[.82rem] text-bone-dimmer leading-relaxed">
@@ -554,6 +556,7 @@
       </label>
 
       <button type="submit" class="btn btn-primary btn-lg w-full mt-6">Invia la richiesta</button>
+      <div data-form-status class="mt-4 hidden rounded-xl border px-4 py-3 text-[.88rem]" role="status" aria-live="polite"></div>
       <p class="mt-3.5 text-[.8rem] text-bone-dimmer text-center">Rispondo in 24/48 ore. Nessun costo.</p>
     </form>
   </div>
@@ -620,6 +623,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="/assets/ms-tw.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=4" defer></script>
 </body>
 </html>
