@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Font self-hosted — nessuna chiamata a Google, nessun dato
+   del visitatore trasmesso a terzi.
+   Entrambi variabili: un solo file copre tutti i pesi.
+   ============================================================ */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/assets/fonts/space-grotesk-latin-var.woff2') format('woff2-variations');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/inter-latin-var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-ink text-bone font-sans antialiased overflow-x-hidden;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold tracking-tightest;
+    line-height: 1.04;
+  }
+  ::selection { background: theme('colors.copper.DEFAULT'); color: #fff; }
+  :focus-visible { outline: 2px solid theme('colors.copper.light'); outline-offset: 3px; }
+}
+
+@layer components {
+  .wrap { @apply max-w-wrap mx-auto px-6; }
+
+  /* ---------- tipografia ---------- */
+  .eyebrow {
+    @apply font-mono text-[.7rem] font-medium uppercase text-copper-light;
+    letter-spacing: .2em;
+  }
+  .lead { @apply text-bone-dim; font-size: clamp(1.05rem, 1.9vw, 1.3rem); line-height: 1.6; }
+  .h-hero { font-size: clamp(2.5rem, 6.4vw, 4.9rem); }
+  .h-sec  { font-size: clamp(2rem, 4.4vw, 3.3rem); }
+
+  /* ---------- bottoni ---------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+           text-[.94rem] font-medium border border-transparent whitespace-nowrap
+           transition-all duration-300 ease-smooth;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    @apply bg-copper text-white;
+    box-shadow: 0 6px 26px theme('colors.copper.dim');
+  }
+  .btn-primary:hover {
+    @apply bg-copper-light text-ink;
+    box-shadow: 0 14px 40px theme('colors.copper.dim');
+  }
+  .btn-ghost { @apply border-white/20 text-bone; }
+  .btn-ghost:hover { @apply border-bone bg-white/5; }
+  .btn-lg { @apply px-8 py-4 text-base; }
+
+  /* ---------- superfici ---------- */
+  .card {
+    @apply rounded-2xl border border-white/10 bg-ink-800 p-7
+           transition-all duration-500 ease-smooth;
+  }
+  .card:hover {
+    @apply border-copper/40 bg-ink-700;
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0,0,0,.45);
+  }
+  .card-num {
+    @apply font-mono text-[.72rem] tracking-[.16em] text-copper-light mb-4 block;
+  }
+
+  .panel { @apply bg-paper text-paper-ink; }
+  .panel .eyebrow { @apply text-copper; }
+  .panel .lead { @apply text-paper-dim; }
+  .panel .card { @apply bg-white border-paper-line; }
+  .panel .card:hover { @apply border-copper/50 bg-white; box-shadow: 0 24px 60px rgba(28,25,23,.10); }
+  .panel .card h3 { @apply text-paper-ink; }
+  .panel .card p  { @apply text-paper-dim; }
+
+  /* ---------- griglia tecnica di sfondo ---------- */
+  .techgrid {
+    background-image:
+      linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+    background-size: 72px 72px;
+    @apply animate-drift;
+  }
+  .halo {
+    background: radial-gradient(circle, rgba(200,113,55,.24), transparent 62%);
+    filter: blur(38px);
+    @apply animate-breathe;
+  }
+
+  /* ---------- specifiche ---------- */
+  .spec {
+    @apply grid gap-6 px-7 py-6 border-b border-white/10;
+    grid-template-columns: 240px 1fr;
+  }
+  .spec:last-child { @apply border-b-0; }
+  .spec dt { @apply font-semibold text-[.95rem] text-bone; }
+  .spec dd { @apply m-0 text-[.95rem] text-bone-dim; }
+  @media (max-width: 760px) { .spec { grid-template-columns: 1fr; gap: .35rem; } }
+
+  .chip {
+    @apply font-mono text-[.72rem] px-3 py-1.5 rounded-full
+           bg-copper/10 text-copper-light border border-copper/25;
+  }
+
+  /* ---------- form ---------- */
+  .field label { @apply block text-[.82rem] text-bone-dim mb-2 font-medium; }
+  .field input, .field select, .field textarea {
+    @apply w-full px-4 py-3 rounded-xl border border-white/15 bg-ink-800 text-bone
+           text-[.95rem] transition-all duration-200;
+    font-family: inherit;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    @apply outline-none border-copper;
+    box-shadow: 0 0 0 3px rgba(200,113,55,.18);
+  }
+  .field textarea { @apply resize-y min-h-[130px]; }
+
+  /* ---------- animazioni allo scroll ---------- */
+  .rv { opacity: 0; transform: translateY(30px); }
+  .rv.in { opacity: 1; transform: none; transition: opacity .9s var(--e), transform .9s var(--e); }
+
+  /* titolo che si compone riga per riga */
+  .lines span { display: block; overflow: hidden; }
+  .lines span > i {
+    display: block; font-style: inherit;
+    transform: translateY(105%);
+    transition: transform 1s cubic-bezier(.16,1,.3,1);
+  }
+  .lines.in span > i { transform: none; }
+
+  .stroke-text {
+    -webkit-text-stroke: 1px rgba(250,250,249,.22);
+    color: transparent;
+  }
+}
+
+:root { --e: cubic-bezier(.16,1,.3,1); }
+
+/* Le immagini generate hanno linee blu: la rotazione di tinta le riporta
+   sull'accento rame, cosi' la palette resta coerente. */
+.tint-copper { filter: hue-rotate(168deg) saturate(1.25) brightness(1.05); }
+
+/* parallasse guidata da JS, con variabile CSS */
+.parallax { will-change: transform; transform: translate3d(0, var(--py, 0px), 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rv { opacity: 1; transform: none; }
+  .lines span > i { transform: none; }
+  .parallax { transform: none !important; }
+}

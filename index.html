@@ -3,369 +3,482 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MakerSolve — Progettazione e stampa 3D per aziende | Mirandola (MO)</title>
-<meta name="description" content="Progetto e produco pezzi su misura, attrezzature e prototipi funzionali per aziende. CAD, reverse engineering, stampa 3D FDM e resina. Risposta in 24/48h. Mirandola, Modena.">
+<title>MakerSolve — Progettazione CAD e stampa 3D per aziende | Mirandola (MO)</title>
+<meta name="description" content="Progettazione CAD, reverse engineering e stampa 3D di componenti su misura, attrezzature di reparto e prototipi funzionali per aziende. Valutazione di fattibilità in 24/48 ore. Mirandola, Modena.">
 <link rel="canonical" href="https://makersolve.com/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="MakerSolve — Progettazione e stampa 3D per aziende">
-<meta property="og:description" content="Dal problema al pezzo funzionante. CAD, reverse engineering e stampa 3D per aziende. Risposta in 24/48h.">
+<meta property="og:title" content="MakerSolve — Progettazione CAD e stampa 3D per aziende">
+<meta property="og:description" content="Componenti su misura, attrezzature di reparto e prototipi funzionali. Valutazione di fattibilità in 24/48 ore. Mirandola (MO).">
 <meta property="og:url" content="https://makersolve.com/">
 <meta property="og:image" content="https://makersolve.com/assets/og-card.jpg">
 <meta property="og:locale" content="it_IT">
 
 <link rel="icon" type="image/png" href="/assets/logo.png">
-<link rel="stylesheet" href="assets/ms.css?v=2">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ms-tw.css?v=1">
 </head>
 <body>
 
-<!-- ===================== NAV ===================== -->
-<nav class="nav" id="nav">
-  <div class="wrap">
-    <a href="/" class="brand"><span class="dot"></span>MakerSolve</a>
-    <div class="navlinks">
-      <a href="#servizi">Servizi</a>
-      <a href="#metodo">Metodo</a>
-      <a href="#capacita">Capacità tecniche</a>
-      <a href="#lavori">Lavori</a>
-      <a href="#limiti">Limiti</a>
+<!-- ============================ NAV ============================ -->
+<nav id="nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-500 ease-smooth">
+  <div class="wrap flex items-center gap-3 sm:gap-8 h-[68px]">
+    <a href="/" class="flex items-center gap-2.5 font-display font-semibold tracking-tight text-[1.05rem]">
+      <span class="w-2 h-2 rounded-sm bg-copper rotate-45 shadow-[0_0_16px_rgba(200,113,55,.7)]"></span>
+      MakerSolve
+    </a>
+    <div class="ml-auto hidden lg:flex gap-8 text-[.9rem] text-bone-dim">
+      <a href="#servizi"  class="hover:text-bone transition-colors duration-200">Servizi</a>
+      <a href="#metodo"   class="hover:text-bone transition-colors duration-200">Metodo</a>
+      <a href="#capacita" class="hover:text-bone transition-colors duration-200">Capacità tecniche</a>
+      <a href="#lavori"   class="hover:text-bone transition-colors duration-200">Lavori</a>
+      <a href="#ambiti"   class="hover:text-bone transition-colors duration-200">Ambiti</a>
     </div>
-    <a href="#contatto" class="btn btn-primary">Richiedi fattibilità</a>
+    <a href="#contatto" class="btn btn-primary ml-auto lg:ml-0 !px-4 sm:!px-6 !text-[.85rem] sm:!text-[.94rem]">
+      <span class="hidden sm:inline">Richiedi fattibilità</span><span class="sm:hidden">Preventivo</span>
+    </a>
+
+    <button id="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobilemenu"
+            class="lg:hidden w-10 h-10 -mr-2 grid place-items-center rounded-lg border border-white/15 text-bone transition-colors hover:border-copper">
+      <span class="relative block w-[18px] h-[12px]">
+        <span class="burger-l absolute left-0 top-0 w-full h-[1.5px] bg-current transition-transform duration-300 ease-smooth"></span>
+        <span class="burger-l absolute left-0 top-[5px] w-full h-[1.5px] bg-current transition-opacity duration-300"></span>
+        <span class="burger-l absolute left-0 top-[10px] w-full h-[1.5px] bg-current transition-transform duration-300 ease-smooth"></span>
+      </span>
+    </button>
+  </div>
+
+  <div id="mobilemenu"
+       class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-smooth bg-ink/95 backdrop-blur-xl border-b border-white/10">
+    <div class="wrap py-5 flex flex-col gap-1">
+      <a href="#servizi"  class="py-2.5 text-bone-dim hover:text-bone transition-colors">Servizi</a>
+      <a href="#metodo"   class="py-2.5 text-bone-dim hover:text-bone transition-colors">Metodo</a>
+      <a href="#capacita" class="py-2.5 text-bone-dim hover:text-bone transition-colors">Capacità tecniche</a>
+      <a href="#lavori"   class="py-2.5 text-bone-dim hover:text-bone transition-colors">Lavori</a>
+      <a href="#ambiti"   class="py-2.5 text-bone-dim hover:text-bone transition-colors">Ambiti</a>
+      <a href="tel:+393466088830" data-site-phone-link class="py-2.5 text-copper-light font-medium">Chiama <span data-site-phone>346 608 8830</span></a>
+    </div>
   </div>
 </nav>
 
-<!-- ===================== HERO ===================== -->
-<header class="hero">
-  <div class="hero-media"><img src="assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"></div>
-  <div class="hero-scrim"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-halo"></div>
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow rv">Progettazione CAD e stampa 3D · Mirandola, Modena</span>
-      <h1 class="rv" data-d="1">Componenti su misura <span class="grad">per la tua produzione.</span></h1>
-      <p class="lead rv" data-d="2">
-        Progettiamo e realizziamo componenti su misura, attrezzature di produzione e prototipi
-        funzionali per aziende che devono risolvere un problema meccanico specifico senza disporre
-        dei volumi richiesti da un fornitore tradizionale.
+<!-- ============================ HERO ============================ -->
+<header class="relative min-h-[100svh] flex items-center overflow-hidden pt-32 pb-20">
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <img src="/assets/gen-hero-bg.webp" alt="" aria-hidden="true" fetchpriority="high"
+         class="tint-copper parallax w-full h-[118%] object-cover opacity-40 animate-kenburns">
+  </div>
+  <div class="absolute inset-0 z-[1]"
+       style="background:linear-gradient(92deg,#12100E 6%,rgba(18,16,14,.95) 34%,rgba(18,16,14,.55) 62%,rgba(18,16,14,.75) 100%),linear-gradient(to top,#12100E 3%,transparent 38%)"></div>
+  <div class="absolute inset-[-12%] z-[1] techgrid"
+       style="mask-image:radial-gradient(ellipse 80% 62% at 42% 44%,#000 22%,transparent 76%);-webkit-mask-image:radial-gradient(ellipse 80% 62% at 42% 44%,#000 22%,transparent 76%)"></div>
+  <div id="halo" class="halo absolute z-[1] rounded-full pointer-events-none"
+       style="left:44%;top:38%;width:min(1000px,120vw);aspect-ratio:1;transform:translate(-50%,-50%)"></div>
+
+  <div class="wrap relative z-10">
+    <div class="max-w-[880px]">
+      <span class="eyebrow rv block mb-5">Progettazione CAD e stampa 3D · Mirandola, Modena</span>
+
+      <h1 class="lines h-hero mb-7">
+        <span><i>Componenti su misura</i></span>
+        <span><i class="text-copper-light">per chi non li trova</i></span>
+        <span><i class="stroke-text">a catalogo.</i></span>
+      </h1>
+
+      <p class="lead rv max-w-[62ch] mb-9" data-d="1">
+        Progettazione CAD, reverse engineering e stampa 3D di componenti, attrezzature di reparto
+        e prototipi funzionali. Per aziende che devono risolvere un problema meccanico specifico
+        senza disporre dei volumi richiesti da un fornitore tradizionale.
       </p>
-      <div class="hero-cta rv" data-d="3">
+
+      <div class="flex flex-wrap gap-3 rv" data-d="2">
         <a href="#contatto" class="btn btn-primary btn-lg">Richiedi una valutazione di fattibilità</a>
         <a href="#capacita" class="btn btn-ghost btn-lg">Capacità tecniche</a>
       </div>
-      <div class="hero-note rv" data-d="4">
-        <span class="pulse-dot"></span>
-        Risposta tecnica in 24/48 ore · Valutazione di fattibilità gratuita
-      </div>
-    </div>
 
+      <p class="mt-7 text-[.86rem] text-bone-dimmer flex items-center gap-2.5 rv" data-d="3">
+        <span class="w-[7px] h-[7px] rounded-full bg-copper-light animate-ring"></span>
+        Risposta tecnica in 24/48 ore · Valutazione gratuita, senza vincoli
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 rv" data-d="4">
+    <div class="w-[26px] h-[42px] rounded-full border border-white/20 flex justify-center pt-2.5">
+      <span class="w-[3px] h-[7px] rounded-full bg-copper-light" id="scrolldot"></span>
+    </div>
   </div>
 </header>
 
-<!-- ===================== METRICHE ===================== -->
-<div class="metrics">
-  <div class="wrap">
-    <div class="metric rv"><div class="n" data-count="3">0</div><div class="l">stampanti in officina<br>2 FDM · 1 resina</div></div>
-    <div class="metric rv" data-d="1"><div class="n"><span data-count="24">0</span>/<span data-count="48">0</span>h</div><div class="l">tempo di risposta<br>a una richiesta tecnica</div></div>
-    <div class="metric rv" data-d="2"><div class="n" data-count="7">0</div><div class="l">famiglie di materiali<br>tecnici disponibili</div></div>
-    <div class="metric rv" data-d="3"><div class="n">1&nbsp;→&nbsp;n</div><div class="l">dal pezzo singolo<br>alla piccola serie</div></div>
+<!-- ============================ METRICHE ============================ -->
+<section class="border-y border-white/10 bg-ink-800">
+  <div class="wrap grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 !px-0">
+    <div class="bg-ink-800 py-9 px-6 text-center rv">
+      <div class="font-display font-semibold text-[clamp(1.9rem,3.6vw,2.8rem)] leading-none tracking-tightest" data-count="3">0</div>
+      <div class="mt-2.5 text-[.82rem] text-bone-dimmer leading-snug">stampanti in officina<br>2 FDM · 1 resina</div>
+    </div>
+    <div class="bg-ink-800 py-9 px-6 text-center rv" data-d="1">
+      <div class="font-display font-semibold text-[clamp(1.9rem,3.6vw,2.8rem)] leading-none tracking-tightest"><span data-count="24">0</span>/<span data-count="48">0</span>h</div>
+      <div class="mt-2.5 text-[.82rem] text-bone-dimmer leading-snug">valutazione tecnica<br>di fattibilità</div>
+    </div>
+    <div class="bg-ink-800 py-9 px-6 text-center rv" data-d="2">
+      <div class="font-display font-semibold text-[clamp(1.9rem,3.6vw,2.8rem)] leading-none tracking-tightest" data-count="8">0</div>
+      <div class="mt-2.5 text-[.82rem] text-bone-dimmer leading-snug">famiglie di materiali<br>tecnici disponibili</div>
+    </div>
+    <div class="bg-ink-800 py-9 px-6 text-center rv" data-d="3">
+      <div class="font-display font-semibold text-[clamp(1.9rem,3.6vw,2.8rem)] leading-none tracking-tightest">1&nbsp;→&nbsp;n</div>
+      <div class="mt-2.5 text-[.82rem] text-bone-dimmer leading-snug">dal pezzo singolo<br>alla piccola serie</div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- ===================== PROBLEMI ===================== -->
-<section id="problemi">
+<!-- ============================ CASI D'USO ============================ -->
+<section class="py-28">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Quando ha senso scrivermi</span>
-      <h2>Quattro situazioni che la fornitura tradizionale non copre.</h2>
-      <p class="lead">Non lavoriamo sui volumi, ma sui componenti che i volumi non giustificano: necessari in tempi brevi, in pochi esemplari, non convenienti da attrezzare.</p>
+    <div class="max-w-[780px] mb-14">
+      <span class="eyebrow rv block mb-4">Quando serve</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Quattro situazioni che la fornitura tradizionale non copre.</h2>
+      <p class="lead rv" data-d="2">
+        Non si lavora sui volumi, ma sui componenti che i volumi non giustificano:
+        necessari in tempi brevi, in pochi esemplari, non convenienti da attrezzare.
+      </p>
     </div>
 
-    <div class="pain">
-      <div class="rv">
-        <span class="q">CASO 01</span>
-        <h3>Un componente fuori produzione ha fermato una macchina</h3>
-        <p>Il ricambio è fuori produzione, il fornitore non risponde, la macchina è ferma. Se il componente è geometricamente ricostruibile e non è un elemento strutturale critico, procediamo con rilievo, modellazione e riproduzione.</p>
+    <div class="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+      <div class="bg-ink-800 p-8 transition-colors duration-500 hover:bg-ink-700 rv">
+        <span class="card-num">CASO 01</span>
+        <h3 class="text-xl mb-2.5">Un ricambio fuori produzione blocca una macchina</h3>
+        <p class="text-[.95rem] text-bone-dim">Il componente non è più disponibile e il fornitore non risponde. Se la geometria è ricostruibile e non si tratta di un elemento strutturale critico, il pezzo viene rilevato, modellato e riprodotto.</p>
       </div>
-      <div class="rv" data-d="1">
-        <span class="q">CASO 02</span>
-        <h3>Ti serve un'attrezzatura che non è a catalogo</h3>
-        <p>Dime, posaggi, maschere di montaggio e supporti per il collaudo. Attrezzatura progettata sul tuo processo, non adattata da un prodotto generico che costa molte volte tanto.</p>
+      <div class="bg-ink-800 p-8 transition-colors duration-500 hover:bg-ink-700 rv" data-d="1">
+        <span class="card-num">CASO 02</span>
+        <h3 class="text-xl mb-2.5">L'attrezzatura necessaria non è a catalogo</h3>
+        <p class="text-[.95rem] text-bone-dim">Dime, posaggi, maschere di montaggio e supporti per il collaudo, progettati sul ciclo di lavoro reale anziché adattati da un prodotto generico che costa molte volte tanto.</p>
       </div>
-      <div class="rv" data-d="2">
-        <span class="q">CASO 03</span>
-        <h3>Devi validare un'idea prima di investire in stampi</h3>
-        <p>Prototipi funzionali per la verifica di ingombri, accoppiamenti ed ergonomia. Iterazioni rapide sul modello CAD prima di impegnare capitale in attrezzature definitive.</p>
+      <div class="bg-ink-800 p-8 transition-colors duration-500 hover:bg-ink-700 rv" data-d="2">
+        <span class="card-num">CASO 03</span>
+        <h3 class="text-xl mb-2.5">Una soluzione va validata prima di investire</h3>
+        <p class="text-[.95rem] text-bone-dim">Prototipi funzionali per verificare ingombri, accoppiamenti ed ergonomia. Iterazioni rapide sul modello CAD prima di impegnare capitale in attrezzature definitive.</p>
       </div>
-      <div class="rv" data-d="3">
-        <span class="q">CASO 04</span>
-        <h3>Assenza di documentazione tecnica</h3>
-        <p>Il punto di partenza può essere una fotografia, un componente rotto, uno schizzo o una descrizione a voce. La modellazione CAD la facciamo noi: non serve un file 3D per avviare la valutazione.</p>
+      <div class="bg-ink-800 p-8 transition-colors duration-500 hover:bg-ink-700 rv" data-d="3">
+        <span class="card-num">CASO 04</span>
+        <h3 class="text-xl mb-2.5">Manca la documentazione tecnica</h3>
+        <p class="text-[.95rem] text-bone-dim">Il punto di partenza può essere una fotografia, un componente rotto, uno schizzo o una descrizione a voce. La modellazione CAD rientra nel servizio: non serve un file 3D per iniziare.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVIZI ===================== -->
-<section id="servizi" class="paper">
+<!-- ============================ SERVIZI ============================ -->
+<section id="servizi" class="panel py-28">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Servizi</span>
-      <h2>Dal requisito al componente funzionante.</h2>
-      <p class="lead">Non siamo un service di stampa 3D a cui invii un STL. Il contenuto tecnico sta nella progettazione CAD: la macchina è l'ultima fase del processo.</p>
+    <div class="max-w-[780px] mb-14">
+      <span class="eyebrow rv block mb-4">Servizi</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Dal requisito al componente funzionante.</h2>
+      <p class="lead rv" data-d="2">
+        Non un service di stampa 3D su file fornito: il contenuto tecnico sta nella progettazione,
+        la macchina è l'ultima fase del processo.
+      </p>
     </div>
 
-    <div class="grid-3">
-      <div class="card rv"><div class="ico">01</div>
-        <h3>Progettazione CAD</h3>
-        <p>Modellazione parametrica di componenti custom a partire da requisiti funzionali, vincoli di ingombro e condizioni di esercizio reali. Consegniamo file sorgente e STEP.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card rv">
+        <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">01</div>
+        <h3 class="text-[1.2rem] mb-2.5">Progettazione CAD</h3>
+        <p class="text-[.95rem]">Modellazione parametrica di componenti custom a partire da requisiti funzionali, vincoli di ingombro e condizioni di esercizio reali. Consegna in formato sorgente e STEP.</p>
       </div>
-      <div class="card rv" data-d="1"><div class="ico">02</div>
-        <h3>Reverse engineering</h3>
-        <p>Ricostruiamo il modello 3D dal campione fisico, con rilievo dimensionale diretto. Per ricambi non più reperibili o componenti privi di documentazione.</p>
+      <div class="card rv" data-d="1">
+        <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">02</div>
+        <h3 class="text-[1.2rem] mb-2.5">Reverse engineering</h3>
+        <p class="text-[.95rem]">Ricostruzione del modello 3D dal campione fisico, con rilievo dimensionale diretto. Per ricambi non più reperibili o componenti privi di documentazione.</p>
       </div>
-      <div class="card rv" data-d="2"><div class="ico">03</div>
-        <h3>Attrezzature di reparto</h3>
-        <p>Dime, posaggi, maschere e supporti progettati sul tuo ciclo di lavoro, per rendere ripetibile un'operazione che oggi dipende dalla manualità dell'operatore.</p>
+      <div class="card rv" data-d="2">
+        <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">03</div>
+        <h3 class="text-[1.2rem] mb-2.5">Attrezzature di reparto</h3>
+        <p class="text-[.95rem]">Dime, posaggi, maschere e supporti progettati sul ciclo di lavoro, per rendere ripetibile un'operazione oggi affidata alla manualità dell'operatore.</p>
       </div>
-      <div class="card rv" data-d="3"><div class="ico">04</div>
-        <h3>Prototipazione funzionale</h3>
-        <p>Prototipi da provare sul campo. Scegliamo il materiale in funzione del carico previsto, della temperatura e dell'ambiente di esercizio.</p>
+      <div class="card rv" data-d="3">
+        <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">04</div>
+        <h3 class="text-[1.2rem] mb-2.5">Prototipazione funzionale</h3>
+        <p class="text-[.95rem]">Prototipi destinati alla prova sul campo. Materiale selezionato in funzione del carico previsto, della temperatura e dell'ambiente di esercizio.</p>
       </div>
-      <div class="card rv" data-d="4"><div class="ico">05</div>
-        <h3>Scocche e contenitori tecnici</h3>
-        <p>Involucri su misura per elettronica esistente: alloggiamenti per PCB, passaggi cavo, sistemi di ritegno, accessi per connettori e organi di comando.</p>
+      <div class="card rv" data-d="4">
+        <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">05</div>
+        <h3 class="text-[1.2rem] mb-2.5">Scocche e contenitori</h3>
+        <p class="text-[.95rem]">Involucri su misura per elettronica esistente: alloggiamenti PCB, passaggi cavo, sistemi di ritegno, accessi per connettori e comandi.</p>
       </div>
-      <div class="card rv" data-d="5"><div class="ico">06</div>
-        <h3>Integrazione elettronica</h3>
-        <p>Quando al componente serve una funzione attiva: cablaggi, sensori e piccola elettronica di controllo integrati nel progetto meccanico.</p>
+      <div class="card rv" data-d="5">
+        <div class="w-11 h-11 rounded-xl grid place-items-center bg-copper/10 text-copper font-mono text-[.85rem] font-semibold mb-5">06</div>
+        <h3 class="text-[1.2rem] mb-2.5">Integrazione elettronica</h3>
+        <p class="text-[.95rem]">Quando al componente serve una funzione attiva: cablaggi, sensori e piccola logica di controllo integrati nel progetto meccanico.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== MARQUEE MATERIALI ===================== -->
-<div class="marquee on-media" aria-hidden="true">
-  <div class="band"><img src="assets/gen-materials.webp" alt=""></div>
-  <div class="marquee-track">
+<!-- ============================ MATERIALI ============================ -->
+<div class="relative overflow-hidden border-y border-white/10 py-9 bg-ink" aria-hidden="true">
+  <div class="absolute inset-0 z-0">
+    <img src="/assets/gen-materials.webp" alt="" loading="lazy" class="w-full h-full object-cover opacity-30">
+    <div class="absolute inset-0" style="background:linear-gradient(90deg,#12100E,rgba(18,16,14,.45) 22%,rgba(18,16,14,.45) 78%,#12100E)"></div>
+  </div>
+  <div class="relative z-10 flex gap-14 w-max animate-marquee font-mono text-[.84rem] tracking-[.08em] text-bone-dim whitespace-nowrap">
     <span>PLA</span><span>PETG</span><span>ASA</span><span>ABS</span><span>TPU · FLESSIBILE</span><span>NYLON CF</span><span>NYLON GF</span><span>RESINA</span><span>MATERIALI SPECIALI SU RICHIESTA</span>
     <span>PLA</span><span>PETG</span><span>ASA</span><span>ABS</span><span>TPU · FLESSIBILE</span><span>NYLON CF</span><span>NYLON GF</span><span>RESINA</span><span>MATERIALI SPECIALI SU RICHIESTA</span>
   </div>
 </div>
 
-<!-- ===================== METODO ===================== -->
-<section id="metodo" class="method has-bg">
-  <div class="sec-bg"><img src="assets/gen-exploded.webp" alt="" loading="lazy"></div>
-  <div class="wrap method-wrap">
-    <div class="method-sticky rv">
-      <span class="eyebrow">Metodo</span>
-      <h2 style="margin:16px 0 20px">Quattro fasi,<br>definite in partenza.</h2>
-      <p class="lead">Prima di iniziare sai cosa ricevi, quando e a quali condizioni. Se il componente non è fattibile te lo comunichiamo alla prima fase, non alla terza.</p>
-      <a href="#contatto" class="btn btn-primary btn-lg" style="margin-top:28px">Avvia la valutazione</a>
+<!-- ============================ METODO ============================ -->
+<section id="metodo" class="relative py-28 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src="/assets/gen-exploded.webp" alt="" loading="lazy" class="tint-copper parallax w-full h-[118%] object-cover opacity-[.18]">
+    <div class="absolute inset-0" style="background:radial-gradient(ellipse 72% 62% at 50% 50%,transparent,#12100E 88%)"></div>
+  </div>
+
+  <div class="wrap relative z-10 grid lg:grid-cols-[.85fr_1.15fr] gap-16 items-start">
+    <div class="lg:sticky lg:top-28">
+      <span class="eyebrow rv block mb-4">Metodo</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Quattro fasi,<br>definite in partenza.</h2>
+      <p class="lead rv mb-8" data-d="2">
+        Oggetto della fornitura, tempi e condizioni sono definiti prima dell'avvio.
+        Un'eventuale non fattibilità viene comunicata alla prima fase, non alla terza.
+      </p>
+      <a href="#contatto" class="btn btn-primary btn-lg rv" data-d="3">Avvia la valutazione</a>
+
+      <div class="mt-10 h-[3px] w-full max-w-[220px] bg-white/10 rounded-full overflow-hidden rv" data-d="4">
+        <div id="methodbar" class="h-full bg-copper origin-left scale-x-0 transition-transform duration-500 ease-smooth"></div>
+      </div>
     </div>
 
-    <div class="steps" id="steps">
-      <div class="step rv"><span class="bar"></span>
-        <span class="num">FASE 01 · CLIENTE</span>
-        <h3>Trasmissione dei dati</h3>
-        <p>Fotografie, misure di massima, un disegno a mano o il componente rotto. Ci servono la funzione richiesta, l'ambiente di esercizio e la quantità. Non serve un file CAD.</p>
-      </div>
-      <div class="step rv" data-d="1"><span class="bar"></span>
-        <span class="num">FASE 02 · MAKERSOLVE</span>
-        <h3>Valutazione di fattibilità</h3>
-        <p>Entro 24/48 ore ricevi l'esito tecnico: fattibilità, materiale, limiti dimensionali e condizioni di realizzazione. In caso negativo, ti indichiamo la motivazione.</p>
-      </div>
-      <div class="step rv" data-d="2"><span class="bar"></span>
-        <span class="num">FASE 03 · MAKERSOLVE</span>
-        <h3>Progettazione e produzione</h3>
-        <p>Modellazione CAD, scelta del processo (FDM o resina) e realizzazione. Sui componenti complessi condividiamo il modello prima di produrre, così le correzioni avvengono a schermo e non su un pezzo già fatto.</p>
-      </div>
-      <div class="step rv" data-d="3"><span class="bar"></span>
-        <span class="num">FASE 04 · CONGIUNTA</span>
-        <h3>Validazione e consegna</h3>
-        <p>La validazione avviene in condizioni di esercizio. Eventuali scostamenti comportano correzione del modello e nuova realizzazione: è il vantaggio di produrre senza stampi.</p>
-      </div>
+    <div class="flex flex-col gap-5" id="steps">
+      <article class="step relative rounded-2xl border border-white/10 bg-ink-800 p-8 overflow-hidden transition-all duration-500 ease-smooth rv">
+        <span class="bar absolute left-0 inset-y-0 w-[3px] bg-copper origin-top scale-y-0 transition-transform duration-700 ease-smooth"></span>
+        <span class="card-num">FASE 01 · ACQUISIZIONE</span>
+        <h3 class="text-xl mb-2.5">Trasmissione dei dati</h3>
+        <p class="text-[.96rem] text-bone-dim">Fotografie, misure di massima, un disegno a mano o il componente rotto. Servono la funzione richiesta, l'ambiente di esercizio e la quantità. Un file CAD non è necessario.</p>
+      </article>
+      <article class="step relative rounded-2xl border border-white/10 bg-ink-800 p-8 overflow-hidden transition-all duration-500 ease-smooth rv" data-d="1">
+        <span class="bar absolute left-0 inset-y-0 w-[3px] bg-copper origin-top scale-y-0 transition-transform duration-700 ease-smooth"></span>
+        <span class="card-num">FASE 02 · VALUTAZIONE</span>
+        <h3 class="text-xl mb-2.5">Esito di fattibilità</h3>
+        <p class="text-[.96rem] text-bone-dim">Entro 24/48 ore viene fornito l'esito tecnico: fattibilità, materiale indicato, limiti dimensionali e condizioni di realizzazione. In caso negativo viene esplicitata la motivazione.</p>
+      </article>
+      <article class="step relative rounded-2xl border border-white/10 bg-ink-800 p-8 overflow-hidden transition-all duration-500 ease-smooth rv" data-d="2">
+        <span class="bar absolute left-0 inset-y-0 w-[3px] bg-copper origin-top scale-y-0 transition-transform duration-700 ease-smooth"></span>
+        <span class="card-num">FASE 03 · ESECUZIONE</span>
+        <h3 class="text-xl mb-2.5">Progettazione e produzione</h3>
+        <p class="text-[.96rem] text-bone-dim">Modellazione CAD, scelta del processo (FDM o resina) e realizzazione. Sui componenti complessi il modello viene condiviso prima della produzione, così le correzioni avvengono a schermo e non su un pezzo già prodotto.</p>
+      </article>
+      <article class="step relative rounded-2xl border border-white/10 bg-ink-800 p-8 overflow-hidden transition-all duration-500 ease-smooth rv" data-d="3">
+        <span class="bar absolute left-0 inset-y-0 w-[3px] bg-copper origin-top scale-y-0 transition-transform duration-700 ease-smooth"></span>
+        <span class="card-num">FASE 04 · VALIDAZIONE</span>
+        <h3 class="text-xl mb-2.5">Verifica e consegna</h3>
+        <p class="text-[.96rem] text-bone-dim">Il componente viene verificato in condizioni di esercizio. Eventuali scostamenti comportano correzione del modello e nuova realizzazione: nessuno stampo, nessun costo di riattrezzaggio.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ===================== CAPACITÀ TECNICHE ===================== -->
-<section id="capacita" class="paper-2">
+<!-- ============================ CAPACITÀ ============================ -->
+<section id="capacita" class="py-28 bg-ink-800 border-y border-white/10">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Capacità tecniche</span>
-      <h2>Capacità dichiarate, senza arrotondamenti.</h2>
-      <p class="lead">Dichiariamo i limiti della nostra officina in partenza, invece di lasciarli emergere a componente consegnato.</p>
+    <div class="max-w-[780px] mb-12">
+      <span class="eyebrow rv block mb-4">Capacità tecniche</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Capacità dichiarate,<br>senza arrotondamenti.</h2>
+      <p class="lead rv" data-d="2">I limiti dell'officina sono dichiarati in partenza, anziché emergere a componente consegnato.</p>
     </div>
 
-    <dl class="specs rv">
-      <div class="spec-row">
+    <dl class="rounded-2xl border border-white/10 bg-ink overflow-hidden rv" data-d="3">
+      <div class="spec">
         <dt>Parco macchine</dt>
-        <dd>Tre stampanti nella nostra officina: due a filamento (FDM) e una a resina, per i dettagli fini e le geometrie di piccole dimensioni.</dd>
+        <dd>Tre stampanti in officina: due a filamento (FDM) e una a resina, per i dettagli fini e le geometrie di piccole dimensioni.</dd>
       </div>
-      <div class="spec-row">
+      <div class="spec">
         <dt>Materiali</dt>
         <dd>
-          Li selezioniamo in funzione del carico, della temperatura di esercizio e dell'esposizione ambientale. Materiali speciali reperibili su richiesta.
-          <div class="chips">
-            <span class="chip">PLA</span><span class="chip">PETG</span><span class="chip">ASA</span>
-            <span class="chip">ABS</span><span class="chip">TPU</span><span class="chip">Nylon CF</span>
-            <span class="chip">Nylon GF</span><span class="chip">Resina</span>
+          Selezionati in funzione del carico, della temperatura di esercizio e dell'esposizione ambientale. Materiali speciali reperibili su richiesta.
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="chip">PLA</span><span class="chip">PETG</span><span class="chip">ASA</span><span class="chip">ABS</span>
+            <span class="chip">TPU</span><span class="chip">Nylon CF</span><span class="chip">Nylon GF</span><span class="chip">Resina</span>
           </div>
         </dd>
       </div>
-      <div class="spec-row">
+      <div class="spec">
         <dt>Tolleranze</dt>
-        <dd><b>Lavoriamo nell'ordine del millimetro.</b> Il decimo, in processo FDM, non rientra tra i risultati che garantiamo: se il componente lo richiede te lo diciamo subito e valutiamo la stampa a resina o una lavorazione diversa.</dd>
+        <dd><strong class="text-bone font-semibold">La lavorazione si colloca nell'ordine del millimetro.</strong> Il decimo, in processo FDM, non rientra tra i risultati garantiti: se il componente lo richiede viene segnalato in fase preliminare, valutando la stampa a resina o una lavorazione diversa.</dd>
       </div>
-      <div class="spec-row">
+      <div class="spec">
         <dt>Quantità</dt>
-        <dd>Dal pezzo singolo alla piccola serie. Il limite superiore dipende dalla geometria e dal tempo macchina e lo definiamo sul componente specifico.</dd>
+        <dd>Dal pezzo singolo alla piccola serie. Il limite superiore dipende dalla geometria e dal tempo macchina e viene definito sul componente specifico.</dd>
       </div>
-      <div class="spec-row">
+      <div class="spec">
         <dt>Tempi</dt>
-        <dd>Risposta tecnica entro 24/48 ore, in funzione della complessità della richiesta. I tempi di produzione li definiamo in fase di valutazione.</dd>
+        <dd>Valutazione tecnica entro 24/48 ore, in funzione della complessità della richiesta. I tempi di produzione vengono definiti in fase di valutazione.</dd>
       </div>
-      <div class="spec-row">
+      <div class="spec">
         <dt>Oltre la stampa</dt>
         <dd>Progettazione CAD, reverse engineering da campione fisico e integrazione di piccola elettronica quando al componente serve una funzione attiva.</dd>
       </div>
-      <div class="spec-row">
+      <div class="spec">
         <dt>Consegna</dt>
-        <dd>Ritiro presso la nostra officina a Mirandola, in provincia di Modena, oppure spedizione in tutta Italia.</dd>
+        <dd>Ritiro presso l'officina di <span data-site-city>Mirandola</span>, in provincia di Modena, oppure spedizione in tutta Italia.</dd>
       </div>
     </dl>
   </div>
 </section>
 
-<!-- ===================== LAVORI ===================== -->
-<section id="lavori">
+<!-- ============================ LAVORI ============================ -->
+<section id="lavori" class="py-28">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Lavori</span>
-      <h2>Casi reali di progettazione e produzione.</h2>
-      <p class="lead">MakerSolve è una realtà recente e non presentiamo un portfolio di commesse che non abbiamo ancora. Questi sono lavori usciti dalla nostra officina, descritti per come sono andati.</p>
+    <div class="max-w-[780px] mb-14">
+      <span class="eyebrow rv block mb-4">Lavori</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Casi reali di progettazione e produzione.</h2>
+      <p class="lead rv" data-d="2">
+        MakerSolve è una realtà recente e non presenta un portfolio di commesse che non ha ancora.
+        Questi sono lavori usciti dall'officina, descritti per come sono andati.
+      </p>
     </div>
 
-    <div class="work">
-      <article class="work-item rv">
-        <div class="work-img"><img src="assets/scocca-telecomando-cancello-stampa-3d-mirandola.png" alt="Scocca per telecomando cancello ricostruita e stampata in 3D" loading="lazy"></div>
-        <div class="work-body">
-          <span class="tag">Reverse engineering</span>
-          <h3>Scocca ricostruita attorno a una PCB esistente</h3>
-          <p>Involucro danneggiato, elettronica funzionante. Abbiamo rilevato la scheda originale e progettato attorno a essa una nuova scocca: pulsanti, foro portachiavi e nervature interne per il bloccaggio della PCB.</p>
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="group rounded-2xl border border-white/10 bg-ink-800 overflow-hidden transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:border-copper/40 rv">
+        <div class="aspect-[4/3] overflow-hidden bg-ink">
+          <img src="/assets/scocca-telecomando-cancello-stampa-3d-mirandola.png"
+               alt="Scocca per telecomando cancello ricostruita e stampata in 3D attorno alla scheda elettronica originale"
+               loading="lazy"
+               class="w-full h-full object-cover transition-transform duration-[900ms] ease-smooth group-hover:scale-[1.07]">
+        </div>
+        <div class="p-6">
+          <span class="font-mono text-[.68rem] tracking-[.14em] uppercase text-copper-light">Reverse engineering</span>
+          <h3 class="text-[1.1rem] mt-3 mb-2.5">Scocca ricostruita su PCB esistente</h3>
+          <p class="text-[.9rem] text-bone-dim">Involucro danneggiato, elettronica funzionante. La scheda originale è stata rilevata e attorno a essa è stata progettata una nuova scocca: pulsanti, foro portachiavi e nervature interne per il bloccaggio della PCB.</p>
         </div>
       </article>
 
-      <article class="work-item rv" data-d="1">
-        <div class="work-img"><img src="assets/dima.png" alt="Posaggio da banco per tubicini flessibili" loading="lazy"></div>
-        <div class="work-body">
-          <span class="tag">Attrezzatura di reparto</span>
-          <h3>Posaggio da banco per tubicini flessibili</h3>
-          <p>Attrezzatura per mantenere in posizione tubi di piccolo diametro durante assemblaggio e collaudo. Obiettivo: rendere ripetibile il posizionamento senza commissionare un'attrezzatura dedicata.</p>
+      <article class="group rounded-2xl border border-white/10 bg-ink-800 overflow-hidden transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:border-copper/40 rv" data-d="1">
+        <div class="aspect-[4/3] overflow-hidden bg-ink">
+          <img src="/assets/dima.png"
+               alt="Posaggio da banco stampato in 3D per il mantenimento in posizione di tubicini flessibili"
+               loading="lazy"
+               class="w-full h-full object-cover transition-transform duration-[900ms] ease-smooth group-hover:scale-[1.07]">
+        </div>
+        <div class="p-6">
+          <span class="font-mono text-[.68rem] tracking-[.14em] uppercase text-copper-light">Attrezzatura di reparto</span>
+          <h3 class="text-[1.1rem] mt-3 mb-2.5">Posaggio da banco per tubicini</h3>
+          <p class="text-[.9rem] text-bone-dim">Attrezzatura per mantenere in posizione tubi di piccolo diametro durante assemblaggio e collaudo. Obiettivo: rendere ripetibile il posizionamento senza commissionare un'attrezzatura dedicata.</p>
         </div>
       </article>
 
-      <article class="work-item rv" data-d="2">
-        <div class="work-img"><img src="assets/dima-semimanubri-moto.png" alt="Dima universale per semimanubri da competizione" loading="lazy"></div>
-        <div class="work-body">
-          <span class="tag">Prodotto MakerSolve</span>
-          <h3>Dima universale per semimanubri</h3>
-          <p>Attrezzatura per il controllo dell'apertura dei semimanubri su moto da competizione. Geometria studiata per adattarsi a modelli differenti, in sostituzione della misurazione manuale.</p>
+      <article class="group rounded-2xl border border-white/10 bg-ink-800 overflow-hidden transition-all duration-500 ease-smooth hover:-translate-y-1.5 hover:border-copper/40 rv" data-d="2">
+        <div class="aspect-[4/3] overflow-hidden bg-ink">
+          <img src="/assets/dima-semimanubri-moto.png"
+               alt="Dima universale per il controllo dell'apertura dei semimanubri su moto da competizione"
+               loading="lazy"
+               class="w-full h-full object-cover transition-transform duration-[900ms] ease-smooth group-hover:scale-[1.07]">
+        </div>
+        <div class="p-6">
+          <span class="font-mono text-[.68rem] tracking-[.14em] uppercase text-copper-light">Prodotto MakerSolve</span>
+          <h3 class="text-[1.1rem] mt-3 mb-2.5">Dima universale per semimanubri</h3>
+          <p class="text-[.9rem] text-bone-dim">Attrezzatura per il controllo dell'apertura dei semimanubri su moto da competizione. Geometria studiata per adattarsi a modelli differenti, in sostituzione della misurazione manuale.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ===================== LIMITI ===================== -->
-<section id="limiti" class="paper">
+<!-- ============================ AMBITI ============================ -->
+<section id="ambiti" class="panel py-28">
   <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Trasparenza</span>
-      <h2>Ambiti coperti<br>e ambiti esclusi.</h2>
-      <p class="lead">Una risposta negativa in fase preliminare vale più di un preventivo che ti fa perdere due settimane.</p>
+    <div class="max-w-[780px] mb-14">
+      <span class="eyebrow rv block mb-4">Trasparenza</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Ambiti coperti<br>e ambiti esclusi.</h2>
+      <p class="lead rv" data-d="2">Una risposta negativa in fase preliminare vale più di un preventivo che fa perdere due settimane.</p>
     </div>
 
-    <div class="honest">
-      <div class="card rv" style="border-color:#cfe6d9">
-        <h3 style="margin-bottom:4px">La collaborazione è appropriata se…</h3>
-        <ul>
-          <li><span class="mark ok">✓</span><span>Ti serve <b>un componente o pochi esemplari</b> e il volume non giustifica un attrezzaggio.</span></li>
-          <li><span class="mark ok">✓</span><span>Il componente opera in <b>condizioni note e non critiche</b>: supporti, scocche, dime, prototipi, ricambi funzionali.</span></li>
-          <li><span class="mark ok">✓</span><span>Non hai un disegno CAD e <b>la progettazione rientra nell'incarico</b>.</span></li>
-          <li><span class="mark ok">✓</span><span>Ti serve <b>iterare rapidamente</b> sulla geometria prima di consolidare il progetto.</span></li>
-          <li><span class="mark ok">✓</span><span>Cerchi un interlocutore <b>tecnico diretto</b>, senza intermediazione commerciale.</span></li>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card rv" style="border-color:#CBDDD0">
+        <h3 class="text-[1.15rem] mb-4">La collaborazione è appropriata se…</h3>
+        <ul class="flex flex-col gap-3.5 list-none p-0 m-0">
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-emerald-50 text-emerald-700 text-[.7rem] font-bold">✓</span><span>Serve <strong class="font-semibold text-paper-ink">un componente o pochi esemplari</strong> e il volume non giustifica un attrezzaggio.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-emerald-50 text-emerald-700 text-[.7rem] font-bold">✓</span><span>Il componente opera in <strong class="font-semibold text-paper-ink">condizioni note e non critiche</strong>: supporti, scocche, dime, prototipi, ricambi funzionali.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-emerald-50 text-emerald-700 text-[.7rem] font-bold">✓</span><span>Manca il disegno CAD e <strong class="font-semibold text-paper-ink">la progettazione rientra nell'incarico</strong>.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-emerald-50 text-emerald-700 text-[.7rem] font-bold">✓</span><span>Serve <strong class="font-semibold text-paper-ink">iterare rapidamente</strong> sulla geometria prima di consolidare il progetto.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-emerald-50 text-emerald-700 text-[.7rem] font-bold">✓</span><span>È preferito un <strong class="font-semibold text-paper-ink">interlocutore tecnico diretto</strong>, senza intermediazione commerciale.</span></li>
         </ul>
       </div>
 
-      <div class="card rv" data-d="1" style="border-color:#eed7d5">
-        <h3 style="margin-bottom:4px">La richiesta non rientra nell'ambito se…</h3>
-        <ul>
-          <li><span class="mark no">×</span><span>Il componente costituisce <b>elemento di sicurezza o strutturale critico</b>: è richiesto un percorso di qualifica che non copriamo.</span></li>
-          <li><span class="mark no">×</span><span>Ti serve un <b>dispositivo certificato</b> (medicale, ATEX, contatto alimentare): possiamo offrire supporto limitato alla fase di studio.</span></li>
-          <li><span class="mark no">×</span><span>Ti serve una <b>tolleranza al decimo</b> garantita su geometrie estese in processo FDM.</span></li>
-          <li><span class="mark no">×</span><span>Cerchi <b>volumi elevati al costo minimo</b>: sull'ordine delle migliaia di pezzi lo stampaggio è più conveniente della stampa 3D, e te lo diciamo noi.</span></li>
-          <li><span class="mark no">×</span><span>Cerchi un <b>articolo promozionale di basso costo</b>: il nostro valore sta nella progettazione, e quella incide sul prezzo.</span></li>
+      <div class="card rv" data-d="1" style="border-color:#EBD5D2">
+        <h3 class="text-[1.15rem] mb-4">La richiesta non rientra nell'ambito se…</h3>
+        <ul class="flex flex-col gap-3.5 list-none p-0 m-0">
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-red-50 text-red-700 text-[.7rem] font-bold">×</span><span>Il componente è un <strong class="font-semibold text-paper-ink">elemento di sicurezza o strutturale critico</strong>: serve un percorso di qualifica non coperto.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-red-50 text-red-700 text-[.7rem] font-bold">×</span><span>Serve un <strong class="font-semibold text-paper-ink">dispositivo certificato</strong> (medicale, ATEX, contatto alimentare): possibile solo un supporto in fase di studio.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-red-50 text-red-700 text-[.7rem] font-bold">×</span><span>Serve una <strong class="font-semibold text-paper-ink">tolleranza al decimo</strong> garantita su geometrie estese in processo FDM.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-red-50 text-red-700 text-[.7rem] font-bold">×</span><span>L'obiettivo è il <strong class="font-semibold text-paper-ink">volume elevato al costo minimo</strong>: sulle migliaia di pezzi lo stampaggio è più conveniente della stampa 3D.</span></li>
+          <li class="flex gap-3 text-[.95rem] leading-snug"><span class="shrink-0 w-5 h-5 mt-0.5 rounded-md grid place-items-center bg-red-50 text-red-700 text-[.7rem] font-bold">×</span><span>La richiesta riguarda un <strong class="font-semibold text-paper-ink">articolo promozionale di basso costo</strong>: il valore sta nella progettazione, che incide sul prezzo.</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== CONTATTO ===================== -->
-<section id="contatto" class="contact has-bg">
-  <div class="sec-bg"><img src="assets/gen-layers.webp" alt="" loading="lazy"></div>
-  <div class="wrap contact-wrap">
-    <div class="rv">
-      <span class="eyebrow">Contatto</span>
-      <h2 style="margin:16px 0 20px">Richiedi una valutazione<br>di fattibilità.</h2>
-      <p class="lead">La valutazione è gratuita e non vincolante. Più la richiesta è precisa, più la risposta è rapida: fotografie, misure di massima e destinazione d'uso del componente sono di norma sufficienti.</p>
+<!-- ============================ CONTATTO ============================ -->
+<section id="contatto" class="relative py-28 bg-ink-800 border-t border-white/10 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src="/assets/gen-layers.webp" alt="" loading="lazy" class="tint-copper parallax w-full h-[118%] object-cover opacity-[.18]">
+    <div class="absolute inset-0" style="background:radial-gradient(ellipse 72% 62% at 50% 50%,transparent,#12100E 90%)"></div>
+  </div>
 
-      <div class="direct">
-        <a href="tel:+393466088830">
-          <div><div class="k">Telefono</div><div class="v" data-site-phone>346 608 8830</div></div>
+  <div class="wrap relative z-10 grid lg:grid-cols-[.85fr_1.15fr] gap-14 items-start">
+    <div>
+      <span class="eyebrow rv block mb-4">Contatto</span>
+      <h2 class="h-sec rv mb-5" data-d="1">Richiedi una valutazione<br>di fattibilità.</h2>
+      <p class="lead rv mb-8" data-d="2">
+        La valutazione è gratuita e non vincolante. Più la richiesta è precisa, più la risposta
+        è rapida: fotografie, misure di massima e destinazione d'uso del componente sono di norma sufficienti.
+      </p>
+
+      <div class="flex flex-col gap-3.5">
+        <a href="tel:+393466088830" data-site-phone-link
+           class="flex items-center gap-4 px-5 py-4 rounded-xl border border-white/10 bg-ink transition-all duration-300 hover:border-copper hover:translate-x-1 rv" data-d="3">
+          <div>
+            <div class="font-mono text-[.72rem] uppercase tracking-[.12em] text-bone-dimmer">Telefono</div>
+            <div class="text-base font-medium mt-1" data-site-phone>346 608 8830</div>
+          </div>
         </a>
-        <a href="mailto:giulio.corazzari@gmail.com?subject=Richiesta%20fattibilit%C3%A0%20MakerSolve">
-          <div><div class="k">Email</div><div class="v" data-site-email>giulio.corazzari@gmail.com</div></div>
+        <a href="mailto:giulio.corazzari@gmail.com?subject=Richiesta%20valutazione%20MakerSolve" data-site-email-link
+           class="flex items-center gap-4 px-5 py-4 rounded-xl border border-white/10 bg-ink transition-all duration-300 hover:border-copper hover:translate-x-1 rv" data-d="4">
+          <div>
+            <div class="font-mono text-[.72rem] uppercase tracking-[.12em] text-bone-dimmer">Posta elettronica</div>
+            <div class="text-base font-medium mt-1" data-site-email>giulio.corazzari@gmail.com</div>
+          </div>
         </a>
-        <a href="#capacita">
-          <div><div class="k">Officina</div><div class="v">Mirandola (MO) · Emilia-Romagna</div></div>
+        <a href="/stampa-3d-mirandola/"
+           class="flex items-center gap-4 px-5 py-4 rounded-xl border border-white/10 bg-ink transition-all duration-300 hover:border-copper hover:translate-x-1 rv" data-d="5">
+          <div>
+            <div class="font-mono text-[.72rem] uppercase tracking-[.12em] text-bone-dimmer">Officina</div>
+            <div class="text-base font-medium mt-1"><span data-site-city>Mirandola</span> (MO) · Emilia-Romagna</div>
+          </div>
         </a>
       </div>
     </div>
 
-    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="rv" data-d="1">
+    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data"
+          class="rounded-2xl border border-white/10 bg-ink p-8 rv" data-d="1">
       <input type="hidden" name="access_key" value="4ba64ba8-8bf9-41f1-a3b4-e97f5e83dd3f">
-      <input type="hidden" name="subject" value="Nuova richiesta di fattibilità — makersolve.com">
+      <input type="hidden" name="subject" value="Richiesta di fattibilità — makersolve.com">
       <input type="hidden" name="from_name" value="MakerSolve — sito">
-      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
 
-      <div class="f-row">
-        <div class="field">
-          <label for="nome">Nome e cognome *</label>
-          <input id="nome" name="nome" type="text" required>
-        </div>
-        <div class="field">
-          <label for="azienda">Azienda</label>
-          <input id="azienda" name="azienda" type="text" placeholder="Lascia vuoto se sei un privato">
-        </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="field mb-4"><label for="nome">Nome e cognome *</label><input id="nome" name="nome" type="text" required autocomplete="name"></div>
+        <div class="field mb-4"><label for="azienda">Azienda</label><input id="azienda" name="azienda" type="text" placeholder="Da compilare se applicabile" autocomplete="organization"></div>
       </div>
-
-      <div class="f-row">
-        <div class="field">
-          <label for="email">Email *</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <div class="field">
-          <label for="tel">Telefono</label>
-          <input id="tel" name="tel" type="tel">
-        </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="field mb-4"><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field mb-4"><label for="tel">Telefono</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div>
       </div>
-
-      <div class="f-row">
-        <div class="field">
-          <label for="tipo">Di cosa hai bisogno *</label>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="field mb-4">
+          <label for="tipo">Tipologia di richiesta *</label>
           <select id="tipo" name="tipo" required>
             <option value="">Seleziona…</option>
             <option>Ricambio / pezzo non più reperibile</option>
@@ -373,74 +486,70 @@
             <option>Prototipo funzionale</option>
             <option>Scocca o contenitore per elettronica</option>
             <option>Progettazione CAD da zero</option>
-            <option>Reverse engineering da pezzo fisico</option>
-            <option>Altro / non so ancora</option>
+            <option>Reverse engineering da campione fisico</option>
+            <option>Altro / da definire</option>
           </select>
         </div>
-        <div class="field">
-          <label for="qta">Quantità indicativa</label>
-          <input id="qta" name="quantita" type="text" placeholder="es. 1 pezzo, 20 pezzi…">
-        </div>
+        <div class="field mb-4"><label for="qta">Quantità indicativa</label><input id="qta" name="quantita" type="text" placeholder="es. 1 pezzo, 20 pezzi…"></div>
       </div>
-
-      <div class="field">
+      <div class="field mb-4">
         <label for="msg">Descrizione: funzione del componente, ambiente di esercizio, misure di massima *</label>
         <textarea id="msg" name="messaggio" required placeholder="Es. Supporto per fissare un sensore su un telaio in alluminio. Ingombro max 80×40 mm, ambiente interno, temperatura ambiente. Servono 4 pezzi entro fine mese."></textarea>
       </div>
-
-      <div class="field">
-        <label for="file">Fotografie, schizzi o file 3D (STEP, STL) — massimo 5 MB</label>
-        <input id="file" name="allegato" type="file" accept=".jpg,.jpeg,.png,.pdf,.step,.stp,.stl,.zip">
+      <div class="field mb-4">
+        <label for="file">Fotografie, schizzi o file 3D — massimo 5 MB</label>
+        <input id="file" name="allegato" type="file" accept=".jpg,.jpeg,.png,.pdf,.step,.stp,.stl,.3mf,.zip" class="!py-2.5 text-[.86rem] text-bone-dim">
       </div>
 
-      <label class="consent">
-        <input type="checkbox" required>
-        <span>Ho letto la <a href="/privacy-policy/">privacy policy</a> e acconsento al trattamento dei dati per essere ricontattato in merito a questa richiesta.</span>
+      <label class="flex gap-3 items-start text-[.82rem] text-bone-dimmer leading-relaxed">
+        <input type="checkbox" required class="w-4 h-4 mt-1 shrink-0">
+        <span>Ho preso visione della <a href="/privacy-policy/" class="text-copper-light underline underline-offset-2">privacy policy</a> e acconsento al trattamento dei dati per essere ricontattato in merito alla presente richiesta.</span>
       </label>
 
-      <button type="submit" class="btn btn-primary btn-lg">Invia la richiesta di fattibilità</button>
-      <p style="margin-top:14px;font-size:.8rem;color:var(--fg-dimmer);text-align:center">
-        Risposta entro 24/48 ore · Nessun costo, nessun vincolo
-      </p>
+      <button type="submit" class="btn btn-primary btn-lg w-full mt-6">Invia la richiesta di fattibilità</button>
+      <p class="mt-3.5 text-[.8rem] text-bone-dimmer text-center">Risposta entro 24/48 ore · Nessun costo, nessun vincolo</p>
     </form>
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer>
+<!-- ============================ FOOTER ============================ -->
+<footer class="bg-ink border-t border-white/10 pt-14 pb-10 text-[.87rem] text-bone-dimmer">
   <div class="wrap">
-    <div class="f-top">
-      <div class="f-col">
-        <a href="/" class="brand" style="margin-bottom:12px"><span class="dot"></span>MakerSolve</a>
-        <p style="max-width:340px;line-height:1.6">
+    <div class="grid md:grid-cols-[1.4fr_1fr_1fr] gap-9 mb-10">
+      <div>
+        <a href="/" class="flex items-center gap-2.5 font-display font-semibold text-[1.05rem] text-bone mb-3">
+          <span class="w-2 h-2 rounded-sm bg-copper rotate-45"></span>MakerSolve
+        </a>
+        <p class="max-w-[340px] leading-relaxed">
           Progettazione meccanica, reverse engineering e stampa 3D per aziende e professionisti.
           Officina a Mirandola (MO), lavorazioni in tutta Italia.
         </p>
       </div>
-      <div class="f-col">
-        <h4>Navigazione</h4>
-        <a href="#servizi">Servizi</a>
-        <a href="#metodo">Metodo</a>
-        <a href="#capacita">Capacità tecniche</a>
-        <a href="#lavori">Lavori</a>
-        <a href="/stampa-3d-personalizzata/">Stampa 3D personalizzata</a>
-        <a href="/materiali/">Materiali</a>
+      <div>
+        <h4 class="font-mono text-[.72rem] uppercase tracking-[.14em] text-bone-dim mb-3.5 font-medium">Servizi</h4>
+        <a href="/servizi/progettazione-cad/" class="block py-1 hover:text-bone transition-colors">Progettazione CAD</a>
+        <a href="/servizi/reverse-engineering/" class="block py-1 hover:text-bone transition-colors">Reverse engineering</a>
+        <a href="/servizi/prototipazione-rapida/" class="block py-1 hover:text-bone transition-colors">Prototipazione rapida</a>
+        <a href="/servizi/componenti-custom/" class="block py-1 hover:text-bone transition-colors">Componenti custom</a>
+        <a href="/stampa-3d-personalizzata/" class="block py-1 hover:text-bone transition-colors">Stampa 3D personalizzata</a>
+        <a href="/materiali/" class="block py-1 hover:text-bone transition-colors">Materiali</a>
       </div>
-      <div class="f-col">
-        <h4>Contatti</h4>
-        <a href="tel:+393466088830" data-site-phone-link><span data-site-phone>346 608 8830</span></a>
-        <a href="mailto:giulio.corazzari@gmail.com" data-site-email-link><span data-site-email>giulio.corazzari@gmail.com</span></a>
-        <a href="https://www.linkedin.com/company/makersolve" data-site-linkedin-link rel="noopener">LinkedIn</a>
-        <a href="/chi-siamo/">Chi sono</a>
-        <a href="/contatti/">Contatti</a>
+      <div>
+        <h4 class="font-mono text-[.72rem] uppercase tracking-[.14em] text-bone-dim mb-3.5 font-medium">Contatti</h4>
+        <a href="tel:+393466088830" data-site-phone-link class="block py-1 hover:text-bone transition-colors"><span data-site-phone>346 608 8830</span></a>
+        <a href="mailto:giulio.corazzari@gmail.com" data-site-email-link class="block py-1 hover:text-bone transition-colors"><span data-site-email>giulio.corazzari@gmail.com</span></a>
+        <a href="https://www.linkedin.com/company/makersolve" data-site-linkedin-link rel="noopener" class="block py-1 hover:text-bone transition-colors">LinkedIn</a>
+        <a href="/portfolio/" class="block py-1 hover:text-bone transition-colors">Lavori</a>
+        <a href="/chi-siamo/" class="block py-1 hover:text-bone transition-colors">Chi siamo</a>
+        <a href="/contatti/" class="block py-1 hover:text-bone transition-colors">Contatti</a>
       </div>
     </div>
-    <div class="f-bot">
+    <div class="border-t border-white/10 pt-6 flex flex-wrap gap-4 justify-between">
       <span>© <span id="yr">2026</span> MakerSolve — <span data-site-city>Mirandola</span> (MO)<span data-vat-optional> · P.IVA <span data-site-vat></span></span></span>
-      <span style="display:flex;gap:18px;flex-wrap:wrap">
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/cookie-policy/">Cookie</a>
-        <a href="/termini/">Termini</a>
+      <span class="flex gap-5 flex-wrap">
+        <a href="/privacy-policy/" class="hover:text-bone transition-colors">Privacy</a>
+        <a href="/cookie-policy/" class="hover:text-bone transition-colors">Cookie</a>
+        <a href="/termini/" class="hover:text-bone transition-colors">Termini</a>
       </span>
     </div>
   </div>
@@ -464,6 +573,6 @@
 
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
-<script src="assets/ms.js?v=2" defer></script>
+<script src="/assets/ms-tw.js?v=1" defer></script>
 </body>
 </html>

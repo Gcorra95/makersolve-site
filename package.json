@@ -1,0 +1,13 @@
+{
+  "name": "makersolve-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sito makersolve.com — build CSS con Tailwind",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/ms-tw.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/ms-tw.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
