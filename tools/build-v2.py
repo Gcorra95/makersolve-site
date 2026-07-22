@@ -3,14 +3,14 @@
 """
 MakerSolve — generatore delle pagine interne in stile v2.
 
-Genera i file `index-v2.html` di ogni pagina interna a partire da un template
+Genera i file `index.html` di ogni pagina interna a partire da un template
 condiviso (nav, footer, head, CTA finale) piu' il contenuto specifico definito
 qui sotto in PAGES.
 
 Uso:
     python tools/build-v2.py
 
-Le pagine home (/index-v2.html) e contatti (/contatti/index-v2.html) sono
+Le pagine home (/index.html) e contatti (/contatti/index.html) sono
 scritte a mano e NON vengono toccate da questo script.
 
 NB: le pagine prodotte sono generate. Se preferisci modificarle a mano,
@@ -141,6 +141,9 @@ def cta_band(title, body):
       <a href="/contatti/" class="btn btn-primary btn-lg">Richiedi una valutazione</a>
       <a href="tel:%s" data-site-phone-link class="btn btn-ghost btn-lg">Chiama <span data-site-phone>%s</span></a>
     </div>
+    <p class="rv" data-d="3" style="margin-top:26px;font-size:.86rem;color:var(--fg-dimmer)">
+      Officina di progettazione CAD e stampa 3D a <span data-site-city>Mirandola</span>, in provincia di Modena &middot; Spedizioni in tutta Italia
+    </p>
   </div>
 </section>""" % (title, body, TEL_HREF, TEL)
 
@@ -202,6 +205,7 @@ PAGE = """<!DOCTYPE html>
 <meta property="og:image" content="https://makersolve.com/assets/og-card.jpg">
 <meta property="og:locale" content="it_IT">
 
+<link rel="icon" type="image/png" href="/assets/logo.png">
 <link rel="stylesheet" href="/assets/ms.css?v=2">
 </head>
 <body>
@@ -256,7 +260,7 @@ PAGES = []
 PAGES.append(dict(
     path="chi-siamo/",
     nav_active="chi-siamo",
-    title="Chi sono &mdash; Giulio Corazzari | MakerSolve",
+    title="Chi sono &mdash; Giulio Corazzari | MakerSolve Mirandola (MO)",
     ogtitle="Chi sono &mdash; MakerSolve",
     desc="Sono Giulio: progetto e produco componenti su misura, attrezzature e prototipi funzionali. Officina a Mirandola (MO), interlocutore tecnico diretto senza passaggi commerciali.",
     hero=hero(
@@ -323,7 +327,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="materiali/",
     nav_active="materiali",
-    title="Materiali per stampa 3D: PLA, PETG, ASA, ABS, TPU, Nylon CF | MakerSolve",
+    title="Materiali stampa 3D: PLA, PETG, ASA, ABS, TPU, Nylon | Mirandola e Modena",
     ogtitle="Materiali &mdash; MakerSolve",
     desc="Come scelgo il materiale in base a carico, temperatura e ambiente d'esercizio. PLA, PETG, ASA, ABS, TPU, nylon caricato fibra e resina. Mirandola (MO).",
     hero=hero(
@@ -382,7 +386,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="portfolio/",
     nav_active="portfolio",
-    title="Lavori &mdash; Casi reali di progettazione e stampa 3D | MakerSolve",
+    title="Lavori: casi reali di CAD e stampa 3D | Mirandola e Modena",
     ogtitle="Lavori &mdash; MakerSolve",
     desc="Casi reali usciti dall'officina: scocca ricostruita attorno a una PCB, posaggio da banco per tubicini, dima universale per semimanubri da competizione.",
     hero=hero(
@@ -463,7 +467,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="stampa-3d-personalizzata/",
     nav_active="",
-    title="Stampa 3D personalizzata su misura | MakerSolve Mirandola",
+    title="Stampa 3D personalizzata su misura a Mirandola e Modena | MakerSolve",
     ogtitle="Stampa 3D personalizzata &mdash; MakerSolve",
     desc="Stampa 3D di oggetti e pezzi su misura, con o senza file 3D. Controllo del file prima di stampare, consulenza su materiale e orientamento. Mirandola (MO).",
     hero=hero(
@@ -517,7 +521,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="servizi/progettazione-cad/",
     nav_active="servizi",
-    title="Progettazione CAD di componenti su misura | MakerSolve",
+    title="Progettazione CAD di componenti su misura | Mirandola e Modena",
     ogtitle="Progettazione CAD &mdash; MakerSolve",
     desc="Modellazione CAD di componenti custom a partire da idea, schizzo, foto o pezzo fisico. Consegna con file STEP. Mirandola (MO), lavorazioni in tutta Italia.",
     hero=hero(
@@ -570,7 +574,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="servizi/reverse-engineering/",
     nav_active="servizi",
-    title="Reverse engineering di pezzi rotti e componenti senza disegno | MakerSolve",
+    title="Reverse engineering pezzi rotti e senza disegno | Mirandola e Modena",
     ogtitle="Reverse engineering &mdash; MakerSolve",
     desc="Ricostruzione CAD di componenti a partire dal pezzo fisico, anche rotto o incompleto. Ricambi non pi&ugrave; reperibili, scocche, carter. Mirandola (MO).",
     hero=hero(
@@ -620,7 +624,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="servizi/prototipazione-rapida/",
     nav_active="servizi",
-    title="Prototipazione rapida con CAD e stampa 3D | MakerSolve Mirandola",
+    title="Prototipazione rapida con CAD e stampa 3D | Mirandola e Modena",
     ogtitle="Prototipazione rapida &mdash; MakerSolve",
     desc="Prototipi funzionali per verificare ingombri, accoppiamenti e funzione prima di investire in attrezzature definitive. CAD e stampa 3D. Mirandola (MO).",
     hero=hero(
@@ -672,7 +676,7 @@ PAGES.append(dict(
 PAGES.append(dict(
     path="servizi/componenti-custom/",
     nav_active="servizi",
-    title="Componenti su misura: supporti, staffe, adattatori, dime | MakerSolve",
+    title="Componenti su misura: supporti, staffe, dime | Mirandola e Modena",
     ogtitle="Componenti custom &mdash; MakerSolve",
     desc="Componenti su misura quando il pezzo commerciale non esiste, non combacia o costa troppo: supporti, staffe, adattatori, guide, carter, dime e piccoli lotti.",
     hero=hero(
@@ -737,7 +741,7 @@ def main():
             footer=FOOTER,
             jsonld=p["jsonld"],
         )
-        out = os.path.join(ROOT, p["path"].replace("/", os.sep), "index-v2.html")
+        out = os.path.join(ROOT, p["path"].replace("/", os.sep), "index.html")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         io.open(out, "w", encoding="utf-8").write(html)
         written.append(os.path.relpath(out, ROOT).replace(os.sep, "/"))

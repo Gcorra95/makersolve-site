@@ -14,6 +14,7 @@
 <meta property="og:image" content="https://makersolve.com/assets/og-card.jpg">
 <meta property="og:locale" content="it_IT">
 
+<link rel="icon" type="image/png" href="/assets/logo.png">
 <link rel="stylesheet" href="assets/ms.css?v=2">
 </head>
 <body>
@@ -41,7 +42,7 @@
   <div class="hero-halo"></div>
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow rv">Progettazione meccanica &amp; stampa 3D · Mirandola (MO)</span>
+      <span class="eyebrow rv">Progettazione CAD e stampa 3D · Mirandola, Modena</span>
       <h1 class="rv" data-d="1">Il pezzo che ti serve <span class="grad">non esiste ancora.</span></h1>
       <p class="lead rv" data-d="2">
         Progetto e produco componenti su misura, attrezzature di produzione e prototipi funzionali
@@ -111,7 +112,7 @@
     <div class="sec-head rv">
       <span class="eyebrow">Servizi</span>
       <h2>Dal problema al pezzo funzionante.</h2>
-      <p class="lead">Non sono un service di stampa a cui mandi un STL. Il valore è nella progettazione: la stampante è solo l'ultimo passaggio.</p>
+      <p class="lead">Non sono un service di stampa 3D a cui mandi un STL. Il valore è nella progettazione CAD: la stampante è solo l'ultimo passaggio.</p>
     </div>
 
     <div class="grid-3">
@@ -231,7 +232,7 @@
       </div>
       <div class="spec-row">
         <dt>Consegna</dt>
-        <dd>Ritiro in zona Mirandola (MO) o spedizione in tutta Italia.</dd>
+        <dd>Ritiro in zona Mirandola, in provincia di Modena, oppure spedizione in tutta Italia.</dd>
       </div>
     </dl>
   </div>
@@ -448,14 +449,14 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"ProfessionalService",
+  "@type":["ProfessionalService","LocalBusiness"],
   "name":"MakerSolve",
   "url":"https://makersolve.com/",
   "email":"giulio.corazzari@gmail.com",
   "telephone":"+39 346 608 8830",
   "description":"Progettazione meccanica CAD, reverse engineering e stampa 3D di componenti su misura, attrezzature e prototipi funzionali per aziende.",
-  "areaServed":{"@type":"Country","name":"Italia"},
-  "address":{"@type":"PostalAddress","addressLocality":"Mirandola","addressRegion":"MO","addressCountry":"IT"},
+  "areaServed":[{"@type":"City","name":"Mirandola"},{"@type":"AdministrativeArea","name":"Provincia di Modena"},{"@type":"AdministrativeArea","name":"Emilia-Romagna"},{"@type":"Country","name":"Italia"}],
+  "address":{"@type":"PostalAddress","addressLocality":"Mirandola","addressRegion":"MO","postalCode":"41037","addressCountry":"IT"},
   "founder":{"@type":"Person","name":"Giulio Corazzari"},
   "knowsAbout":["Stampa 3D FDM","Stampa 3D resina","Progettazione CAD","Reverse engineering","Prototipazione rapida","Attrezzature di produzione"]
 }
