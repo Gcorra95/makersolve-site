@@ -496,7 +496,7 @@ PAGES.append(dict(
                 ("Supporti ed espositori", "Basi, sostegni, staffe ed espositori progettati su un oggetto specifico, non adattati da un prodotto generico."),
                 ("Oggetti personalizzati", "Targhette, loghi tridimensionali e componenti di piccole dimensioni su misura."),
                 ("Adattatori", "Raccordi e interfacce tra componenti non predisposti all'accoppiamento."),
-                ("Prototipi", "Componenti da provare sul campo per verificare ingombri, accoppiamenti ed ergonomia."),
+                ("Prototipi funzionali", "Prototipi da provare sul campo per verificare ingombri, accoppiamenti ed ergonomia prima della produzione definitiva."),
                 ("Piccoli lotti", "Serie ridotte, dove attrezzare uno stampo non ha convenienza economica."),
             ], cols=3),
             cls="paper-2",
@@ -629,7 +629,7 @@ PAGES.append(dict(
     desc="Prototipi funzionali per la verifica di ingombri, accoppiamenti e funzione prima dell'investimento in attrezzature definitive. Progettazione CAD e stampa 3D. Mirandola (MO).",
     hero=hero(
         "Prototipazione rapida",
-        "Validare l'idea<br><span class=\"grad\">prima di investire.</span>",
+        "Prototipi funzionali,<br><span class=\"grad\">prima di investire.</span>",
         "Un prototipo non deve essere bello: deve dare una risposta verificabile. Entra? Si monta? Tiene? "
         "Realizziamo prototipi funzionali per verificare forma, ingombri, fori, fissaggi e montaggio prima che le decisioni diventino costose.",
         "Prototipazione rapida",
@@ -759,7 +759,7 @@ PAGES.append(dict(
                 ("Adattatori", "Interfacce tra componenti non predisposti all'accoppiamento: attacchi, passi, diametri."),
                 ("Scocche e contenitori", "Involucri su misura per elettronica esistente, con accessi e passaggi cavo definiti sul contenuto reale."),
                 ("Ricambi non reperibili", "Componenti fuori produzione ricostruiti dall'originale o dalle porzioni residue."),
-                ("Prototipi", "Componenti da provare sul campo per verificare ingombri, accoppiamenti ed ergonomia."),
+                ("Prototipi funzionali", "Prototipi da provare sul campo per verificare ingombri, accoppiamenti ed ergonomia prima della produzione definitiva."),
                 ("Attrezzature di reparto", "Dime, posaggi e maschere progettati sul tuo ciclo di lavoro."),
             ], cols=3),
             cls="paper-2",
