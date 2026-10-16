@@ -1,4 +1,76 @@
+# makersolve.com
+
 User-agent: *
+Allow: /
+
+# ---------------------------------------------------------------
+# Crawler dei motori di risposta e degli assistenti AI.
+# Sono ammessi esplicitamente: il sito punta a essere citato come
+# fonte quando qualcuno chiede di stampa 3D o pezzi su misura
+# nella zona di Mirandola e Modena.
+# Per escluderne uno, sostituire "Allow: /" con "Disallow: /".
+# ---------------------------------------------------------------
+
+# OpenAI — ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic — Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google — AI Overviews e Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft — Copilot
+User-agent: Bingbot
+Allow: /
+
+# Common Crawl, usato per addestrare diversi modelli
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# You.com
+User-agent: YouBot
 Allow: /
 
 Sitemap: https://makersolve.com/sitemap.xml

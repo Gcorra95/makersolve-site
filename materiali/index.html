@@ -144,6 +144,39 @@
   </div>
 </section>
 
+<!-- ============================ FAQ ============================ -->
+<section class="paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Domande frequenti</span>
+      <h2>Domande sui materiali</h2>
+    </div>
+
+    <div class="faq rv">
+      <details>
+        <summary>Quale materiale devo scegliere?</summary>
+        <div class="a">Non devi sceglierlo tu: lo indico io in base a tre informazioni che mi dai, cioè il carico che il pezzo deve reggere, la temperatura a cui lavora e se sta all'aperto. Un nylon caricato fibra su un componente scarico è solo un costo in più.</div>
+      </details>
+      <details>
+        <summary>Quali materiali sono disponibili?</summary>
+        <div class="a">PLA, PETG, ASA, ABS, TPU flessibile, nylon caricato fibra di carbonio e fibra di vetro, più resina per i dettagli fini. Materiali speciali sono reperibili su richiesta.</div>
+      </details>
+      <details>
+        <summary>Che differenza c'è tra PLA e PETG?</summary>
+        <div class="a">Il PLA è più semplice da stampare e ha una buona definizione, ma non ha resistenza al calore: si deforma già alle temperature di un abitacolo al sole. Il PETG è più tenace e meno fragile, ed è la scelta di riferimento per supporti e parti funzionali non esposte al calore.</div>
+      </details>
+      <details>
+        <summary>Quale materiale resiste all'aperto?</summary>
+        <div class="a">L'ASA. Resiste a raggi ultravioletti e intemperie, ed è il materiale indicato per tutto ciò che resta stabilmente in esterno.</div>
+      </details>
+      <details>
+        <summary>Quale materiale resiste al calore?</summary>
+        <div class="a">L'ABS per componenti tecnici e carter in ambienti caldi, l'ASA quando c'è anche esposizione esterna. Il PLA è da escludere in qualsiasi situazione con calore.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="tight has-bg">
   <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
@@ -202,20 +235,47 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Service",
-  "name":"Stampa 3D con materiali tecnici",
-  "description":"Selezione del materiale di stampa 3D in base a carico, temperatura di esercizio e ambiente: PLA, PETG, ASA, ABS, TPU, nylon caricato fibra e resina.",
-  "url":"https://makersolve.com/materiali/",
-  "serviceType":"Stampa 3D con materiali tecnici",
-  "areaServed":{"@type":"Country","name":"Italia"},
-  "provider":{
-    "@type":"ProfessionalService",
-    "name":"MakerSolve",
-    "url":"https://makersolve.com/",
-    "telephone":"+39 346 608 8830",
-    "email":"giulio.corazzari@gmail.com",
-    "address":{"@type":"PostalAddress","addressLocality":"Mirandola","addressRegion":"MO","addressCountry":"IT"}
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Stampa 3D con materiali tecnici",
+  "description": "Selezione del materiale di stampa 3D in base a carico, temperatura di esercizio e ambiente: PLA, PETG, ASA, ABS, TPU, nylon caricato fibra e resina.",
+  "url": "https://makersolve.com/materiali/",
+  "serviceType": "Stampa 3D con materiali tecnici",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Mirandola"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Provincia di Modena"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Emilia-Romagna"
+    },
+    {
+      "@type": "Country",
+      "name": "Italia"
+    }
+  ],
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "MakerSolve",
+    "url": "https://makersolve.com/",
+    "telephone": "+39 346 608 8830",
+    "email": "giulio.corazzari@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mirandola",
+      "addressRegion": "MO",
+      "addressCountry": "IT",
+      "postalCode": "41037"
+    },
+    "@id": "https://makersolve.com/#organization",
+    "sameAs": [
+      "https://www.linkedin.com/company/makersolve"
+    ]
   }
 }
 </script>
@@ -223,5 +283,73 @@
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
 <script src="/assets/ms-tw.js?v=4" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://makersolve.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Materiali",
+      "item": "https://makersolve.com/materiali/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quale materiale devo scegliere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non devi sceglierlo tu: lo indico io in base a tre informazioni che mi dai, cioè il carico che il pezzo deve reggere, la temperatura a cui lavora e se sta all'aperto. Un nylon caricato fibra su un componente scarico è solo un costo in più."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali materiali sono disponibili?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PLA, PETG, ASA, ABS, TPU flessibile, nylon caricato fibra di carbonio e fibra di vetro, più resina per i dettagli fini. Materiali speciali sono reperibili su richiesta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Che differenza c'è tra PLA e PETG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il PLA è più semplice da stampare e ha una buona definizione, ma non ha resistenza al calore: si deforma già alle temperature di un abitacolo al sole. Il PETG è più tenace e meno fragile, ed è la scelta di riferimento per supporti e parti funzionali non esposte al calore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quale materiale resiste all'aperto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'ASA. Resiste a raggi ultravioletti e intemperie, ed è il materiale indicato per tutto ciò che resta stabilmente in esterno."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quale materiale resiste al calore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'ABS per componenti tecnici e carter in ambienti caldi, l'ASA quando c'è anche esposizione esterna. Il PLA è da escludere in qualsiasi situazione con calore."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

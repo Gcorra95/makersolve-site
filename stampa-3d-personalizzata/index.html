@@ -134,6 +134,35 @@
   </div>
 </section>
 
+<!-- ============================ FAQ ============================ -->
+<section class="paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Domande frequenti</span>
+      <h2>Domande sulla stampa 3D personalizzata</h2>
+    </div>
+
+    <div class="faq rv">
+      <details>
+        <summary>Posso mandare un file e ricevere il pezzo stampato?</summary>
+        <div class="a">Sì. Accetto file STL, STEP, 3MF e OBJ. Prima di stampare controllo scala, spessori minimi, orientamento e punti critici, e ti segnalo le modifiche opportune: è il passaggio che evita di pagare due volte lo stesso pezzo.</div>
+      </details>
+      <details>
+        <summary>E se non ho nessun file?</summary>
+        <div class="a">Il disegno 3D lo faccio io, partendo da uno schizzo, da una fotografia con una misura di riferimento o dall'oggetto fisico. Non serve saper modellare per ottenere un pezzo su misura.</div>
+      </details>
+      <details>
+        <summary>Quanto costa stampare un pezzo?</summary>
+        <div class="a">Non c'è un listino, perché due pezzi delle stesse dimensioni possono richiedere impegni di progettazione molto diversi. Il costo dipende da tempo di disegno, materiale e tempo macchina, e il preventivo arriva dopo la valutazione, prima che parta qualsiasi lavorazione.</div>
+      </details>
+      <details>
+        <summary>Che dimensioni massime si possono stampare?</summary>
+        <div class="a">Dipende dalla macchina e dall'orientamento del pezzo. I componenti più grandi si possono realizzare in più parti da unire: indica gli ingombri nella richiesta e ti dico subito se rientra.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="tight has-bg">
   <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
@@ -192,20 +221,47 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Service",
-  "name":"Stampa 3D personalizzata",
-  "description":"Stampa 3D di oggetti e componenti su misura, con o senza file 3D, con verifica preventiva di file, materiale e orientamento.",
-  "url":"https://makersolve.com/stampa-3d-personalizzata/",
-  "serviceType":"Stampa 3D personalizzata",
-  "areaServed":{"@type":"Country","name":"Italia"},
-  "provider":{
-    "@type":"ProfessionalService",
-    "name":"MakerSolve",
-    "url":"https://makersolve.com/",
-    "telephone":"+39 346 608 8830",
-    "email":"giulio.corazzari@gmail.com",
-    "address":{"@type":"PostalAddress","addressLocality":"Mirandola","addressRegion":"MO","addressCountry":"IT"}
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Stampa 3D personalizzata",
+  "description": "Stampa 3D di oggetti e componenti su misura, con o senza file 3D, con verifica preventiva di file, materiale e orientamento.",
+  "url": "https://makersolve.com/stampa-3d-personalizzata/",
+  "serviceType": "Stampa 3D personalizzata",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Mirandola"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Provincia di Modena"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Emilia-Romagna"
+    },
+    {
+      "@type": "Country",
+      "name": "Italia"
+    }
+  ],
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "MakerSolve",
+    "url": "https://makersolve.com/",
+    "telephone": "+39 346 608 8830",
+    "email": "giulio.corazzari@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mirandola",
+      "addressRegion": "MO",
+      "addressCountry": "IT",
+      "postalCode": "41037"
+    },
+    "@id": "https://makersolve.com/#organization",
+    "sameAs": [
+      "https://www.linkedin.com/company/makersolve"
+    ]
   }
 }
 </script>
@@ -213,5 +269,65 @@
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
 <script src="/assets/ms-tw.js?v=4" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://makersolve.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stampa 3D personalizzata",
+      "item": "https://makersolve.com/stampa-3d-personalizzata/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Posso mandare un file e ricevere il pezzo stampato?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Accetto file STL, STEP, 3MF e OBJ. Prima di stampare controllo scala, spessori minimi, orientamento e punti critici, e ti segnalo le modifiche opportune: è il passaggio che evita di pagare due volte lo stesso pezzo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se non ho nessun file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il disegno 3D lo faccio io, partendo da uno schizzo, da una fotografia con una misura di riferimento o dall'oggetto fisico. Non serve saper modellare per ottenere un pezzo su misura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa stampare un pezzo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non c'è un listino, perché due pezzi delle stesse dimensioni possono richiedere impegni di progettazione molto diversi. Il costo dipende da tempo di disegno, materiale e tempo macchina, e il preventivo arriva dopo la valutazione, prima che parta qualsiasi lavorazione."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Che dimensioni massime si possono stampare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dipende dalla macchina e dall'orientamento del pezzo. I componenti più grandi si possono realizzare in più parti da unire: indica gli ingombri nella richiesta e ti dico subito se rientra."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

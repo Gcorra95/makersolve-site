@@ -130,6 +130,35 @@
   </div>
 </section>
 
+<!-- ============================ FAQ ============================ -->
+<section class="paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Domande frequenti</span>
+      <h2>Domande sulla copia di un pezzo esistente</h2>
+    </div>
+
+    <div class="faq rv">
+      <details>
+        <summary>Si può ricostruire un pezzo se è rotto?</summary>
+        <div class="a">Sì, nella maggior parte dei casi. Rilevo le misure dalle parti ancora integre e ricostruisco la geometria mancante per continuità. Serve che resti abbastanza materiale da misurare: se il pezzo è frantumato in frammenti minuti diventa difficile.</div>
+      </details>
+      <details>
+        <summary>Cosa devo mandare per far valutare un ricambio fuori produzione?</summary>
+        <div class="a">Una fotografia del pezzo con un metro o un calibro accanto, che dà il riferimento di scala, più le misure principali che riesci a prendere. Se puoi portarmi il pezzo di persona a Mirandola, il rilievo è più preciso.</div>
+      </details>
+      <details>
+        <summary>Il pezzo rifatto è identico all'originale?</summary>
+        <div class="a">Geometricamente sì, nei limiti del rilievo. Il materiale però cambia: se l'originale era in metallo e lavorava sotto carico, riprodurlo in plastica sposta il problema invece di risolverlo, e in quel caso te lo dico prima di procedere.</div>
+      </details>
+      <details>
+        <summary>Si può copiare un pezzo coperto da brevetto?</summary>
+        <div class="a">No. Riproduco ricambi per uso proprio e componenti fuori produzione, non copie di prodotti protetti destinate alla rivendita.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="tight has-bg">
   <div class="sec-bg"><img class="tint-copper parallax" src="/assets/gen-exploded.webp" alt="" loading="lazy"></div>
   <div class="wrap" style="text-align:center">
@@ -188,20 +217,47 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Service",
-  "name":"Reverse engineering",
-  "description":"Ricostruzione del modello CAD di un componente a partire dal campione fisico, anche danneggiato o incompleto, per ricambi non più reperibili.",
-  "url":"https://makersolve.com/servizi/reverse-engineering/",
-  "serviceType":"Reverse engineering",
-  "areaServed":{"@type":"Country","name":"Italia"},
-  "provider":{
-    "@type":"ProfessionalService",
-    "name":"MakerSolve",
-    "url":"https://makersolve.com/",
-    "telephone":"+39 346 608 8830",
-    "email":"giulio.corazzari@gmail.com",
-    "address":{"@type":"PostalAddress","addressLocality":"Mirandola","addressRegion":"MO","addressCountry":"IT"}
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Reverse engineering",
+  "description": "Ricostruzione del modello CAD di un componente a partire dal campione fisico, anche danneggiato o incompleto, per ricambi non più reperibili.",
+  "url": "https://makersolve.com/servizi/reverse-engineering/",
+  "serviceType": "Reverse engineering",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Mirandola"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Provincia di Modena"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Emilia-Romagna"
+    },
+    {
+      "@type": "Country",
+      "name": "Italia"
+    }
+  ],
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "MakerSolve",
+    "url": "https://makersolve.com/",
+    "telephone": "+39 346 608 8830",
+    "email": "giulio.corazzari@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mirandola",
+      "addressRegion": "MO",
+      "addressCountry": "IT",
+      "postalCode": "41037"
+    },
+    "@id": "https://makersolve.com/#organization",
+    "sameAs": [
+      "https://www.linkedin.com/company/makersolve"
+    ]
   }
 }
 </script>
@@ -209,5 +265,71 @@
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
 <script src="/assets/ms-tw.js?v=4" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://makersolve.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Servizi",
+      "item": "https://makersolve.com/servizi/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Reverse engineering",
+      "item": "https://makersolve.com/servizi/reverse-engineering/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Si può ricostruire un pezzo se è rotto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì, nella maggior parte dei casi. Rilevo le misure dalle parti ancora integre e ricostruisco la geometria mancante per continuità. Serve che resti abbastanza materiale da misurare: se il pezzo è frantumato in frammenti minuti diventa difficile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa devo mandare per far valutare un ricambio fuori produzione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una fotografia del pezzo con un metro o un calibro accanto, che dà il riferimento di scala, più le misure principali che riesci a prendere. Se puoi portarmi il pezzo di persona a Mirandola, il rilievo è più preciso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Il pezzo rifatto è identico all'originale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Geometricamente sì, nei limiti del rilievo. Il materiale però cambia: se l'originale era in metallo e lavorava sotto carico, riprodurlo in plastica sposta il problema invece di risolverlo, e in quel caso te lo dico prima di procedere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Si può copiare un pezzo coperto da brevetto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Riproduco ricambi per uso proprio e componenti fuori produzione, non copie di prodotti protetti destinate alla rivendita."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

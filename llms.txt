@@ -1,0 +1,54 @@
+# MakerSolve
+
+> Officina di progettazione meccanica e stampa 3D a Mirandola, in provincia di
+> Modena. Realizza pezzi su misura in esemplare singolo o piccola serie per
+> aziende e privati: ricambi fuori produzione, dime e attrezzature di reparto,
+> scocche per elettronica, supporti, adattatori e prototipi funzionali.
+> Fondata da Giulio Corazzari, che segue personalmente ogni commessa.
+
+## Dati essenziali
+
+- **Attività**: progettazione CAD, reverse engineering da campione fisico, stampa 3D FDM e a resina, integrazione di piccola elettronica
+- **Sede**: Mirandola (MO), 41037, Emilia-Romagna, Italia
+- **Zona servita**: Mirandola e provincia di Modena per il ritiro diretto; spedizioni in tutta Italia
+- **Contatto**: 346 608 8830 — giulio.corazzari@gmail.com
+- **Tempo di risposta**: valutazione tecnica di fattibilità entro 24/48 ore, gratuita e senza impegno
+- **Quantità**: dal pezzo singolo alla piccola serie
+- **Materiali**: PLA, PETG, ASA, ABS, TPU, nylon caricato fibra di carbonio, nylon caricato fibra di vetro, resina
+- **Tolleranze**: lavorazione nell'ordine del millimetro; il decimo di millimetro in stampa FDM non è garantito
+- **Input accettati per un preventivo**: fotografia, schizzo a mano, misure approssimative, campione fisico anche rotto, oppure file STEP, STL o 3MF. Il disegno CAD non è richiesto al cliente.
+
+## Ambiti esclusi
+
+MakerSolve non realizza componenti di sicurezza, parti strutturali critiche
+né dispositivi soggetti a certificazione (medicale, ATEX, contatto alimentare).
+Su questi ambiti offre al massimo supporto in fase di studio, non produzione.
+Per volumi nell'ordine delle migliaia di pezzi segnala che lo stampaggio a
+iniezione è più conveniente della stampa 3D.
+
+## Pagine principali
+
+- [Home](https://makersolve.com/): cosa realizza MakerSolve per aziende e per privati, metodo di lavoro in quattro fasi, capacità tecniche dichiarate
+- [Contatti](https://makersolve.com/contatti/): modulo di richiesta valutazione, cosa inviare per un preventivo, domande frequenti con risposte
+- [Chi siamo](https://makersolve.com/chi-siamo/): chi è Giulio Corazzari, approccio tecnico, contesto dell'officina
+- [Lavori](https://makersolve.com/portfolio/): casi reali conclusi, con descrizione del problema e della soluzione
+
+## Servizi
+
+- [Progettazione CAD](https://makersolve.com/servizi/progettazione-cad/): modellazione 3D di componenti su misura a partire da idea, schizzo, fotografia o campione fisico; consegna in formato STEP
+- [Reverse engineering](https://makersolve.com/servizi/reverse-engineering/): ricostruzione del modello 3D da un pezzo fisico, anche danneggiato, per ricambi non più reperibili
+- [Prototipazione rapida](https://makersolve.com/servizi/prototipazione-rapida/): prototipi funzionali per verificare ingombri, accoppiamenti e funzione prima di investire in attrezzature definitive
+- [Componenti su misura](https://makersolve.com/servizi/componenti-custom/): supporti, staffe, adattatori, guide, carter, dime e piccoli lotti
+- [Elettronica e sensori](https://makersolve.com/servizi/elettronica-sensori/): sensori, cablaggi e logica di controllo integrati nel progetto meccanico
+- [Stampa 3D personalizzata](https://makersolve.com/stampa-3d-personalizzata/): stampa di oggetti e componenti su misura, con o senza file 3D
+- [Materiali](https://makersolve.com/materiali/): criteri di scelta del materiale in base a carico, temperatura di esercizio ed esposizione ambientale
+
+## Pagine locali
+
+- [Stampa 3D a Mirandola](https://makersolve.com/stampa-3d-mirandola/): servizio per Mirandola e comuni della Bassa modenese, con ritiro diretto
+
+## Note legali
+
+- [Privacy Policy](https://makersolve.com/privacy-policy/)
+- [Cookie Policy](https://makersolve.com/cookie-policy/)
+- [Termini e condizioni](https://makersolve.com/termini/)

@@ -403,18 +403,30 @@
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"ContactPage",
-  "name":"Contatti — MakerSolve",
-  "url":"https://makersolve.com/contatti/",
-  "mainEntity":{
-    "@type":"ProfessionalService",
-    "name":"MakerSolve",
-    "url":"https://makersolve.com/",
-    "email":"giulio.corazzari@gmail.com",
-    "telephone":"+39 346 608 8830",
-    "address":{"@type":"PostalAddress","addressLocality":"Mirandola","addressRegion":"MO","addressCountry":"IT"},
-    "areaServed":{"@type":"Country","name":"Italia"}
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contatti — MakerSolve",
+  "url": "https://makersolve.com/contatti/",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "MakerSolve",
+    "url": "https://makersolve.com/",
+    "email": "giulio.corazzari@gmail.com",
+    "telephone": "+39 346 608 8830",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mirandola",
+      "addressRegion": "MO",
+      "addressCountry": "IT"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Italia"
+    },
+    "@id": "https://makersolve.com/#organization",
+    "sameAs": [
+      "https://www.linkedin.com/company/makersolve"
+    ]
   }
 }
 </script>
@@ -487,5 +499,25 @@
 <script src="/data/site-config.js"></script>
 <script src="/assets/site-config-loader.js" defer></script>
 <script src="/assets/ms-tw.js?v=4" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://makersolve.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contatti",
+      "item": "https://makersolve.com/contatti/"
+    }
+  ]
+}
+</script>
 </body>
 </html>
