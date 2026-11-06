@@ -18,6 +18,8 @@ window.MAKERSOLVE_CONFIG = {
   country: "IT",
 
   linkedin: "https://www.linkedin.com/company/makersolve",
+  instagram: "https://www.instagram.com/makersolve/",
+  stimalo: "https://stimalo.com/printer/makersolve",
 
   // Compila solo quando avrai una P.IVA definitiva.
   vatNumber: "",
