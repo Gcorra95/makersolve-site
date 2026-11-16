@@ -2,6 +2,9 @@
 
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /tools/
+Disallow: /src/
 
 # ---------------------------------------------------------------
 # Crawler dei motori di risposta e degli assistenti AI.

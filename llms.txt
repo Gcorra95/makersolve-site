@@ -1,56 +1,73 @@
 # MakerSolve
 
-> Officina di progettazione meccanica e stampa 3D a Mirandola, in provincia di
-> Modena. Realizza pezzi su misura in esemplare singolo o piccola serie per
-> aziende e privati: ricambi fuori produzione, dime e attrezzature di reparto,
-> scocche per elettronica, supporti, adattatori e prototipi funzionali.
-> Fondata da Giulio Corazzari, che segue personalmente ogni commessa.
+> Laboratorio di stampa 3D personalizzata a Mirandola, in provincia di Modena
+> (Emilia-Romagna), fondato e gestito da Giulio Corazzari. Progetta e stampa in 3D
+> oggetti che non si trovano in negozio, anche in un esemplare solo, per privati,
+> negozi, studi e piccole aziende. Tre ambiti: oggetti con il logo per le attività
+> (quadri e loghi 3D da parete, lampade e insegne luminose da interno, targhette NFC
+> per le recensioni Google, biglietti da visita NFC); ricambi in plastica rotti o
+> fuori produzione per la casa (manopole, pezzi di tapparelle e box doccia, ricambi
+> di elettrodomestici, mobili, auto e moto); idee su misura (regali e oggetti
+> personalizzati, supporti, adattatori, scocche, piccola elettronica).
 
 ## Dati essenziali
 
-- **Attività**: progettazione CAD, reverse engineering da campione fisico, stampa 3D FDM e a resina, integrazione di piccola elettronica
-- **Sede**: Mirandola (MO), 41037, Emilia-Romagna, Italia
-- **Zona servita**: Mirandola e provincia di Modena per il ritiro diretto; spedizioni in tutta Italia
-- **Contatto**: 346 608 8830 — giulio.corazzari@gmail.com
-- **Tempo di risposta**: valutazione tecnica di fattibilità entro 24/48 ore, gratuita e senza impegno
-- **Quantità**: dal pezzo singolo alla piccola serie
-- **Materiali**: PLA, PETG, ASA, ABS, TPU, nylon caricato fibra di carbonio, nylon caricato fibra di vetro, resina
-- **Tolleranze**: lavorazione nell'ordine del millimetro; il decimo di millimetro in stampa FDM non è garantito
-- **Input accettati per un preventivo**: fotografia, schizzo a mano, misure approssimative, campione fisico anche rotto, oppure file STEP, STL o 3MF. Il disegno CAD non è richiesto al cliente.
+- **Nome**: MakerSolve
+- **Tipo di attività**: laboratorio di stampa 3D personalizzata e progettazione su misura
+- **Sede**: Mirandola (MO), 41037, Emilia-Romagna, Italia. Ritiro su appuntamento.
+- **Zona servita**: Mirandola e Bassa modenese (Carpi, Finale Emilia, San Felice sul Panaro, Medolla, Cavezzo, Concordia sulla Secchia, San Possidonio, Camposanto, San Prospero, Novi di Modena), Modena e provincia; spedizione in tutta Italia
+- **Contatti**: telefono 346 608 8830, email giulio.corazzari@gmail.com, modulo su https://makersolve.com/contatti/
+- **Tempo di risposta**: entro 24/48 ore, con valutazione gratuita e senza impegno
+- **Prezzi**: nessun listino; il prezzo dipende da tempo di disegno, materiale e ore di stampa e viene comunicato prima di iniziare
+- **Quantità**: da un pezzo solo (nessun minimo d'ordine) alla piccola serie
+- **Cosa serve per un preventivo**: una foto con un metro accanto, qualche misura, a cosa serve l'oggetto; per gli oggetti con logo, il logo (anche solo un'immagine). Non serve un file 3D: il disegno lo fa MakerSolve. Si accettano anche file STL, STEP, 3MF.
+- **Materiali**: PLA, PETG, ASA, ABS, TPU flessibile, nylon rinforzato con fibra di carbonio o di vetro, resina per i dettagli fini
+- **Precisione**: nell'ordine del millimetro; il decimo di millimetro con la stampa a filamento non è garantito
+- **Luci**: lampade e insegne solo con LED a bassa tensione, da interno
 
-## Ambiti esclusi
+## Cosa MakerSolve non fa
 
-MakerSolve non realizza componenti di sicurezza, parti strutturali critiche
-né dispositivi soggetti a certificazione (medicale, ATEX, contatto alimentare).
-Su questi ambiti offre al massimo supporto in fase di studio, non produzione.
-Per volumi nell'ordine delle migliaia di pezzi segnala che lo stampaggio a
-iniezione è più conveniente della stampa 3D.
+- Pezzi di sicurezza (freni, valvole del gas, parti che reggono persone o carichi sospesi), parti strutturali critiche, dispositivi certificati (medicali, ATEX)
+- Pezzi a contatto con alimenti
+- Insegne collegate direttamente alla rete elettrica o impianti per esterni
+- Copie di prodotti coperti da brevetto o marchio destinate alla rivendita
+- Se un ricambio esiste ancora in ferramenta o online a pochi euro, lo segnala invece di rifarlo
+- Per migliaia di pezzi uguali segnala che conviene lo stampaggio a iniezione
 
-## Pagine principali
+## Oggetti per le attività
 
-- [Home](https://makersolve.com/): cosa realizza MakerSolve per aziende e per privati, metodo di lavoro in quattro fasi, capacità tecniche dichiarate
-- [Contatti](https://makersolve.com/contatti/): modulo di richiesta valutazione, cosa inviare per un preventivo, domande frequenti con risposte
-- [Chi siamo](https://makersolve.com/chi-siamo/): chi è Giulio Corazzari, approccio tecnico, contesto dell'officina
-- [Lavori](https://makersolve.com/portfolio/): casi reali conclusi, con descrizione del problema e della soluzione
+- [Loghi 3D e lampade con logo](https://makersolve.com/logo-3d/): quadri con il logo a rilievo, lampade e insegne luminose da interno, espositori e gadget per negozi, studi e aziende; il logo può essere ricostruito anche da una foto o dal profilo Instagram
+- [Targhette e biglietti NFC](https://makersolve.com/personalizzati-nfc/): targhette ed espositori per le recensioni Google, biglietti da visita e portachiavi con tag NFC chiuso dentro la stampa; funzionano con iPhone dal modello XS in poi e con Android con NFC attivo
 
-## Servizi
+## Ricambi per la casa
 
-- [Progettazione CAD](https://makersolve.com/servizi/progettazione-cad/): modellazione 3D di componenti su misura a partire da idea, schizzo, fotografia o campione fisico; consegna in formato STEP
-- [Reverse engineering](https://makersolve.com/servizi/reverse-engineering/): ricostruzione del modello 3D da un pezzo fisico, anche danneggiato, per ricambi non più reperibili
-- [Prototipazione rapida](https://makersolve.com/servizi/prototipazione-rapida/): prototipi funzionali per verificare ingombri, accoppiamenti e funzione prima di investire in attrezzature definitive
-- [Componenti su misura](https://makersolve.com/servizi/componenti-custom/): supporti, staffe, adattatori, guide, carter, dime e piccoli lotti
-- [Elettronica e sensori](https://makersolve.com/servizi/elettronica-sensori/): sensori, cablaggi e logica di controllo integrati nel progetto meccanico
-- [Stampa 3D personalizzata](https://makersolve.com/stampa-3d-personalizzata/): stampa di oggetti e componenti su misura, con o senza file 3D
-- [Materiali](https://makersolve.com/materiali/): criteri di scelta del materiale in base a carico, temperatura di esercizio ed esposizione ambientale
+- [Ricambi in plastica](https://makersolve.com/ricambi/): come si rifà un ricambio in plastica non più reperibile, cosa si può rifare e cosa no
+- [Manopole](https://makersolve.com/ricambi/manopole/): manopole di forno, piano cottura, termosifone, miscelatore e piccoli elettrodomestici rifatte sul perno originale
+- [Tapparelle](https://makersolve.com/ricambi/tapparelle/): tappi, fermi, guidacinghia e calotte in plastica per tapparelle vecchie, in materiale resistente al sole
+- [Box doccia](https://makersolve.com/ricambi/box-doccia/): corpi delle rotelle, pattini, fermi, maniglie e cerniere in plastica di box doccia fuori produzione
 
-## Pagine locali
+## Idee su misura e servizi
 
-- [Stampa 3D a Mirandola](https://makersolve.com/stampa-3d-mirandola/): servizio per Mirandola e comuni della Bassa modenese, con ritiro diretto
+- [Stampa 3D personalizzata](https://makersolve.com/stampa-3d-personalizzata/): regali e oggetti con nome o dedica, supporti, adattatori, piccole serie, con o senza file 3D
+- [Reverse engineering](https://makersolve.com/servizi/reverse-engineering/): copia di un pezzo esistente, anche rotto, con ricostruzione del disegno 3D
+- [Progettazione CAD](https://makersolve.com/servizi/progettazione-cad/): disegno 3D di pezzi su misura da idea, schizzo, foto o pezzo originale; consegna anche del file STEP
+- [Prototipazione rapida](https://makersolve.com/servizi/prototipazione-rapida/): prototipi per provare forma, misure e montaggio prima di produrre
+- [Componenti su misura](https://makersolve.com/servizi/componenti-custom/): supporti, staffe, adattatori, scocche, coperture e dime
+- [Piccola elettronica](https://makersolve.com/servizi/elettronica-sensori/): luci LED, sensori, display e piccoli circuiti con Arduino o ESP32, con la scocca stampata attorno
+- [Materiali](https://makersolve.com/materiali/): come si sceglie tra PLA, PETG, ASA, ABS, TPU, nylon e resina
+
+## Altre pagine
+
+- [Home](https://makersolve.com/): panoramica dei tre ambiti, metodo di lavoro, cosa c'è in laboratorio
+- [Stampa 3D a Mirandola](https://makersolve.com/stampa-3d-mirandola/): servizio locale per Mirandola, la Bassa modenese e Modena, con ritiro diretto
+- [Lavori](https://makersolve.com/portfolio/): casi reali con problema e soluzione
+- [Chi siamo](https://makersolve.com/chi-siamo/): chi è Giulio Corazzari e come lavora il laboratorio
+- [Contatti](https://makersolve.com/contatti/): modulo di richiesta, cosa mandare, domande frequenti
 
 ## Profili ufficiali
 
-- [LinkedIn](https://www.linkedin.com/company/makersolve)
 - [Instagram](https://www.instagram.com/makersolve/)
+- [LinkedIn](https://www.linkedin.com/company/makersolve)
 - [Stimalo](https://stimalo.com/printer/makersolve)
 
 ## Note legali
