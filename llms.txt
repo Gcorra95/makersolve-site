@@ -20,7 +20,7 @@
 - **Tempo di risposta**: entro 24/48 ore, con valutazione gratuita e senza impegno
 - **Prezzi**: nessun listino; il prezzo dipende da tempo di disegno, materiale e ore di stampa e viene comunicato prima di iniziare
 - **Quantità**: da un pezzo solo (nessun minimo d'ordine) alla piccola serie
-- **Cosa serve per un preventivo**: una foto con un metro accanto, qualche misura, a cosa serve l'oggetto; per gli oggetti con logo, il logo (anche solo un'immagine). Non serve un file 3D: il disegno lo fa MakerSolve. Si accettano anche file STL, STEP, 3MF.
+- **Cosa serve per un preventivo**: per un primo parere bastano una foto con un metro accanto e due righe su cosa serve. Per rifare un ricambio serve il pezzo originale, anche rotto (portato a Mirandola o spedito): le misure si prendono dal pezzo, non dalle foto. Per gli oggetti con logo basta il logo, anche solo un'immagine. Non serve un file 3D: il disegno lo fa MakerSolve. Si accettano anche file STL, STEP, 3MF.
 - **Materiali**: PLA, PETG, ASA, ABS, TPU flessibile, nylon rinforzato con fibra di carbonio o di vetro, resina per i dettagli fini
 - **Precisione**: nell'ordine del millimetro; il decimo di millimetro con la stampa a filamento non è garantito
 - **Luci**: lampade e insegne solo con LED a bassa tensione, da interno
