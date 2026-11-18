@@ -36,6 +36,7 @@
 
 ## Oggetti per le attività
 
+- [Gestionale flotta Gestiscimi](https://makersolve.com/gestionale-flotta/): programma per Windows per la manutenzione dei furgoni aziendali, personalizzato con il logo dell'azienda: scadenze di revisione, tagliando, freni e gomme a km e mesi, guasti segnalati dagli operai con un bot Telegram e QR sul cruscotto, schede di lavoro in 6 lingue, distinta ricambi, report Excel, dati sul PC dell'azienda; prova gratuita 30 giorni
 - [Loghi 3D e lampade con logo](https://makersolve.com/logo-3d/): quadri con il logo a rilievo, lampade e insegne luminose da interno, espositori e gadget per negozi, studi e aziende; il logo può essere ricostruito anche da una foto o dal profilo Instagram
 - [Targhette e biglietti NFC](https://makersolve.com/personalizzati-nfc/): targhette ed espositori per le recensioni Google, biglietti da visita e portachiavi con tag NFC chiuso dentro la stampa; funzionano con iPhone dal modello XS in poi e con Android con NFC attivo
 
